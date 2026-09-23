@@ -1,0 +1,2366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agile Networks | Managed IT for Architecture, Engineering and Construction Firms</title>
+<meta name="description" content="Managed IT for architecture, engineering and construction firms. Weekly on-site support along the Boston-DC corridor, remote support across the US. Since 2001.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#0E1A2B;
+  --navy:#132B4A;
+  --navy-2:#0B1D35;
+  --paper:#F6F5F1;
+  --paper-2:#ECEAE3;
+  --white:#FFFFFF;
+  --rule:#CBD1D8;
+  --muted:#4A5566;
+  --blue:#2F5F8F;
+  --line-on-navy:#8DB4DA;
+  --text-on-navy:#E9EEF4;
+  --muted-on-navy:#AEBCCD;
+  --accent:#B8481A;
+  --accent-hover:#9C3B13;
+  --focus:#E07A3F;
+  --ph:#7A6A4F;
+  --ph-bg:#FBF7EE;
+  --display:"Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body:"IBM Plex Sans", "Segoe UI", Roboto, Arial, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --maxw:1180px;
+  --gutter:clamp(16px, 4vw, 40px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{transition:none!important;animation:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-underline-offset:3px}
+a:hover{color:var(--accent)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:2px}
+h1,h2,h3,h4{font-family:var(--display);font-stretch:112%;line-height:1.12;margin:0;text-wrap:balance;letter-spacing:-0.01em}
+h1{font-size:clamp(2rem, 1.3rem + 3vw, 3.4rem);font-weight:700}
+h2{font-size:clamp(1.55rem, 1.2rem + 1.5vw, 2.3rem);font-weight:650}
+h3{font-size:1.25rem;font-weight:650}
+h4{font-size:1.02rem;font-weight:650}
+p{margin:0;max-width:66ch}
+ul{margin:0;padding-left:1.1em}
+li{margin-block:.25em}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:500}
+.on-navy .eyebrow{color:var(--line-on-navy)}
+.lede{font-size:1.18rem;color:var(--muted);max-width:60ch}
+.stack{display:flex;flex-direction:column;gap:1rem}
+.stack-lg{display:flex;flex-direction:column;gap:1.6rem}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Skip link */
+.skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:#fff;padding:.6rem 1rem;z-index:100;font-weight:600}
+.skip:focus{top:12px;color:#fff}
+
+/* Header */
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(246,245,241,.94);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--rule)}
+.header-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:68px}
+.wordmark{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--ink)}
+.wordmark:hover{color:var(--ink)}
+.wordmark svg{flex:none}
+.wordmark b{font-family:var(--display);font-stretch:118%;font-weight:750;font-size:1.12rem;letter-spacing:-.01em;line-height:1}
+.wordmark small{display:block;white-space:nowrap;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.nav{display:flex;align-items:center;gap:.25rem}
+.nav a{font-size:.92rem;font-weight:500;color:var(--ink);text-decoration:none;padding:.5rem .55rem;border-radius:2px;white-space:nowrap}
+.nav a:hover{color:var(--accent)}
+.nav a[aria-current="page"],.nav a[aria-current="true"]{box-shadow:inset 0 -2px 0 var(--accent)}
+.nav .btn{margin-left:.5rem}
+.menu-btn{display:none;background:none;border:1px solid var(--rule);padding:.5rem .7rem;font:500 .9rem var(--body);color:var(--ink);cursor:pointer;border-radius:2px}
+@media (max-width: 1000px){
+  .menu-btn{display:inline-flex;align-items:center;gap:.4rem}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--rule);flex-direction:column;align-items:stretch;padding:.5rem var(--gutter) 1rem}
+  .nav.open{display:flex}
+  .nav a{padding:.8rem .2rem;border-bottom:1px solid var(--paper-2)}
+  .nav a[aria-current="page"]{box-shadow:none;color:var(--accent)}
+  .nav .btn{margin:.6rem 0 0;text-align:center;justify-content:center}
+}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.5rem;font:600 .98rem/1 var(--body);padding:.9rem 1.25rem;border-radius:2px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .15s, color .15s, border-color .15s}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-hover);color:#fff}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+.on-navy .btn-ghost{border-color:var(--text-on-navy);color:var(--text-on-navy)}
+.on-navy .btn-ghost:hover{background:var(--text-on-navy);color:var(--navy)}
+.nav .btn-primary{color:#fff;padding:.7rem 1rem}
+.nav .btn-primary:hover{color:#fff}
+.btn-row{display:flex;flex-wrap:wrap;gap:.75rem}
+.arrow::after{content:"\2192";font-family:var(--body)}
+
+/* Sections */
+.section{padding-block:clamp(56px, 8vw, 104px)}
+.section + .section{border-top:1px solid var(--rule)}
+.section.tint{background:var(--white)}
+.on-navy{background:var(--navy);color:var(--text-on-navy)}
+.on-navy p,.on-navy li{color:var(--text-on-navy)}
+.on-navy .lede{color:var(--muted-on-navy)}
+.on-navy a:not(.btn){color:var(--line-on-navy)}
+.section-head{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;margin-bottom:clamp(32px,4vw,52px)}
+@media (min-width: 900px){.section-head.split{grid-template-columns:5fr 6fr;align-items:end;gap:3rem}}
+
+/* Blueprint grid background */
+.grid-bg{background-image:linear-gradient(rgba(141,180,218,.13) 1px, transparent 1px),linear-gradient(90deg, rgba(141,180,218,.13) 1px, transparent 1px);background-size:24px 24px}
+.paper-grid{background-image:linear-gradient(rgba(47,95,143,.07) 1px, transparent 1px),linear-gradient(90deg, rgba(47,95,143,.07) 1px, transparent 1px);background-size:24px 24px}
+
+/* Hero */
+.hero{padding-block:clamp(48px,7vw,96px) clamp(56px,7vw,96px)}
+.hero-grid{display:grid;gap:clamp(32px,5vw,64px);grid-template-columns:minmax(0,1fr)}
+@media (min-width: 980px){.hero-grid{grid-template-columns:6fr 5fr;align-items:center}}
+.hero h1{max-width:18ch}
+.hero .lede{color:var(--muted-on-navy);font-size:1.15rem}
+.drawing{border:1px solid rgba(141,180,218,.4);background:var(--navy-2);padding:10px}
+.drawing svg{display:block;width:100%;height:auto}
+.fig-cap{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--muted-on-navy);margin-top:.6rem;text-transform:uppercase}
+.page-hero{padding-block:clamp(48px,7vw,88px)}
+.page-hero .lede{margin-top:1.1rem}
+.sheet-tag{display:inline-flex;gap:.8rem;align-items:center;font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--line-on-navy);border:1px solid rgba(141,180,218,.45);padding:.3rem .6rem;margin-bottom:1.4rem}
+.sheet-tag span + span{border-left:1px solid rgba(141,180,218,.45);padding-left:.8rem}
+
+/* Value props */
+.props{display:grid;gap:0;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--ink)}
+@media (min-width: 720px){.props{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width: 1080px){.props{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.prop{padding:1.6rem 1.4rem 1.8rem 0;display:flex;flex-direction:column;gap:.7rem;border-bottom:1px solid var(--rule)}
+@media (min-width: 720px){.prop{padding-right:1.8rem}}
+.prop .tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.prop p{color:var(--muted);font-size:.98rem}
+
+/* Service cards */
+.cards{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);grid-template-columns:minmax(0,1fr)}
+@media (min-width: 760px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.card{background:var(--white);padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;gap:.85rem;text-decoration:none;color:var(--ink);transition:background .15s}
+a.card:hover{background:#FAFBFC;color:var(--ink)}
+a.card:hover h3{color:var(--accent)}
+.card .code{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;color:var(--blue);text-transform:uppercase}
+.card p{color:var(--muted);font-size:.98rem}
+.card .more{margin-top:auto;font-weight:600;font-size:.94rem;color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;padding:0;margin:0}
+.chips li{margin:0;font-family:var(--mono);font-size:.74rem;padding:.25rem .5rem;border:1px solid var(--rule);background:var(--paper);color:var(--ink);letter-spacing:.02em}
+.on-navy .chips li{background:transparent;border-color:rgba(141,180,218,.45);color:var(--text-on-navy)}
+
+/* Placeholders */
+.ph{border:1.5px dashed var(--ph);background:var(--ph-bg);color:var(--ph);padding:1rem 1.1rem;position:relative}
+.ph-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;display:block;margin-bottom:.35rem}
+.ph p{color:#5E5140}
+.logo-strip{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (min-width:640px){.logo-strip{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:1000px){.logo-strip{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.logo-ph{height:78px;display:flex;align-items:center;justify-content:center;text-align:center;padding:.5rem}
+.logo-ph .ph-label{margin:0}
+.quote-ph{padding:clamp(22px,3vw,36px)}
+.quote-ph blockquote{margin:0;font-family:var(--display);font-stretch:105%;font-size:clamp(1.2rem,1rem + .8vw,1.6rem);line-height:1.35;color:#5E5140}
+.quote-ph figcaption{margin-top:1rem;font-family:var(--mono);font-size:.8rem}
+
+/* Two col */
+.two{display:grid;gap:clamp(28px,4vw,56px);grid-template-columns:minmax(0,1fr)}
+@media (min-width: 900px){.two{grid-template-columns:repeat(2,minmax(0,1fr))}.two.wide-left{grid-template-columns:7fr 5fr}.two.wide-right{grid-template-columns:5fr 7fr}}
+
+/* Corridor */
+.corridor svg{width:100%;height:auto;display:block}
+
+/* CTA band */
+.cta-band{padding-block:clamp(56px,7vw,88px)}
+.cta-inner{display:grid;gap:1.6rem;grid-template-columns:minmax(0,1fr);align-items:center}
+@media (min-width:900px){.cta-inner{grid-template-columns:7fr 5fr}.cta-inner .btn-row{justify-content:flex-end}}
+
+/* Service detail */
+.svc{display:grid;gap:clamp(24px,4vw,56px);grid-template-columns:minmax(0,1fr);scroll-margin-top:90px}
+@media (min-width: 960px){.svc{grid-template-columns:4fr 8fr}}
+.svc-side{display:flex;flex-direction:column;gap:1rem}
+@media (min-width: 960px){.svc-side{position:sticky;top:100px;align-self:start}}
+.svc-code{font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;color:var(--accent)}
+.facets{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);grid-template-columns:minmax(0,1fr)}
+@media (min-width: 700px){.facets{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.facet{background:var(--white);padding:1.4rem 1.5rem;display:flex;flex-direction:column;gap:.7rem}
+.facet.full{grid-column:1/-1}
+.facet h4{font-family:var(--mono);font-stretch:100%;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:500}
+.facet p,.facet li{font-size:.98rem;color:var(--ink)}
+.facet ul{display:flex;flex-direction:column;gap:.1rem}
+.callout{border-left:3px solid var(--accent);padding:.9rem 1.1rem;background:var(--paper);font-size:.98rem}
+.callout strong{font-family:var(--display);font-stretch:110%}
+.specialty{background:var(--navy);color:var(--text-on-navy);padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;gap:.9rem}
+.specialty h4{color:var(--line-on-navy)}
+.specialty p,.specialty li{color:var(--text-on-navy)}
+
+/* Process */
+.process{display:grid;gap:0;grid-template-columns:minmax(0,1fr);counter-reset:step;list-style:none;padding:0;margin:0}
+@media (min-width: 760px){.process{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width: 1080px){.process{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.process li{margin:0;padding:1.5rem 1.5rem 1.7rem 0;border-top:2px solid var(--ink);display:flex;flex-direction:column;gap:.6rem;position:relative}
+.process li::before{counter-increment:step;content:"Step 0" counter(step);font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.process p{color:var(--muted);font-size:.97rem}
+
+/* Profiles */
+.profiles{display:grid;gap:clamp(20px,3vw,32px);grid-template-columns:minmax(0,1fr)}
+@media (min-width: 1000px){.profiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.profile{background:var(--white);border:1px solid var(--rule);display:flex;flex-direction:column}
+.profile-head{padding:1.5rem 1.5rem 1.2rem;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:.5rem}
+.profile-head .size{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;color:var(--blue);text-transform:uppercase}
+.profile-body{padding:1.3rem 1.5rem 1.6rem;display:flex;flex-direction:column;gap:1rem;flex:1}
+.profile-body h4{font-family:var(--mono);font-stretch:100%;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.profile-body p,.profile-body li{font-size:.97rem}
+.profile .btn{margin-top:auto;align-self:flex-start}
+
+.checklist{list-style:none;padding:0;display:grid;gap:0;grid-template-columns:minmax(0,1fr)}
+@media (min-width:760px){.checklist{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:2.5rem}}
+.checklist li{margin:0;padding:.85rem 0 .85rem 1.8rem;border-bottom:1px solid var(--rule);position:relative}
+.checklist li::before{content:"";position:absolute;left:0;top:1.25rem;width:12px;height:12px;border:1.5px solid var(--accent);transform:rotate(45deg) scale(.8)}
+
+/* AI governance */
+.risk-list{display:grid;gap:1px;background:rgba(141,180,218,.3);border:1px solid rgba(141,180,218,.3);grid-template-columns:minmax(0,1fr)}
+@media (min-width:760px){.risk-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.risk{background:var(--navy);padding:1.5rem;display:flex;flex-direction:column;gap:.6rem}
+.risk h3{font-size:1.1rem;color:#fff}
+.risk p{color:var(--muted-on-navy);font-size:.97rem}
+.deliverables{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);grid-template-columns:minmax(0,1fr)}
+@media (min-width:760px){.deliverables{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1080px){.deliverables{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.deliv{background:var(--white);padding:1.5rem;display:flex;flex-direction:column;gap:.6rem}
+.deliv .doc{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.deliv p{color:var(--muted);font-size:.97rem}
+.questions{list-style:none;padding:0;margin:0;display:flex;flex-direction:column}
+.questions li{margin:0;padding:1rem 0;border-bottom:1px solid var(--rule);font-family:var(--display);font-stretch:106%;font-size:1.08rem;font-weight:550}
+.questions li:first-child{border-top:1px solid var(--rule)}
+
+/* About */
+.team{display:grid;gap:clamp(20px,3vw,28px);grid-template-columns:minmax(0,1fr)}
+@media (min-width:760px){.team{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.member{display:flex;flex-direction:column;gap:.8rem}
+.photo-ph{aspect-ratio:4/5;max-width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.4rem}
+.photo-ph small{font-family:var(--mono);font-size:.7rem}
+.member .role{font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.facts{width:100%;border-collapse:collapse;font-size:.98rem}
+.facts th,.facts td{text-align:left;padding:.85rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.facts th{font-family:var(--mono);font-weight:500;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);width:38%;padding-right:1rem}
+.facts tr:first-child th,.facts tr:first-child td{border-top:1px solid var(--ink)}
+
+/* Insights */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.6rem}
+.filter{font:500 .88rem var(--body);padding:.45rem .8rem;border:1px solid var(--rule);background:var(--white);color:var(--ink);cursor:pointer;border-radius:2px}
+.filter[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.posts{display:grid;gap:clamp(18px,2.5vw,26px);grid-template-columns:minmax(0,1fr)}
+@media (min-width:720px){.posts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1080px){.posts{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.post{background:var(--white);border:1px solid var(--rule);display:flex;flex-direction:column}
+.post-img{aspect-ratio:16/9;max-width:100%;border:0;border-bottom:1.5px dashed var(--ph);display:flex;align-items:center;justify-content:center}
+.post-body{padding:1.2rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.55rem}
+.post .cat{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.post h3{font-size:1.1rem}
+.post p{color:var(--muted);font-size:.95rem}
+.post .meta{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+
+/* Contact */
+.contact-grid{display:grid;gap:clamp(28px,4vw,56px);grid-template-columns:minmax(0,1fr)}
+@media (min-width:960px){.contact-grid{grid-template-columns:5fr 7fr}}
+.book{background:var(--navy);color:var(--text-on-navy);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:1rem}
+.book p{color:var(--text-on-navy)}
+.direct{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--ink)}
+.direct div{display:flex;justify-content:space-between;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--rule);flex-wrap:wrap}
+.direct dt{font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.direct dd{margin:0;font-weight:500}
+.direct .tbd{color:var(--ph);font-family:var(--mono);font-size:.86rem;border:1px dashed var(--ph);padding:.1rem .4rem;background:var(--ph-bg)}
+form.contact{background:var(--white);border:1px solid var(--rule);padding:clamp(22px,3vw,36px);display:grid;gap:1.1rem;grid-template-columns:minmax(0,1fr)}
+@media (min-width:640px){form.contact{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.field{display:flex;flex-direction:column;gap:.35rem}
+.field.full{grid-column:1/-1}
+.field label{font-weight:600;font-size:.92rem}
+.field .hint{font-size:.84rem;color:var(--muted)}
+.field input,.field select,.field textarea{font:400 1rem var(--body);color:var(--ink);background:var(--paper);border:1px solid #9AA4B1;border-radius:2px;padding:.75rem .8rem;width:100%}
+.field textarea{min-height:140px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid var(--focus);outline-offset:1px;border-color:var(--ink)}
+.form-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:1rem;justify-content:space-between}
+.form-status{grid-column:1/-1;font-size:.95rem}
+.form-status:empty{display:none}
+.form-status.ok{border-left:3px solid var(--blue);background:var(--paper);padding:.8rem 1rem}
+.form-status.err{border-left:3px solid var(--accent);background:#FBF0EA;padding:.8rem 1rem;color:#7A2E0E}
+
+/* Notes */
+.notes-table-wrap{overflow-x:auto;border:1px solid var(--rule);background:var(--white)}
+.notes-table{border-collapse:collapse;width:100%;min-width:680px;font-size:.92rem}
+.notes-table th,.notes-table td{text-align:left;padding:.7rem .9rem;border-bottom:1px solid var(--rule);vertical-align:top}
+.notes-table th{font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--paper)}
+.notes-table code{font-family:var(--mono);font-size:.84rem}
+.taglines{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0}
+.taglines li{margin:0;padding:1.1rem 0;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:.3rem}
+.taglines li:first-child{border-top:1px solid var(--ink)}
+.taglines q{font-family:var(--display);font-stretch:110%;font-size:1.25rem;font-weight:600;quotes:none}
+.taglines small{font-family:var(--mono);font-size:.74rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+
+/* Footer / title block */
+.site-footer{background:var(--navy-2);color:var(--text-on-navy);padding-block:clamp(40px,5vw,64px) 28px}
+.site-footer a{color:var(--text-on-navy);text-decoration:none}
+.site-footer a:hover{color:#fff;text-decoration:underline}
+.foot-grid{display:grid;gap:2rem;grid-template-columns:minmax(0,1fr)}
+@media (min-width:760px){.foot-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:1080px){.foot-grid{grid-template-columns:4fr 3fr 3fr 4fr}}
+.foot-grid h2{font-family:var(--mono);font-stretch:100%;font-size:.74rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-on-navy);margin-bottom:.8rem}
+.foot-grid ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:.35rem}
+.foot-grid li{margin:0;font-size:.95rem}
+.foot-grid p{color:var(--muted-on-navy);font-size:.95rem}
+.titleblock{border:1px solid rgba(141,180,218,.45);font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.titleblock div{padding:.55rem .7rem;border-bottom:1px solid rgba(141,180,218,.3);display:flex;flex-direction:column;gap:.2rem}
+.titleblock div:nth-child(odd){border-right:1px solid rgba(141,180,218,.3)}
+.titleblock div.span{grid-column:1/-1;border-right:0}
+.titleblock div:last-child,.titleblock div:nth-last-child(2):not(.span){border-bottom:0}
+.titleblock span{color:var(--muted-on-navy);font-size:.64rem;letter-spacing:.12em}
+.titleblock b{font-weight:500;color:#fff;font-size:.82rem}
+.titleblock .sheetno b{font-family:var(--display);font-stretch:118%;font-size:1.5rem;letter-spacing:0}
+.foot-base{margin-top:2.4rem;padding-top:1.2rem;border-top:1px solid rgba(141,180,218,.25);display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.85rem;color:var(--muted-on-navy)}
+.foot-base p{color:var(--muted-on-navy)}
+
+.page:focus{outline:none}
+
+/* v2 additions */
+.hero-photo{aspect-ratio:4/3;max-width:100%;border:1.5px dashed var(--line-on-navy);background:rgba(11,29,53,.6);display:flex;flex-direction:column;justify-content:center;gap:.6rem;padding:clamp(20px,3vw,32px);color:var(--muted-on-navy)}
+.hero-photo .ph-label{color:var(--line-on-navy)}
+.hero-photo p{color:var(--muted-on-navy);font-size:.98rem}
+.hero-photo small{font-family:var(--mono);font-size:.74rem}
+.hero-facts{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(141,180,218,.45)}
+.hero-facts li{margin:0;padding:.8rem .8rem .2rem 0;display:flex;flex-direction:column;gap:.15rem}
+.hero-facts b{font-family:var(--display);font-stretch:112%;font-size:1.15rem;color:#fff;font-weight:650}
+.hero-facts span{font-size:.8rem;color:var(--muted-on-navy);line-height:1.35}
+.cases{display:grid;gap:clamp(20px,3vw,28px);grid-template-columns:minmax(0,1fr)}
+@media (min-width:1000px){.cases.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.case{background:var(--white);border:1px solid var(--rule);display:flex;flex-direction:column}
+.case-head{padding:1.4rem 1.5rem 1.1rem;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:.45rem}
+.case-head .who{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.status{align-self:flex-start;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:.15rem .45rem;border:1px solid var(--ph);color:var(--ph);background:var(--ph-bg)}
+.case-body{padding:1.2rem 1.5rem 1.5rem;display:flex;flex-direction:column;gap:.9rem;flex:1}
+.case-body h4{font-family:var(--mono);font-stretch:100%;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.case-body p,.case-body li{font-size:.97rem}
+.case-full{display:grid;gap:0;grid-template-columns:minmax(0,1fr);border:1px solid var(--rule);background:var(--white);scroll-margin-top:90px}
+@media (min-width:960px){.case-full{grid-template-columns:4fr 8fr}}
+.case-full > div{padding:clamp(22px,3vw,34px)}
+.case-full .case-meta{background:var(--paper);border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:1rem}
+@media (min-width:960px){.case-full .case-meta{border-bottom:0;border-right:1px solid var(--rule)}}
+.case-full dl{margin:0;display:flex;flex-direction:column;gap:.7rem}
+.case-full dt{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.case-full dd{margin:0;font-weight:500}
+.calc{background:var(--white);border:1px solid var(--rule);display:grid;grid-template-columns:minmax(0,1fr)}
+@media (min-width:900px){.calc{grid-template-columns:6fr 5fr}}
+.calc-in{padding:clamp(22px,3vw,34px);display:grid;gap:1.1rem;grid-template-columns:minmax(0,1fr)}
+@media (min-width:600px){.calc-in{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.calc-out{background:var(--navy);color:var(--text-on-navy);padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;gap:1rem;justify-content:center}
+.calc-out .big{font-family:var(--display);font-stretch:112%;font-size:clamp(2rem,1.5rem + 2vw,2.8rem);font-weight:700;color:#fff;font-variant-numeric:tabular-nums;line-height:1.05}
+.calc-out .row{display:flex;justify-content:space-between;gap:1rem;border-top:1px solid rgba(141,180,218,.3);padding-top:.7rem;font-variant-numeric:tabular-nums}
+.calc-out .row span{color:var(--muted-on-navy);font-size:.92rem}
+.calc-out .row b{color:#fff}
+.calc-out small{color:var(--muted-on-navy);font-size:.84rem;line-height:1.45}
+.model{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);grid-template-columns:minmax(0,1fr)}
+@media (min-width:900px){.model{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.model > div{background:var(--white);padding:1.5rem;display:flex;flex-direction:column;gap:.7rem}
+.model .kind{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.model p,.model li{font-size:.97rem}
+.model .price{font-family:var(--mono);font-size:.86rem;color:var(--ph);border:1px dashed var(--ph);background:var(--ph-bg);padding:.35rem .55rem;align-self:flex-start}
+.terms{list-style:none;padding:0;margin:0;display:flex;flex-direction:column}
+.terms li{margin:0;padding:1rem 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:minmax(0,1fr);gap:.3rem}
+@media (min-width:700px){.terms li{grid-template-columns:14rem minmax(0,1fr);gap:1.5rem}}
+.terms li:first-child{border-top:1px solid var(--ink)}
+.terms b{font-family:var(--display);font-stretch:108%;font-weight:650}
+.terms span{color:var(--muted)}
+.dont{list-style:none;padding:0;margin:0;display:grid;gap:0;grid-template-columns:minmax(0,1fr)}
+@media (min-width:760px){.dont{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:2.5rem}}
+.dont li{margin:0;padding:.9rem 0 .9rem 1.8rem;border-bottom:1px solid var(--rule);position:relative}
+.dont li::before{content:"";position:absolute;left:2px;top:1.45rem;width:12px;height:1.5px;background:var(--accent)}
+.guide{background:var(--white);border:1px solid var(--ink);box-shadow:6px 6px 0 var(--paper-2);max-width:760px;padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;gap:1.2rem}
+.guide-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:.8rem}
+.guide-head span{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.guide-cols{display:grid;gap:1.4rem;grid-template-columns:minmax(0,1fr)}
+@media (min-width:700px){.guide-cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.guide h4{font-family:var(--mono);font-stretch:100%;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;margin-bottom:.5rem}
+.guide .ok h4{color:var(--blue)}
+.guide .no h4{color:var(--accent)}
+.guide li{font-size:.95rem}
+.guide .foot{font-size:.9rem;color:var(--muted);border-top:1px solid var(--rule);padding-top:.9rem}
+.cards.six{grid-template-columns:minmax(0,1fr)}
+@media (min-width:760px){.cards.six{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1080px){.cards.six{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* Chatterbox */
+.feature{display:grid;grid-template-columns:minmax(0,1fr);border:1px solid var(--ink);background:var(--white);text-decoration:none;color:var(--ink)}
+@media (min-width:900px){.feature{grid-template-columns:5fr 7fr}}
+.feature:hover h2{color:var(--accent)}
+.feature-art{background:var(--navy);padding:clamp(22px,3vw,36px);display:flex;align-items:center}
+.mini-flow{list-style:none;counter-reset:mf;padding:0;margin:0;display:flex;flex-direction:column;gap:.35rem;width:100%}
+.mini-flow li{counter-increment:mf;margin:0;font-family:var(--mono);font-size:.8rem;color:var(--text-on-navy);display:flex;gap:.7rem;align-items:center;padding:.3rem 0;border-bottom:1px solid rgba(141,180,218,.25)}
+.mini-flow li::before{content:counter(mf);color:var(--focus);min-width:1.2rem}
+.feature-body{padding:clamp(22px,3vw,40px);display:flex;flex-direction:column;gap:.9rem;justify-content:center}
+.feature-body .cat,.li-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.feature-body p{color:var(--muted)}
+.feature-body .more{font-weight:600;color:var(--accent)}
+.li-card{background:var(--white);border:1px solid var(--rule);padding:1.3rem;display:flex;flex-direction:column;gap:.8rem}
+.li-foot{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:auto}
+.post-img-real{aspect-ratio:16/9;max-width:100%;background:var(--navy);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--rule)}
+.post-img-real span{font-family:var(--display);font-stretch:118%;font-size:1.8rem;font-weight:700;color:#fff}
+a.post:hover h3{color:var(--accent)}
+.article-head{max-width:860px;margin-inline:auto}
+.article-head h1{margin-top:.8rem}
+.article-head .lede{margin-top:1rem}
+.byline{font-family:var(--mono);font-size:.8rem;color:var(--muted-on-navy);margin-top:1.2rem}
+.flow{list-style:none;counter-reset:fl;padding:0;margin:0 auto clamp(40px,5vw,64px);max-width:1000px;display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (min-width:860px){.flow{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.flow li{counter-increment:fl;margin:0;background:var(--white);padding:1rem 1.1rem;display:flex;flex-direction:column;gap:.25rem}
+.flow li::before{content:"0" counter(fl);font-family:var(--mono);font-size:.72rem;color:var(--accent);letter-spacing:.1em}
+.flow b{font-family:var(--display);font-stretch:108%;font-size:1rem}
+.flow span{font-size:.86rem;color:var(--muted);line-height:1.4}
+.prose{max-width:720px;margin-inline:auto;display:flex;flex-direction:column;gap:1.1rem}
+.prose h2{font-size:1.45rem;margin-top:1.4rem}
+.prose ul{display:flex;flex-direction:column;gap:.15rem}
+.table-wrap{overflow-x:auto}
+.doc-table{width:100%;border-collapse:collapse;font-size:.94rem;min-width:520px}
+.doc-table caption{text-align:left;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:.5rem}
+.doc-table th,.doc-table td{text-align:left;padding:.65rem .7rem;border-bottom:1px solid var(--rule);vertical-align:top}
+.doc-table th{background:var(--paper-2);font-weight:600;font-size:.86rem}
+
+/* Dropdown nav */
+.nav-group{position:relative;display:flex;align-items:center}
+.sub-toggle{background:none;border:0;padding:.5rem .35rem .5rem 0;margin-left:-.3rem;cursor:pointer;color:var(--ink);display:inline-flex;align-items:center}
+.sub{display:none;position:absolute;top:100%;left:0;min-width:210px;background:var(--white);border:1px solid var(--rule);box-shadow:0 10px 24px rgba(14,26,43,.08);padding:.35rem 0;flex-direction:column;z-index:60}
+.nav-group:hover .sub,.nav-group:focus-within .sub,.nav-group.open .sub{display:flex}
+.nav .sub a{padding:.6rem 1rem;box-shadow:none}
+.nav .sub a:hover{background:var(--paper)}
+.nav .sub a[aria-current="page"]{box-shadow:none;color:var(--accent)}
+@media (max-width: 1000px){
+  .nav-group{flex-direction:column;align-items:stretch}
+  .sub-toggle{display:none}
+  .sub{display:flex;position:static;min-width:0;border:0;box-shadow:none;background:transparent;padding:0 0 0 1rem}
+  .nav .sub a{padding:.7rem .2rem;font-size:.9rem;color:var(--muted)}
+}
+
+/* ===== Mobile polish ===== */
+.m-cta{display:none}
+.swipe-hint{display:none}
+.profile-body .chips li,.case-body .chips li,.deliv .chips li{font-size:.72rem;padding:.22rem .45rem}
+@media (max-width: 1000px){
+  .m-cta{display:inline-flex;margin-left:auto;padding:.6rem .85rem;font-size:.88rem;color:#fff}
+  .m-cta:hover{color:#fff}
+  .header-row{gap:.6rem}
+}
+@media (max-width: 640px){
+  body{font-size:16px}
+  .section{padding-block:48px}
+  .page-hero{padding-block:40px 44px}
+  .hero{padding-block:36px 44px}
+  .cta-band{padding-block:44px}
+  .section-head{margin-bottom:24px}
+  .lede{font-size:1.05rem}
+  .wordmark small{display:none}
+  .wordmark b{font-size:1rem}
+  .wordmark svg{width:28px;height:28px}
+  .menu-btn{padding:.5rem .6rem}
+  .hero .eyebrow{font-size:.7rem;line-height:1.7}
+  .hero-photo{display:none}
+  .hero-facts{border-top-color:rgba(141,180,218,.3)}
+  .btn-row{width:100%}
+  .btn-row .btn{flex:1 1 100%;justify-content:center;padding-block:1rem}
+  .cta-inner .btn-row .btn{flex:1 1 100%}
+  .corridor{display:none}
+  .chips a{display:inline-block;padding:.2rem 0}
+  .page-hero .chips li{padding:.35rem .6rem}
+
+  /* swipeable rows */
+  .swipe-hint{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 .6rem}
+  .swipe-hint::after{content:" \2192"}
+  .on-navy .swipe-hint{color:var(--muted-on-navy)}
+  .m-scroll{display:grid!important;grid-auto-flow:column;grid-auto-columns:84%;grid-template-columns:none!important;gap:12px!important;overflow-x:auto;scroll-snap-type:x mandatory;background:transparent!important;border:0!important;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter);scroll-padding-inline:var(--gutter);padding-bottom:6px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .m-scroll::-webkit-scrollbar{display:none}
+  .m-scroll > *{scroll-snap-align:start;border:1px solid var(--rule)}
+  .m-scroll > [hidden]{display:none}
+  .m-scroll .case,.m-scroll .post,.m-scroll .li-card{height:100%}
+
+  /* article tables stack */
+  .doc-table{min-width:0}
+  .doc-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+  .doc-table tr{display:block;border:1px solid var(--rule);background:var(--white);margin-bottom:.6rem;padding:.4rem .2rem}
+  .doc-table td{display:block;border:0;padding:.35rem .7rem}
+  .doc-table td::before{content:attr(data-label);display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.1rem}
+  .flow li{padding:.8rem .8rem}
+
+  /* footer */
+  .foot-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.6rem 1.2rem}
+  .foot-grid > :first-child{grid-column:1/-1}
+  .foot-grid > :last-child{grid-column:1/-1}
+  .foot-grid li{font-size:.9rem}
+  .foot-grid ul{gap:.55rem}
+  .foot-base{flex-direction:column;gap:.4rem}
+
+  /* misc */
+  .terms li{padding:.85rem 0}
+  .calc-in{padding:20px}
+  .guide{box-shadow:none}
+  .feature-art{display:none}
+}
+
+@media (max-width: 640px){
+  .facets.collapsed .facet:not(:first-child){display:none}
+  .more-btn{margin-top:.8rem;width:100%;font:600 .95rem var(--body);padding:.85rem 1rem;background:var(--white);border:1px solid var(--ink);color:var(--ink);border-radius:2px;cursor:pointer}
+  .logo-strip{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .logo-ph{height:56px;padding:.3rem}
+  .logo-ph .ph-label{font-size:.56rem;letter-spacing:.08em}
+  .svc-side .lede{font-size:1rem}
+}
+
+/* Video placeholders */
+.video-ph{margin:0;display:flex;flex-direction:column;gap:.55rem}
+.video-frame{position:relative;aspect-ratio:16/9;max-width:100%;background:var(--navy);border:1.5px dashed var(--line-on-navy);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;text-align:center;padding:1rem;color:var(--text-on-navy)}
+.video-frame .play{width:58px;height:58px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;padding-left:4px}
+.video-frame .v-title{font-family:var(--display);font-stretch:108%;font-weight:650;font-size:1.1rem;color:#fff}
+.video-frame .v-meta{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-on-navy)}
+.video-ph figcaption{font-size:.9rem;color:var(--muted)}
+.transcript summary{cursor:pointer;font-weight:600;font-size:.92rem;color:var(--blue);padding:.2rem 0}
+.transcript[open] summary{margin-bottom:.5rem}
+@media (max-width:640px){.video-frame .play{width:48px;height:48px}.video-frame .v-title{font-size:1rem}}
+</style>
+
+<style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+</head>
+<body>
+<a class="skip" href="#home" id="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="wordmark" href="#home" aria-label="Agile Networks home">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+        <rect x="1" y="1" width="32" height="32" fill="none" stroke="#0E1A2B" stroke-width="2"/>
+        <path d="M7 26 L17 8 L27 26" fill="none" stroke="#0E1A2B" stroke-width="2"/>
+        <path d="M11.5 19 H22.5" stroke="#B8481A" stroke-width="2"/>
+        <circle cx="17" cy="8" r="2.2" fill="#B8481A"/>
+      </svg>
+      <span><b>Agile Networks</b><small>Wordmark placeholder</small></span>
+    </a>
+    <a class="btn btn-primary m-cta" href="#contact">Book a call</a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="site-nav">
+      <svg width="16" height="12" viewBox="0 0 16 12" aria-hidden="true"><path d="M0 1h16M0 6h16M0 11h16" stroke="currentColor" stroke-width="1.6"/></svg>
+      Menu
+    </button>
+    <nav class="nav" id="site-nav" aria-label="Primary">
+      <a href="#services" data-pages="services">What We Do</a>
+      <div class="nav-group">
+        <a href="#firms" class="nav-parent" data-pages="firms work">Who We Serve</a>
+        <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-serve" aria-label="Who We Serve menu"><svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+        <div class="sub" id="sub-serve">
+          <a href="#firms" data-pages="firms">Firm profiles</a>
+          <a href="#work" data-pages="work">Our Work</a>
+        </div>
+      </div>
+      <a href="#ai-governance" data-pages="ai-governance">AI Governance</a>
+      <div class="nav-group">
+        <a href="#about" class="nav-parent" data-pages="about engagements">About</a>
+        <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-about" aria-label="About menu"><svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+        <div class="sub" id="sub-about">
+          <a href="#about" data-pages="about">Company &amp; Team</a>
+          <a href="#engagements" data-pages="engagements">How We Engage</a>
+        </div>
+      </div>
+      <a href="#chatterbox" data-pages="chatterbox post-onboarding">Chatterbox</a>
+      <a href="#contact" class="btn btn-primary">Talk to a Specialist</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== HOME ===================== -->
+<div class="page" id="home" tabindex="-1" data-sheet="A-001" data-sheetname="Home"
+  data-title="Agile Networks | Managed IT for Architecture Firms, Boston to DC"
+  data-desc="Managed IT for architecture, engineering and construction firms. Revit, Rhino, Enscape and Egnyte expertise since 2001. Weekly on-site along the Boston-DC corridor, remote across the US.">
+
+  <section class="hero on-navy" aria-labelledby="home-h1">
+    <div class="wrap hero-grid">
+      <div class="stack-lg">
+        <p class="eyebrow">Managed IT for AEC firms · On site Boston to DC · Remote across the US · Since 2001</p>
+        <h1 id="home-h1">Managed IT for firms whose work lives in Revit, Rhino and Egnyte.</h1>
+        <p class="lede">Agile Networks runs the networks, servers, workstations and cloud storage behind architecture practices and the engineering and construction firms that work alongside them. Predictable monthly support, fixed-fee projects, and a small senior team you can reach directly.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary arrow" href="#contact">Talk to a Specialist</a>
+          <a class="btn btn-ghost" href="#work">See our work</a>
+        </div>
+      </div>
+      <figure style="margin:0" class="stack">
+        <div class="hero-photo" role="img" aria-label="Photo placeholder: a real client studio or equipment room, used with permission">
+          <span class="ph-label">Photo placeholder</span>
+          <p>A real photo: a client studio floor, a rack you installed, or a designer's workstation running Revit. Used with the client's permission.</p>
+          <small>alt: "[Describe the actual photo]"</small>
+        </div>
+        <ul class="hero-facts" aria-label="At a glance">
+          <li><b>2001</b><span>In business since</span></li>
+          <li><b>3</b><span>Person team, no call center</span></li>
+          <li><b>US-wide</b><span>Remote support. Weekly on-site, Boston to DC</span></li>
+        </ul>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="why-h">
+    <div class="wrap">
+      <div class="section-head split">
+        <div class="stack">
+          <p class="eyebrow">Why an architecture-focused MSP</p>
+          <h2 id="why-h">Design firms run a different workload than a typical small office.</h2>
+        </div>
+        <p class="lede">Most managed service providers support law offices, dental practices and architects with the same playbook. Architecture firms break that playbook: huge linked files, GPU-hungry visualization, project data shared with consultants and contractors, and deadlines that don't move.</p>
+      </div>
+      <div class="props">
+        <div class="prop">
+          <span class="tag">Industry fluency</span>
+          <h3>Changes scheduled around your deadlines</h3>
+          <p>Worksharing, linked consultant models, Bluebeam review sessions before a submission. Maintenance and migrations are planned around your project calendar, not ours.</p>
+        </div>
+        <div class="prop">
+          <span class="tag">Egnyte + AEC depth</span>
+          <h3>Egnyte, set up for how projects actually run</h3>
+          <p>Folder structures and permissions built around project phases, consultants and closeout. Migrations off aging file servers without losing a weekend of work.</p>
+        </div>
+        <div class="prop">
+          <span class="tag">Small senior team</span>
+          <h3>You talk to the people doing the work</h3>
+          <p>Three people, no ticket queue. The technician who answers has usually worked on your systems before, and everything we do is documented so nothing depends on memory.</p>
+        </div>
+        <div class="prop">
+          <span class="tag">AI governance</span>
+          <h3>Guardrails before your team adopts AI</h3>
+          <p>Policies, staff guidelines and security reviews so AI tools don't quietly expose client data or design IP. Practical, not hype.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint" aria-labelledby="svc-h">
+    <div class="wrap">
+      <div class="section-head split">
+        <div class="stack">
+          <p class="eyebrow">What we do</p>
+          <h2 id="svc-h">What we do for architecture firms</h2>
+        </div>
+        <p class="lede">Most clients start with managed IT and add the rest as they need it. Each service has its own section with the detail.</p>
+      </div>
+      <div class="cards six m-scroll">
+        <a class="card" href="#svc-managed">
+          <span class="code">S-01 · Core service</span>
+          <h3>Managed IT &amp; Infrastructure</h3>
+          <p>Networks, servers and Hyper-V, workstations, Microsoft 365, backup and security, plus vendor and license management for your AEC software.</p>
+          <span class="more arrow">Managed IT details </span>
+        </a>
+        <a class="card" href="#svc-egnyte">
+          <span class="code">S-02 · Named specialty</span>
+          <h3>Egnyte &amp; Cloud File Management</h3>
+          <p>Migrations from on-prem file servers, permission design, large-file performance and ongoing administration of your Egnyte environment.</p>
+          <span class="more arrow">Egnyte details </span>
+        </a>
+        <a class="card" href="#svc-software">
+          <span class="code">S-03 · We speak your software</span>
+          <h3>AEC Software Optimization</h3>
+          <p>Workstations and networks tuned for Revit, AutoCAD, Rhino, Bluebeam, Enscape, Procore, ACC and BIM 360.</p>
+          <span class="more arrow">Software details </span>
+        </a>
+        <a class="card" href="#ai-governance">
+          <span class="code">S-04 · Advisory</span>
+          <h3>AI Governance &amp; Cybersecurity</h3>
+          <p>AI usage policies, staff guidelines, tool security reviews and data governance for client and project information.</p>
+          <span class="more arrow">AI governance details </span>
+        </a>
+        <a class="card" href="#svc-moves">
+          <span class="code">S-05 · Projects</span>
+          <h3>Office Moves &amp; Buildouts</h3>
+          <p>Network, cabling, internet circuits and equipment for a relocation or a new office, coordinated with your landlord, ISP and contractors.</p>
+          <span class="more arrow">Office move details </span>
+        </a>
+        <a class="card" href="#svc-license">
+          <span class="code">Start here · Fixed-fee review</span>
+          <h3>Software License &amp; Spend Review</h3>
+          <p>A review of your Autodesk, Bluebeam, Chaos and other AEC subscriptions: seats, renewal dates and where you may be paying for more than you use.</p>
+          <span class="more arrow">License review details </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="work-home-h">
+    <div class="wrap">
+      <div class="section-head split">
+        <div class="stack">
+          <p class="eyebrow">Selected work</p>
+          <h2 id="work-home-h">What the work actually looks like</h2>
+        </div>
+        <p class="lede">Three recent engagements, described at the level of detail we'd give a prospective client on a call. Firm names are shared only with permission.</p>
+      </div>
+      <div class="cases three m-scroll">
+        <a class="case" href="#case-egnyte" style="text-decoration:none;color:var(--ink)">
+          <div class="case-head"><span class="who">Architecture firm · Egnyte migration</span><h3>Moving a live project archive off an aging file server</h3></div>
+          <div class="case-body"><p>Folder-by-folder review of the old server, a phased move to Egnyte, and a check of how CAD and Revit links are pathed before anything moves.</p><span class="more arrow" style="margin-top:auto;font-weight:600;color:var(--accent)">Read the case </span></div>
+        </a>
+        <a class="case" href="#case-move" style="text-decoration:none;color:var(--ink)">
+          <div class="case-head"><span class="who">Client firm · Office relocation</span><h3>Bringing a network up in a new office</h3></div>
+          <div class="case-body"><p>A new business fiber circuit with static IPs, an ISP router that clashed with the existing firewall setup, and a firewall rebuilt and documented for the new space.</p><span class="more arrow" style="margin-top:auto;font-weight:600;color:var(--accent)">Read the case </span></div>
+        </a>
+        <a class="case" href="#case-entra" style="text-decoration:none;color:var(--ink)">
+          <div class="case-head"><span class="who">Client firm · ~20 users · Identity</span><h3>Retiring a domain controller for Entra ID</h3></div>
+          <div class="case-body"><p>Moving PCs from a domain controller VM to Entra-joined devices in stages, while keeping NAS file permissions where they can actually be managed.</p><span class="more arrow" style="margin-top:auto;font-weight:600;color:var(--accent)">Read the case </span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint" aria-labelledby="clients-h">
+    <div class="wrap stack-lg">
+      <div class="stack">
+        <p class="eyebrow">Clients</p>
+        <h2 id="clients-h">Trusted by architecture, engineering and design firms</h2>
+      </div>
+      <ul class="logo-strip" style="list-style:none;padding:0;margin:0" aria-label="Client logos">
+        <li class="ph logo-ph" style="margin:0"><span class="ph-label">Client logo placeholder</span></li>
+        <li class="ph logo-ph" style="margin:0"><span class="ph-label">Client logo placeholder</span></li>
+        <li class="ph logo-ph" style="margin:0"><span class="ph-label">Client logo placeholder</span></li>
+        <li class="ph logo-ph" style="margin:0"><span class="ph-label">Client logo placeholder</span></li>
+        <li class="ph logo-ph" style="margin:0"><span class="ph-label">Client logo placeholder</span></li>
+        <li class="ph logo-ph" style="margin:0"><span class="ph-label">Client logo placeholder</span></li>
+      </ul>
+      <div class="two wide-left" style="margin-top:1rem">
+        <figure class="ph quote-ph" style="margin:0">
+          <span class="ph-label">Testimonial placeholder · use a real, approved client quote</span>
+          <blockquote>[Client quote goes here. Ideally a specific outcome in the client's own words, for example what changed after onboarding.]</blockquote>
+          <figcaption>[Name], [Title] · [Firm name] · Approved for use: [date]</figcaption>
+        </figure>
+        <div class="stack">
+          <h3>Who we serve</h3>
+          <p>Architecture studios, interiors and landscape practices, and the engineering and construction firms that work alongside them. Our clients range from boutique practices with a handful of principals to firms of 50+ staff running multiple project teams, and larger firms with their own IT who bring us in for AEC-specific depth.</p>
+          <p>The common thread: firms whose work lives in Revit, Rhino and Bluebeam, whose files live in Egnyte or on a server that needs to become Egnyte, and who want IT handled by people who understand both.</p>
+          <p><a href="#firms" class="arrow">Find your firm profile </a> &nbsp; <a href="#work" class="arrow">See our work </a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="area-h" id="coverage" style="scroll-margin-top:90px">
+    <div class="wrap two wide-right" style="align-items:center">
+      <div class="corridor">
+        <svg viewBox="0 0 520 250" role="img" aria-labelledby="corr-t">
+          <title id="corr-t">Schematic of the Boston to Washington DC corridor, where weekly on-site visits are available. Remote support covers the rest of the United States.</title>
+          <rect width="520" height="250" fill="#FFFFFF"/>
+          <g stroke="#2F5F8F" stroke-opacity=".1"><path d="M0 50H520M0 100H520M0 150H520M0 200H520M65 0V250M130 0V250M195 0V250M260 0V250M325 0V250M390 0V250M455 0V250"/></g>
+          <path d="M90 196 L150 170 L200 150 L300 108 L480 40" stroke="#B8481A" stroke-opacity=".18" stroke-width="22" stroke-linecap="round" fill="none"/>
+          <path d="M90 196 L150 170 L200 150 L300 108 L480 40" stroke="#0E1A2B" stroke-width="2.5" fill="none"/>
+          <g font-family="IBM Plex Mono, monospace" font-size="11" fill="#0E1A2B">
+            <circle cx="480" cy="40" r="5" fill="#fff" stroke="#0E1A2B" stroke-width="2"/><text x="470" y="22" text-anchor="end">BOSTON</text>
+            <circle cx="300" cy="108" r="5" fill="#fff" stroke="#0E1A2B" stroke-width="2"/><text x="292" y="90" text-anchor="end">NEW YORK</text>
+            <circle cx="200" cy="150" r="5" fill="#fff" stroke="#0E1A2B" stroke-width="2"/><text x="192" y="132" text-anchor="end">PHILADELPHIA</text>
+            <circle cx="150" cy="170" r="5" fill="#fff" stroke="#0E1A2B" stroke-width="2"/><text x="164" y="190">BALTIMORE</text>
+            <circle cx="90" cy="196" r="5" fill="#fff" stroke="#0E1A2B" stroke-width="2"/><text x="104" y="216">WASHINGTON, DC</text>
+            <text x="330" y="150" fill="#B8481A" font-weight="500">WEEKLY ON-SITE BAND</text>
+          </g>
+          <text x="16" y="30" font-family="IBM Plex Mono, monospace" font-size="10" fill="#4A5566">REMOTE SUPPORT · ANYWHERE IN THE US</text>
+          <text x="510" y="240" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#4A5566">SCHEMATIC · NOT TO SCALE</text>
+        </svg>
+      </div>
+      <div class="stack">
+        <p class="eyebrow">Coverage</p>
+        <h2 id="area-h">On site along the Boston-DC corridor. Remote anywhere in the US.</h2>
+        <ul class="terms">
+          <li><b>Boston to DC</b><span>Scheduled weekly on-site visits for firms that want a technician in the office, plus on-site work for installs, moves and hardware. Remote support in between.</span></li>
+          <li><b>Rest of the US</b><span>Full managed support delivered remotely: monitoring, help for staff, Egnyte, Microsoft 365, security and vendor management. Hardware is shipped pre-configured.</span></li>
+        </ul>
+        <div class="ph"><span class="ph-label">Confirm before launch</span><p>Weekly visit pricing or tier, cities covered, and whether you travel for projects outside the corridor.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint" aria-labelledby="home-ch-h">
+    <div class="wrap">
+      <div class="section-head split" style="margin-bottom:0">
+        <div class="stack"><p class="eyebrow">From Chatterbox</p><h2 id="home-ch-h">How we onboard a new hire, step by step</h2></div>
+        <p class="lede">Setup sheet, role profile, approved software, licenses, a hardware check, a review date, the setup itself, and a video walkthrough for the office manager. <a href="#post-onboarding" class="arrow">Read the article </a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band on-navy" aria-labelledby="cta-home">
+    <div class="wrap cta-inner">
+      <div class="stack">
+        <h2 id="cta-home">Tell us what's slowing the studio down.</h2>
+        <p class="lede">A 30-minute call with a senior technician, not a sales rep. Bring the problem: slow models, a file server near end of life, a renewal you're not sure about, an AI policy you don't have yet.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-primary arrow" href="#contact">Book a Call</a>
+        <a class="btn btn-ghost" href="#engagements">How we engage</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== SERVICES ===================== -->
+<div class="page" id="services" tabindex="-1" hidden data-sheet="A-200" data-sheetname="What We Do"
+  data-title="What We Do | Managed IT, Egnyte and AEC Software Support | Agile Networks"
+  data-desc="Managed IT and infrastructure, Egnyte and cloud file management, AEC software optimization, office moves and AI governance for AEC firms. On site Boston to DC, remote across the US.">
+
+  <section class="page-hero on-navy" aria-labelledby="svc-h1">
+    <div class="wrap">
+      <h1 id="svc-h1">IT built around the way architecture firms actually work</h1>
+      <p class="lede">We manage the whole stack underneath your design work, from the switch in the closet to the Revit add-ins on each workstation. Here's what each service includes, the problem it solves, and who it fits.</p>
+      <ul class="chips" style="margin-top:1.6rem" aria-label="Jump to a service">
+        <li><a href="#svc-managed" style="text-decoration:none">Managed IT &amp; Infrastructure</a></li>
+        <li><a href="#svc-egnyte" style="text-decoration:none">Egnyte &amp; Cloud Files</a></li>
+        <li><a href="#svc-software" style="text-decoration:none">AEC Software Optimization</a></li>
+        <li><a href="#svc-ai" style="text-decoration:none">AI Governance &amp; Cybersecurity</a></li>
+        <li><a href="#svc-moves" style="text-decoration:none">Office Moves &amp; Buildouts</a></li>
+        <li><a href="#svc-license" style="text-decoration:none">License &amp; Spend Review</a></li>
+        <li><a href="#svc-process" style="text-decoration:none">How we work</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="svc-managed">
+    <div class="wrap svc" id="svc-managed">
+      <div class="svc-side">
+        <span class="svc-code">S-01 · Core service</span>
+        <h2>Managed IT &amp; Infrastructure</h2>
+        <p class="lede">The foundation: networks, servers, workstations, identity and security, managed as one system by people who know what runs on it.</p>
+        <a class="btn btn-primary arrow" href="#contact">Talk about managed IT</a>
+        <p style="font-size:.93rem">Related work: <a href="#case-entra" class="arrow">Entra ID migration case </a></p>
+      </div>
+      <div class="stack-lg">
+        <div class="facets">
+          <div class="facet">
+            <h4>What's included</h4>
+            <ul>
+              <li>Network design and management: switching, firewalls, Wi-Fi, VPN and remote access</li>
+              <li>Windows Server and Hyper-V administration</li>
+              <li>Workstation lifecycle: spec, image, deploy, support, retire</li>
+              <li>New hire onboarding built on role profiles, with a video walkthrough of every setup (<a href="#post-onboarding">how it works</a>)</li>
+              <li>Microsoft 365 and Entra ID administration</li>
+              <li>Cloud infrastructure and hybrid setups</li>
+              <li>Vendor management for AEC software licensing and renewals</li>
+            </ul>
+          </div>
+          <div class="facet">
+            <h4>Security fundamentals, built in</h4>
+            <ul>
+              <li>Endpoint protection on every workstation and server</li>
+              <li>Backup and disaster recovery, tested, not assumed</li>
+              <li>Multi-factor authentication and access reviews</li>
+              <li>Security awareness training for staff</li>
+              <li>Help answering cyber insurance security questionnaires, with the evidence to back up each answer</li>
+            </ul>
+          </div>
+          <div class="facet">
+            <h4>The problem it solves</h4>
+            <p>When a central model takes forever to open, or sync to central stalls the afternoon before a deadline, the cause is usually the network, storage or sync setup, not Revit. We manage the infrastructure with CAD and BIM file sizes and rendering loads in mind, so performance and uptime hold up when the work is heaviest.</p>
+          </div>
+          <div class="facet">
+            <h4>Who it's for</h4>
+            <p>Firms without a full-time IT person, or with an office manager who has become the IT person by default. Also firms whose current provider supports them like any other small office.</p>
+          </div>
+          <div class="facet full">
+            <h4>Vendor and license management</h4>
+            <p>Autodesk, Bluebeam, Chaos, McNeel and the rest renew on different cycles with different rules. We track seats, renewal dates and price changes, flag risks before they hit your invoice, and deal with the vendors so your principals don't have to. New clients can start with a one-time <a href="#svc-license">license and spend review</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint" aria-labelledby="svc-egnyte">
+    <div class="wrap svc" id="svc-egnyte">
+      <div class="svc-side">
+        <span class="svc-code">S-02 · Named specialty</span>
+        <h2>Egnyte &amp; Cloud File Management</h2>
+        <p class="lede">This is where we are deepest. Egnyte is the file platform most of our clients run on, and we have migrated, structured and administered it across many firms.</p>
+        <a class="btn btn-primary arrow" href="#contact">Plan an Egnyte migration</a>
+        <p style="font-size:.93rem">Related work: <a href="#case-egnyte" class="arrow">Egnyte migration case </a></p>
+      </div>
+      <div class="stack-lg">
+        <div class="specialty">
+          <h4 class="eyebrow">Why this matters</h4>
+          <p style="font-family:var(--display);font-stretch:108%;font-size:1.25rem;line-height:1.4">Moving an architecture firm's project archive to the cloud is not a file copy. It's a decision about how every project, consultant and closeout set will be organized for the next ten years.</p>
+        </div>
+        <div class="facets">
+          <div class="facet">
+            <h4>What's included</h4>
+            <ul>
+              <li>Migration from on-prem file servers and NAS devices, phased by project so active work keeps moving</li>
+              <li>Folder structure and permission design built around project phases, teams and outside consultants</li>
+              <li>Performance setup for large Revit, Rhino and CAD files, including local caching and sync where it fits</li>
+              <li>Desktop app rollout and user training</li>
+              <li>Ongoing administration: users, groups, sharing policies, audits</li>
+            </ul>
+          </div>
+          <div class="facet">
+            <h4>The problem it solves</h4>
+            <p>File servers age out, VPNs get slow, and remote staff end up emailing drawings to themselves. A badly planned cloud move is worse: broken links, permissions nobody understands and a support backlog. We plan it so staff notice the improvement, not the migration.</p>
+          </div>
+          <div class="facet full">
+            <h4>Who it's for</h4>
+            <p>Firms on an aging file server, firms already on Egnyte that never got it set up properly, and firms consolidating file storage across offices or after a merger.</p>
+          </div>
+        </div>
+        <div class="ph"><span class="ph-label">Optional: add specifics</span><p>Name the Egnyte products and features you deploy most (e.g. specific caching or sync products), and any Egnyte partner status, once confirmed.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="svc-software">
+    <div class="wrap svc" id="svc-software">
+      <div class="svc-side">
+        <span class="svc-code">S-03 · We speak your software</span>
+        <h2>AEC Software Optimization</h2>
+        <p class="lede">Generic hardware support stops at "the computer turns on." We keep going until Revit opens fast and Enscape renders without crashing.</p>
+        <a class="btn btn-primary arrow" href="#contact">Get a workstation review</a>
+      </div>
+      <div class="stack-lg">
+        <ul class="chips" aria-label="Software we support">
+          <li>Revit</li><li>AutoCAD</li><li>Rhino</li><li>Bluebeam Revu</li><li>Enscape</li><li>Procore</li><li>Autodesk Construction Cloud</li><li>BIM 360</li><li>Egnyte</li><li>Microsoft 365</li>
+        </ul>
+        <div class="facets">
+          <div class="facet">
+            <h4>What's included</h4>
+            <ul>
+              <li>Workstation specs matched to the software: clock speed for Revit, GPU for Enscape and visualization</li>
+              <li>Managing multiple Revit versions when projects are locked to older releases</li>
+              <li>Add-in and plugin deployment across the office</li>
+              <li>Bluebeam Studio, licensing and deployment</li>
+              <li>ACC, BIM 360 and Procore account administration and access control</li>
+              <li>Network and storage tuning for worksharing and large linked models</li>
+            </ul>
+          </div>
+          <div class="facet">
+            <h4>The problem it solves</h4>
+            <p>Designers lose hours to slow opens, crashes and "it works on her machine" problems. Much of it traces back to hardware bought off a generic spec sheet, mismatched versions, or add-ins nobody manages. We fix the cause instead of rebooting the symptom.</p>
+          </div>
+          <div class="facet full">
+            <h4>Who it's for</h4>
+            <p>Any firm where design staff regularly wait on their software. Also firms planning a hardware refresh who want to spend the budget where it actually changes performance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint" aria-labelledby="svc-ai">
+    <div class="wrap svc" id="svc-ai">
+      <div class="svc-side">
+        <span class="svc-code">S-04 · Advisory</span>
+        <h2>AI Governance &amp; Cybersecurity Advisory</h2>
+        <p class="lede">Helping firms adopt AI tools without creating legal, security or IP exposure.</p>
+        <a class="btn btn-primary arrow" href="#ai-governance">Read the full overview</a>
+      </div>
+      <div class="facets">
+        <div class="facet">
+          <h4>What's included</h4>
+          <ul>
+            <li>AI usage policy, adapted from our template to your firm</li>
+            <li>Plain-language staff guidelines</li>
+            <li>Security review of AI tools before you deploy them</li>
+            <li>Data governance for client and project information</li>
+            <li>Review of AI settings inside tools you already use</li>
+          </ul>
+        </div>
+        <div class="facet">
+          <h4>The problem it solves</h4>
+          <p>Staff are already using AI tools, and vendors are adding AI features to platforms you already pay for. Without a policy, client data and design work can end up somewhere your contracts don't allow.</p>
+        </div>
+        <div class="facet full">
+          <h4>Who it's for</h4>
+          <p>Principals who want to say yes to AI with guardrails in place, and firms with clients who ask how their data is handled.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="svc-moves-h">
+    <div class="wrap svc" id="svc-moves">
+      <div class="svc-side">
+        <span class="svc-code">S-05 · Projects</span>
+        <h2 id="svc-moves-h">Office Moves &amp; Buildouts</h2>
+        <p class="lede">Architecture firms move, expand and open second offices. The IT side of that has a long lead time and a lot of parties.</p>
+        <a class="btn btn-primary arrow" href="#contact">Plan a move</a>
+        <p style="font-size:.93rem">Related work: <a href="#case-move" class="arrow">Office relocation case </a></p>
+      </div>
+      <div class="facets">
+        <div class="facet">
+          <h4>What's included</h4>
+          <ul>
+            <li>Internet circuit ordering and coordination with the carrier, including static IPs</li>
+            <li>Low-voltage cabling scope, Wi-Fi layout and equipment room planning with your contractor</li>
+            <li>Firewall, switching and Wi-Fi setup and cutover</li>
+            <li>Printers, plotters, conference rooms and phones</li>
+            <li>A move-weekend plan so staff sit down Monday and work</li>
+            <li>Updated network documentation for the new space</li>
+          </ul>
+        </div>
+        <div class="facet">
+          <h4>The problem it solves</h4>
+          <p>Circuits take weeks to install, carrier equipment often conflicts with an existing firewall setup, and cabling decisions get made before anyone asks IT. Bringing us in early avoids a first week in the new office spent on hotspots.</p>
+        </div>
+        <div class="facet full">
+          <h4>Who it's for</h4>
+          <p>Firms relocating, expanding within a building, or opening a second office. On site along the Boston-DC corridor; elsewhere we coordinate remotely with local cabling and carrier contractors. [Confirm] Billed as a fixed-fee project, separate from monthly support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint" aria-labelledby="svc-license-h">
+    <div class="wrap svc" id="svc-license">
+      <div class="svc-side">
+        <span class="svc-code">Start here · Fixed-fee review</span>
+        <h2 id="svc-license-h">Software License &amp; Spend Review</h2>
+        <p class="lede">A contained first project for firms that want to see how we work before committing to monthly support.</p>
+        <a class="btn btn-primary arrow" href="#contact">Request a license review</a>
+      </div>
+      <div class="facets">
+        <div class="facet">
+          <h4>What we review</h4>
+          <ul>
+            <li>Every AEC and productivity subscription you pay for: Autodesk, Bluebeam, Chaos, McNeel, Microsoft 365, Egnyte and others</li>
+            <li>Assigned seats against active users</li>
+            <li>Renewal dates, terms and auto-renew settings</li>
+            <li>Duplicate or overlapping tools</li>
+            <li>Known upcoming price or licensing-model changes from your vendors</li>
+          </ul>
+        </div>
+        <div class="facet">
+          <h4>What you get</h4>
+          <p>A written summary: what you have, what you use, when each renewal hits, and specific recommendations. You keep the document whether or not you hire us for anything else.</p>
+          <div class="ph" style="padding:.6rem .8rem"><span class="ph-label">Pricing placeholder</span><p>[Fixed fee or range, e.g. by firm size]</p></div>
+        </div>
+        <div class="facet full">
+          <h4>Who it's for</h4>
+          <p>Principals and finance leads who suspect they're over-licensed, are facing a large renewal, or have never seen all their software spend in one place.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="process-h" id="svc-process" style="scroll-margin-top:90px">
+    <div class="wrap">
+      <div class="section-head split">
+        <div class="stack">
+          <p class="eyebrow">How we work</p>
+          <h2 id="process-h">From first call to steady state</h2>
+        </div>
+        <p class="lede">No long sales cycle and no surprise scope. This is the path every new client follows.</p>
+      </div>
+      <ol class="process">
+        <li>
+          <h3>Assessment</h3>
+          <p>We walk your office, network and software stack, review what's documented and what isn't, and talk to the people who use it. You get a written summary of risks and priorities.</p>
+        </li>
+        <li>
+          <h3>Onboarding</h3>
+          <p>We document everything, set up monitoring and backup, take over vendor contacts and fix the urgent items first. Changes are scheduled around your deadlines.</p>
+        </li>
+        <li>
+          <h3>Ongoing support</h3>
+          <p>Day-to-day help from the same small team, proactive maintenance, patching and license tracking. You always know who you're talking to.</p>
+        </li>
+        <li>
+          <h3>Regular review</h3>
+          <p>A standing review with principals on hardware refresh, renewals, security posture and upcoming projects. <span class="ph" style="display:inline;padding:0 .3rem">[Confirm cadence, e.g. quarterly]</span></p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="cta-band on-navy" aria-labelledby="cta-svc">
+    <div class="wrap cta-inner">
+      <div class="stack">
+        <h2 id="cta-svc">Start with an assessment.</h2>
+        <p class="lede">We'll tell you what's working, what's at risk and what we'd fix first, whether or not you hire us.</p>
+      </div>
+      <div class="btn-row"><a class="btn btn-ghost arrow" href="#work">See our work</a><a class="btn btn-primary arrow" href="#contact">Talk to a Specialist</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== FIRMS ===================== -->
+<div class="page" id="firms" tabindex="-1" hidden data-sheet="A-300" data-sheetname="Who We Serve"
+  data-title="Who We Serve | IT for Architecture, Engineering and Construction Firms | Agile Networks"
+  data-desc="Managed IT for architecture, interiors, landscape, engineering and construction firms. Weekly on-site support along the Boston-DC corridor and remote support across the US.">
+
+  <section class="page-hero on-navy" aria-labelledby="firms-h1">
+    <div class="wrap">
+      <p class="eyebrow">Who we serve</p>
+      <h1 id="firms-h1" style="margin-top:.8rem">Architecture, engineering and construction firms of every size</h1>
+      <p class="lede">A five-person studio, a structural engineer and a construction manager need different things from IT. What they share is heavy software, large files, outside collaborators and deadlines that don't move.</p>
+      <ul class="chips" style="margin-top:1.6rem" aria-label="Jump to a section">
+        <li><a href="#firms-size" style="text-decoration:none">By firm size</a></li>
+        <li><a href="#firms-discipline" style="text-decoration:none">By discipline</a></li>
+        <li><a href="#firms-situation" style="text-decoration:none">By situation</a></li>
+        <li><a href="#coverage" style="text-decoration:none">Coverage</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="firms-size" id="firms-size" style="scroll-margin-top:90px">
+    <div class="wrap">
+      <div class="section-head split">
+        <div class="stack"><p class="eyebrow">By firm size</p><h2>What changes as a firm grows</h2></div>
+        <p class="lede">The software stays similar. What changes is how many people depend on it, and how much it costs when it breaks.</p>
+      </div>
+      <div class="profiles">
+        <article class="profile" aria-labelledby="pf1">
+          <div class="profile-head">
+            <span class="size">Roughly 1 to 10 staff</span>
+            <h3 id="pf1" style="font-size:1.45rem">Boutique &amp; solo practices</h3>
+          </div>
+          <div class="profile-body">
+            <p>The principal is also the IT department, and every hour spent on a printer or a license is an hour not billed. You need someone who handles all of it and explains it in plain language.</p>
+            <h4>Typical stack</h4>
+            <ul class="chips"><li>AutoCAD</li><li>Revit</li><li>Rhino</li><li>Bluebeam Revu</li><li>Enscape</li><li>Microsoft 365</li><li>Egnyte</li></ul>
+            <h4>What we usually do</h4>
+            <ul>
+              <li>Fully managed IT, one predictable arrangement</li>
+              <li>Move files off a desktop or aging NAS into Egnyte</li>
+              <li>Right-size workstations for the software you use</li>
+              <li>Backup and security that the principal never has to think about</li>
+            </ul>
+            <p style="font-size:.93rem">Related: <a href="#case-move">Office relocation case</a></p>
+            <a class="btn btn-ghost arrow" href="#contact">Talk to us</a>
+          </div>
+        </article>
+        <article class="profile" aria-labelledby="pf2">
+          <div class="profile-head">
+            <span class="size">Roughly 10 to 50 staff</span>
+            <h3 id="pf2" style="font-size:1.45rem">Mid-size firms</h3>
+          </div>
+          <div class="profile-body">
+            <p>You've outgrown the setup that worked at eight people. Multiple project teams, hybrid staff, maybe a second office, and consultants and contractors who all need access to something.</p>
+            <h4>Typical stack</h4>
+            <ul class="chips"><li>Revit worksharing</li><li>ACC / BIM 360</li><li>Bluebeam Studio</li><li>Enscape</li><li>Procore</li><li>Egnyte</li><li>Microsoft 365 / Entra ID</li></ul>
+            <h4>What we usually do</h4>
+            <ul>
+              <li>Managed IT and infrastructure across offices and remote staff</li>
+              <li>Egnyte permission design by project and phase</li>
+              <li>License tracking and renewal management</li>
+              <li>AI usage policy before adoption spreads informally</li>
+            </ul>
+            <p style="font-size:.93rem">Related: <a href="#case-egnyte">Egnyte migration case</a> · <a href="#case-entra">Entra ID case</a></p>
+            <a class="btn btn-ghost arrow" href="#contact">Talk to us</a>
+          </div>
+        </article>
+        <article class="profile" aria-labelledby="pf3">
+          <div class="profile-head">
+            <span class="size">Firms with in-house IT</span>
+            <h3 id="pf3" style="font-size:1.45rem">Larger firms needing AEC depth</h3>
+          </div>
+          <div class="profile-body">
+            <p>You have an IT team, and they're good at running a business network. What they don't have is time to become experts in Revit deployment, Egnyte architecture or render workstation specs. We work alongside them.</p>
+            <h4>Typical stack</h4>
+            <ul class="chips"><li>Revit Cloud Worksharing</li><li>ACC</li><li>BIM 360</li><li>Enscape</li><li>Rhino</li><li>Egnyte</li><li>Procore</li></ul>
+            <h4>What we usually do</h4>
+            <ul>
+              <li>AEC software specialist support as an overlay to your team</li>
+              <li>Egnyte migrations and restructuring projects</li>
+              <li>Workstation standards for design and visualization staff</li>
+              <li>AI governance program and tool reviews</li>
+            </ul>
+            <p style="font-size:.93rem">Related: <a href="#svc-software">AEC Software Optimization</a> · <a href="#ai-governance">AI Governance</a></p>
+            <a class="btn btn-ghost arrow" href="#contact">Talk to us</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint" aria-labelledby="firms-discipline" id="firms-discipline" style="scroll-margin-top:90px">
+    <div class="wrap">
+      <div class="section-head split">
+        <div class="stack"><p class="eyebrow">By discipline</p><h2>The same principles, different software</h2></div>
+        <p class="lede">Architecture is where we started. The firms that work alongside architects run on much of the same infrastructure, with their own tools and pressure points.</p>
+      </div>
+      <div class="deliverables m-scroll">
+        <div class="deliv">
+          <span class="doc">Architecture</span>
+          <h3>Architecture studios</h3>
+          <p>Central models, linked consultant files, visualization before client meetings and a project archive that only grows.</p>
+          <ul class="chips"><li>Revit</li><li>Rhino</li><li>AutoCAD</li><li>Enscape</li><li>Bluebeam</li><li>Egnyte</li></ul>
+        </div>
+        <div class="deliv">
+          <span class="doc">Interiors</span>
+          <h3>Interior &amp; workplace design</h3>
+          <p>Fast-turn projects, heavy image and material libraries, and presentation work that has to look right on the client's screen.</p>
+          <ul class="chips"><li>Revit</li><li>AutoCAD</li><li>SketchUp</li><li>Enscape</li><li>Adobe Creative Cloud</li><li>Bluebeam</li></ul>
+        </div>
+        <div class="deliv">
+          <span class="doc">Landscape</span>
+          <h3>Landscape architecture &amp; urban design</h3>
+          <p>Large site and survey files, GIS data from public sources, and drawings shared with civil engineers and municipalities.</p>
+          <ul class="chips"><li>AutoCAD</li><li>Vectorworks</li><li>Rhino</li><li>ArcGIS</li><li>Lumion</li><li>Bluebeam</li></ul>
+        </div>
+        <div class="deliv">
+          <span class="doc">Engineering</span>
+          <h3>Structural, facade &amp; MEP engineers</h3>
+          <p>Analysis software with strict licensing, models exchanged with architects on every project, and calculation files that must be retained.</p>
+          <ul class="chips"><li>Revit</li><li>AutoCAD</li><li>Analysis software</li><li>ACC / BIM 360</li><li>Bluebeam</li><li>Egnyte</li></ul>
+        </div>
+        <div class="deliv">
+          <span class="doc">Construction</span>
+          <h3>Construction managers &amp; design-build</h3>
+          <p>Field teams on tablets, jobsite trailers that need working internet, and project records that have to hold up years later.</p>
+          <ul class="chips"><li>Procore</li><li>ACC Build</li><li>Bluebeam</li><li>Microsoft 365</li><li>Field tablets</li><li>Jobsite connectivity</li></ul>
+        </div>
+        <div class="deliv">
+          <span class="doc">Distributed</span>
+          <h3>Multi-office &amp; remote-first firms</h3>
+          <p>Staff in several cities or working from home, who need the same fast access to project files as the people in the main office.</p>
+          <ul class="chips"><li>Egnyte</li><li>Entra ID</li><li>Microsoft 365</li><li>Remote access</li><li>Shipped hardware</li></ul>
+        </div>
+      </div>
+      <div class="ph" style="margin-top:1.4rem"><span class="ph-label">Confirm before launch</span><p>Keep only the disciplines you actively want to sell to, and adjust each stack to match what your clients actually run.</p></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="firms-situation" id="firms-situation" style="scroll-margin-top:90px">
+    <div class="wrap">
+      <div class="section-head split">
+        <div class="stack"><p class="eyebrow">By situation</p><h2>Where firms usually are when they call us</h2></div>
+        <p class="lede">Most new clients come to us at a turning point. If one of these sounds familiar, the linked work shows how we handle it.</p>
+      </div>
+      <ul class="terms">
+        <li><b>Moving off a file server</b><span>The server is aging and remote staff struggle to reach it. <a href="#case-egnyte">See the Egnyte migration case</a> · <a href="#svc-egnyte">Egnyte service</a></span></li>
+        <li><b>Opening or moving an office</b><span>A new lease, a circuit to order and a cabling scope nobody has asked IT about yet. <a href="#case-move">See the office relocation case</a> · <a href="#svc-moves">Office moves</a></span></li>
+        <li><b>Retiring an old domain</b><span>A domain controller kept alive for a handful of PCs and a NAS. <a href="#case-entra">See the Entra ID case</a></span></li>
+        <li><b>After a merger or acquisition</b><span>Another firm's files, accounts and licenses to fold in without losing project history. <a href="#case-egnyte">The Egnyte case includes an absorbed firm's archive</a></span></li>
+        <li><b>Leaving a generalist provider</b><span>Your current IT company supports you like any other small office. <a href="#engagements">See how onboarding and handover work</a></span></li>
+        <li><b>Outgrowing founder-run IT</b><span>A principal or office manager has been the IT department by default. <a href="#svc-managed">Managed IT</a></span></li>
+        <li><b>A large software renewal coming up</b><span>You want to know what you actually use before you sign. <a href="#svc-license">License &amp; spend review</a></span></li>
+        <li><b>Clients asking about AI and data</b><span>Staff are already using AI tools and a client has asked how their data is handled. <a href="#ai-governance">AI governance</a></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section tint" aria-labelledby="also-h">
+    <div class="wrap two">
+      <div class="stack">
+        <p class="eyebrow">Coverage</p>
+        <h2 id="also-h">Wherever your offices are</h2>
+        <p>Firms along the Boston-DC corridor can have a technician on site every week. Firms anywhere else in the US get the same managed support remotely, with pre-configured hardware shipped to staff. <a href="#coverage">How coverage works</a></p>
+      </div>
+      <div class="stack">
+        <h3>Signs you need an AEC-focused MSP</h3>
+        <ul class="checklist" style="grid-template-columns:minmax(0,1fr)">
+          <li>Your current provider treats Revit like any other desktop app</li>
+          <li>Staff email drawings to themselves to work from home</li>
+          <li>Nobody knows exactly when your Autodesk licenses renew</li>
+          <li>Your file server is past its warranty and nobody has a replacement plan</li>
+          <li>Someone is already pasting project info into an AI chatbot</li>
+          <li>The render machine crashes before client presentations</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band on-navy" aria-labelledby="cta-firms">
+    <div class="wrap cta-inner">
+      <div class="stack">
+        <h2 id="cta-firms">See how this plays out in practice.</h2>
+        <p class="lede">Read the case studies, or tell us how your firm is set up and we'll tell you honestly whether we're a match.</p>
+      </div>
+      <div class="btn-row"><a class="btn btn-ghost arrow" href="#work">See our work</a><a class="btn btn-primary arrow" href="#contact">Book a Call</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== AI GOVERNANCE ===================== -->
+<div class="page" id="ai-governance" tabindex="-1" hidden data-sheet="A-400" data-sheetname="AI Governance"
+  data-title="AI Governance for Architecture Firms | Policy, Tool Review and Data Protection | Agile Networks"
+  data-desc="Adopt AI tools without exposing client data or design IP. AI usage policies, staff guidelines, tool security reviews and data governance for architecture firms.">
+
+  <section class="page-hero on-navy" aria-labelledby="ai-h1">
+    <div class="wrap two wide-left" style="align-items:end">
+      <div>
+        <h1 id="ai-h1">Before your team starts using AI inside Procore or ACC, know what you're exposing.</h1>
+        <p class="lede">AI tools can save your staff real time. They can also move client data, building information and unbuilt designs to places your contracts never anticipated. We help architecture firms adopt AI deliberately, with policies and reviews in place first.</p>
+        <div class="btn-row" style="margin-top:1.6rem">
+          <a class="btn btn-primary arrow" href="#contact">Book a governance consultation</a>
+          <a class="btn btn-ghost" href="#ai-sample">See a sample guideline</a>
+        </div>
+      </div>
+      <div class="stack" style="border-left:1px solid rgba(141,180,218,.45);padding-left:1.4rem">
+        <p class="eyebrow">Our stance</p>
+        <p>We're not selling AI and we're not against it. We're the people who read the terms, check the admin settings and write down the rules, so your principals can make an informed call.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ai-what">
+    <div class="wrap two">
+      <div class="stack">
+        <p class="eyebrow">What it is</p>
+        <h2 id="ai-what">A practical governance program, sized for a design firm</h2>
+      </div>
+      <div class="stack">
+        <p>AI governance means deciding, in writing, which AI tools your firm uses, what information is allowed to go into them, who approves new tools, and how you check that vendors handle your data the way they say they do.</p>
+        <p>For a large enterprise that's a committee. For an architecture firm it should be a short policy, a one-page staff guide, a review process for new tools and someone accountable for keeping it current. That's what we set up.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-navy" aria-labelledby="ai-why">
+    <div class="wrap">
+      <div class="section-head split">
+        <div class="stack">
+          <p class="eyebrow">Why it matters for architecture firms</p>
+          <h2 id="ai-why">Your firm holds more sensitive information than most</h2>
+        </div>
+        <p class="lede">Architecture firms don't usually think of themselves as data companies. But the files on your server describe buildings, clients and ideas that others would pay to see.</p>
+      </div>
+      <div class="risk-list">
+        <div class="risk">
+          <h3>Client confidentiality</h3>
+          <p>Owner agreements and NDAs often restrict how project information is shared. Pasting a program document or client email into a public AI tool may already be outside those terms.</p>
+        </div>
+        <div class="risk">
+          <h3>Building and security data</h3>
+          <p>Floor plans, security layouts and systems drawings for institutional, government or private clients can be sensitive in their own right, regardless of any contract.</p>
+        </div>
+        <div class="risk">
+          <h3>Design IP</h3>
+          <p>Unbuilt concepts, competition entries and your firm's own details and standards are your work product. You should know whether a tool's terms allow it to retain or learn from them.</p>
+        </div>
+        <div class="risk">
+          <h3>AI features inside tools you already use</h3>
+          <p>Vendors are adding AI features to design, collaboration and file platforms. Some are controlled at the account or admin level. We check what's available and enabled in your environment before staff start relying on it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ai-included" id="ai-included" style="scroll-margin-top:90px">
+    <div class="wrap">
+      <div class="section-head split">
+        <div class="stack">
+          <p class="eyebrow">What's included</p>
+          <h2>Deliverables you keep</h2>
+        </div>
+        <p class="lede">Every engagement produces written documents your firm owns, plus configuration changes in the systems we manage.</p>
+      </div>
+      <div class="deliverables m-scroll">
+        <div class="deliv"><span class="doc">Document</span><h3>AI usage policy</h3><p>A policy template adapted to your firm: approved tools, prohibited uses, data categories, approval process and ownership.</p></div>
+        <div class="deliv"><span class="doc">Document</span><h3>Staff guidelines</h3><p>A plain-language guide for designers and admin staff: what's fine, what isn't, and who to ask. Short enough that people actually read it.</p></div>
+        <div class="deliv"><span class="doc">Review</span><h3>AI tool security review</h3><p>Before you deploy a tool: data retention, training use, storage location, admin controls, access and contract terms, summarized with a recommendation.</p></div>
+        <div class="deliv"><span class="doc">Framework</span><h3>Data governance</h3><p>A simple classification for client and project information, mapped to the permissions in Egnyte, Microsoft 365 and your project platforms.</p></div>
+        <div class="deliv"><span class="doc">Audit</span><h3>Settings review</h3><p>A pass through the AI-related settings in the platforms you already license, with recommended configurations.</p></div>
+        <div class="deliv"><span class="doc">Security</span><h3>Cybersecurity baseline</h3><p>Endpoint protection, backup and recovery, MFA and staff security awareness, checked against the same policy so AI adoption doesn't widen existing gaps.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint" aria-labelledby="guide-h" id="ai-sample" style="scroll-margin-top:90px">
+    <div class="wrap two wide-right" style="align-items:start">
+      <div class="stack">
+        <p class="eyebrow">Sample deliverable</p>
+        <h2 id="guide-h">A one-page staff guideline</h2>
+        <p>This is the kind of document your staff actually read. Every firm's version is adapted to its contracts, clients and approved tools. Want the editable version? Ask on a governance call.</p>
+        <a class="btn btn-ghost arrow" href="#contact">Request the template</a>
+      </div>
+      <article class="guide" aria-label="Sample AI staff guideline">
+        <div class="guide-head"><h3>Using AI tools at [Firm Name]</h3><span>Sample · v1.0</span></div>
+        <p style="font-size:.97rem">AI tools can help with writing, research and repetitive tasks. These rules keep client information and our design work protected. When in doubt, ask before you paste.</p>
+        <div class="guide-cols">
+          <div class="ok">
+            <h4>Fine to do with approved tools</h4>
+            <ul>
+              <li>Draft or edit emails and proposals using non-confidential information</li>
+              <li>Summarize public documents, then check the summary against the source</li>
+              <li>Brainstorm, outline or rephrase your own writing</li>
+              <li>Get help with scripts or formulas that contain no client data</li>
+            </ul>
+          </div>
+          <div class="no">
+            <h4>Don't</h4>
+            <ul>
+              <li>Paste client names, addresses, contracts or fees into tools not on the approved list</li>
+              <li>Upload drawings, models or renderings of unbuilt work to unapproved tools</li>
+              <li>Use AI output in drawings, specs or code analysis without professional review</li>
+              <li>Turn on AI features in firm platforms without IT approval</li>
+              <li>Use personal AI accounts for firm work</li>
+            </ul>
+          </div>
+        </div>
+        <p class="foot"><b>Approved tools:</b> [list] · <b>Ask first:</b> any new tool, any client question about AI, or anything you're unsure about. Contact [name].</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ai-q">
+    <div class="wrap two">
+      <div class="stack">
+        <p class="eyebrow">Questions a consultation answers</p>
+        <h2 id="ai-q">Start with what's already happening</h2>
+        <p>Most firms don't start from zero. Staff are already experimenting, and at least one platform you pay for has added AI features. A consultation starts by mapping that reality.</p>
+        <figure class="video-ph">
+          <div class="video-frame" role="img" aria-label="Video placeholder: founder on common AI mistakes at design firms">
+            <span class="play" aria-hidden="true"><svg width="22" height="24" viewBox="0 0 22 24"><path d="M2 2 L20 12 L2 22 Z" fill="currentColor"/></svg></span>
+            <span class="v-title">What firms get wrong with AI</span>
+            <span class="v-meta">Video placeholder · about 60 sec · captions on</span>
+          </div>
+          <figcaption>[Founder name] on the AI mistakes we see most often at design firms, and the simple fixes.</figcaption>
+          <details class="transcript"><summary>Read the transcript</summary><p class="ph" style="padding:.6rem .8rem">[Transcript placeholder. Paste the caption text here so it's readable without playing the video and visible to search engines.]</p></details>
+        </figure>
+        <p class="callout"><strong>A note on scope.</strong> We're IT and security advisors, not attorneys. For contract and liability questions we work alongside your counsel and give them the technical facts they need.</p>
+      </div>
+      <ul class="questions">
+        <li>Which AI tools are staff using today, and with what data?</li>
+        <li>Which AI features are available or enabled in platforms we already license?</li>
+        <li>Do any client contracts restrict how we handle project information?</li>
+        <li>Who in the firm approves a new AI tool?</li>
+        <li>What would we tell a client who asks how their data is protected?</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta-band on-navy" aria-labelledby="cta-ai">
+    <div class="wrap cta-inner">
+      <div class="stack">
+        <h2 id="cta-ai">Book a governance consultation.</h2>
+        <p class="lede">We'll review where your firm stands today and outline the policy, guidelines and settings changes you need, in plain language.</p>
+      </div>
+      <div class="btn-row"><a class="btn btn-primary arrow" href="#contact">Book a consultation</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== ABOUT ===================== -->
+<div class="page" id="about" tabindex="-1" hidden data-sheet="A-500" data-sheetname="About"
+  data-title="About Agile Networks | Founder-Led IT for Architecture Firms Since 2001"
+  data-desc="Agile Networks is a small, senior, founder-led IT team serving AEC firms since 2001, with weekly on-site support along the Boston-DC corridor and remote support across the US.">
+
+  <section class="page-hero on-navy" aria-labelledby="about-h1">
+    <div class="wrap">
+      <h1 id="about-h1">A small, senior team that has spent two decades inside architecture firms</h1>
+      <p class="lede">Agile Networks has been in business since 2001, and architecture and design firms are our focus. When you call, you reach a real technician who knows your office, not a support queue.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="story-h">
+    <div class="wrap two wide-left">
+      <div class="stack">
+        <p class="eyebrow">Our story</p>
+        <h2 id="story-h">Founder-led, by design</h2>
+        <p>Agile Networks is run by its founder, who is still the senior technician on client work and the person you'll meet on a first call. We've stayed deliberately small: a principal and two technicians, each of whom knows the client firms personally.</p>
+        <p>Over more than twenty years we've watched architecture firms move from AutoCAD on local drives to Revit worksharing, cloud file platforms and now AI tools. Staying focused on one industry means every lesson from one firm makes us better at the next.</p>
+<figure class="video-ph">
+          <div class="video-frame" role="img" aria-label="Video placeholder: founder on why the firm specializes in AEC">
+            <span class="play" aria-hidden="true"><svg width="22" height="24" viewBox="0 0 22 24"><path d="M2 2 L20 12 L2 22 Z" fill="currentColor"/></svg></span>
+            <span class="v-title">Why I work with AEC firms</span>
+            <span class="v-meta">Video placeholder · 60 to 90 sec · captions on</span>
+          </div>
+          <figcaption>[Founder name] on how Agile Networks came to specialize in architecture, engineering and construction firms, and how the team works.</figcaption>
+          <details class="transcript"><summary>Read the transcript</summary><p class="ph" style="padding:.6rem .8rem">[Transcript placeholder. Paste the caption text here so it's readable without playing the video and visible to search engines.]</p></details>
+        </figure>
+        <div class="ph"><span class="ph-label">Founder story placeholder</span><p>[Add 2-3 sentences in your own voice: how Agile Networks started working with architecture firms, and why you chose to specialize.]</p></div>
+      </div>
+      <div class="stack">
+        <table class="facts">
+          <caption class="sr-only">Company facts</caption>
+          <tr><th scope="row">Founded</th><td>2001</td></tr>
+          <tr><th scope="row">Structure</th><td>S-Corp</td></tr>
+          <tr><th scope="row">On-site coverage</th><td>Boston-DC corridor, with weekly visits available</td></tr>
+          <tr><th scope="row">Remote coverage</th><td>Anywhere in the US</td></tr>
+          <tr><th scope="row">Team</th><td>Founder / principal technician plus two technicians</td></tr>
+          <tr><th scope="row">Industry focus</th><td>Architecture, engineering and construction</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint" aria-labelledby="team-h">
+    <div class="wrap">
+      <div class="section-head split">
+        <div class="stack">
+          <p class="eyebrow">The team</p>
+          <h2 id="team-h">The people you'll actually talk to</h2>
+        </div>
+        <p class="lede">No account managers relaying messages. These three people do the work.</p>
+      </div>
+      <div class="team">
+        <article class="member">
+          <div class="ph photo-ph" role="img" aria-label="Photo placeholder: founder and principal technician"><span class="ph-label">Photo placeholder</span><small>alt: "[Name], founder of Agile Networks"</small></div>
+          <span class="role">Founder · Principal &amp; Senior Technician</span>
+          <h3>[Founder name]</h3>
+          <p class="ph" style="padding:.6rem .8rem">[Bio: 2-3 sentences. Background, years working with architecture firms, areas of depth such as Egnyte and infrastructure.]</p>
+        </article>
+        <article class="member">
+          <div class="ph photo-ph" role="img" aria-label="Photo placeholder: technician"><span class="ph-label">Photo placeholder</span><small>alt: "[Name], technician at Agile Networks"</small></div>
+          <span class="role">Technician</span>
+          <h3>[Technician name]</h3>
+          <p class="ph" style="padding:.6rem .8rem">[Bio: 2-3 sentences. Focus areas and what clients typically call them about.]</p>
+        </article>
+        <article class="member">
+          <div class="ph photo-ph" role="img" aria-label="Photo placeholder: technician"><span class="ph-label">Photo placeholder</span><small>alt: "[Name], technician at Agile Networks"</small></div>
+          <span class="role">Technician</span>
+          <h3>[Technician name]</h3>
+          <p class="ph" style="padding:.6rem .8rem">[Bio: 2-3 sentences. Focus areas and what clients typically call them about.]</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="diff-h">
+    <div class="wrap">
+      <div class="section-head"><p class="eyebrow">How we're different</p><h2 id="diff-h">What a small, specialized team means for you</h2></div>
+      <div class="props">
+        <div class="prop"><span class="tag">Direct access</span><h3>Senior people, first call</h3><p>No tier-one script. The person who answers can fix the problem or knows exactly who can.</p></div>
+        <div class="prop"><span class="tag">Continuity</span><h3>The same faces every time</h3><p>We know your office layout, your principals' preferences and which project is due Friday.</p></div>
+        <div class="prop"><span class="tag">Focus</span><h3>One industry for two decades</h3><p>Every fix we've made at one architecture firm informs how we run the next.</p></div>
+        <div class="prop"><span class="tag">Honesty</span><h3>Straight answers</h3><p>If something isn't worth buying, or isn't a fit for us, we'll say so.</p></div>
+      </div>
+      <p style="margin-top:1.6rem">Small also raises a fair question about continuity. We answer it directly on <a href="#continuity">How We Engage</a>.</p>
+    </div>
+  </section>
+
+  <section class="cta-band on-navy" aria-labelledby="cta-about">
+    <div class="wrap cta-inner">
+      <div class="stack"><h2 id="cta-about">Meet the team on a call.</h2><p class="lede">Thirty minutes with the founder. No slide deck.</p></div>
+      <div class="btn-row"><a class="btn btn-primary arrow" href="#contact">Talk to a Specialist</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== OUR WORK ===================== -->
+<div class="page" id="work" tabindex="-1" hidden data-sheet="A-250" data-sheetname="Our Work"
+  data-title="Our Work | IT Case Studies for Architecture Firms | Agile Networks"
+  data-desc="How Agile Networks handles Egnyte migrations, office relocations and Entra ID projects for architecture and design firms: the situation, what we did and what we found.">
+
+  <section class="page-hero on-navy" aria-labelledby="work-h1">
+    <div class="wrap">
+      <p class="eyebrow"><a href="#firms" style="color:var(--line-on-navy);text-decoration:none">Who we serve</a> · Our work</p>
+      <h1 id="work-h1" style="margin-top:.8rem">Case studies</h1>
+      <p class="lede">Real engagements, written the way we'd walk you through them on a call: what we found, what we did about it, and what the client would say. Firm names appear only with the client's permission.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Case studies">
+    <div class="wrap stack-lg">
+
+      <article class="case-full" id="case-egnyte" aria-labelledby="ce-h">
+        <div class="case-meta">
+          <span class="status">Draft · in progress · name pending approval</span>
+          <h2 id="ce-h" style="font-size:1.5rem">Moving a live project archive off an aging file server</h2>
+          <dl>
+            <div><dt>Client</dt><dd>[Architecture firm, name pending approval]</dd></div>
+            <div><dt>Size</dt><dd>[Staff count]</dd></div>
+            <div><dt>Services</dt><dd>Egnyte migration, file structure design</dd></div>
+          </dl>
+        </div>
+        <div class="stack">
+          <h3>The situation</h3>
+          <p>The firm's projects lived on a single on-prem file server that had grown for years, including the files of a smaller firm it had absorbed. Staff reached live projects through a mapped drive and rarely browsed the server directly.</p>
+          <h3>What we did</h3>
+          <ul>
+            <li>Built a phased migration plan and task list before moving a single file</li>
+            <li>Reviewed the server folder by folder with the firm to decide what migrates, what gets archived and what gets deleted</li>
+            <li>Separated the firm's business operations folders (accounting, HR, legal, marketing) from project data so each gets its own permissions in Egnyte</li>
+            <li>Planned for Projects to become a top-level Egnyte folder instead of staying buried several levels deep</li>
+          </ul>
+          <h3>What we found along the way</h3>
+          <p>The live projects folder was three levels deep and hidden from a normal Explorer view, reachable only through the mapped drive. A second folder with a similar name held old files that needed archiving, not syncing. And before moving anything, we checked whether CAD Xrefs and Revit links used absolute or relative paths, because absolute paths break when folder locations change.</p>
+          <p class="callout"><strong>Why this matters.</strong> A migration that copies folders as-is carries every old problem into the new platform. The review is where most of the value is.</p>
+          <div class="ph"><span class="ph-label">Result placeholder</span><p>[Outcome in the client's own words, once the migration is complete and they approve the quote.]</p></div>
+          <p style="font-size:.93rem">Related: <a href="#svc-egnyte">Egnyte &amp; Cloud File Management</a> · <a href="#firms-situation">Moving off a file server</a></p>
+        </div>
+      </article>
+
+      <article class="case-full" id="case-move" aria-labelledby="cm-h">
+        <div class="case-meta">
+          <span class="status">Draft · name pending approval</span>
+          <h2 id="cm-h" style="font-size:1.5rem">Bringing a network up in a new office</h2>
+          <dl>
+            <div><dt>Client</dt><dd>[Client firm, name pending approval]</dd></div>
+            <div><dt>Location</dt><dd>[City]</dd></div>
+            <div><dt>Services</dt><dd>Office relocation, firewall and network setup</dd></div>
+          </dl>
+        </div>
+        <div class="stack">
+          <h3>The situation</h3>
+          <p>The firm relocated to a new office with a new business fiber circuit and a block of static IP addresses. The carrier's router handed out addresses on its own, which conflicted with the static configuration on the firm's existing firewall.</p>
+          <h3>What we did</h3>
+          <ul>
+            <li>Coordinated the new circuit and documented the static IP details</li>
+            <li>Reset and rebuilt the firewall's WAN, LAN and security rules for the new circuit</li>
+            <li>Recorded the new configuration and circuit details in our documentation system</li>
+          </ul>
+          <h3>What we found along the way</h3>
+          <p>Carrier equipment and an existing firewall rarely agree out of the box. Planning the handoff between them before move day avoids staff arriving to a network that half works.</p>
+          <div class="ph"><span class="ph-label">Result placeholder</span><p>[Outcome in the client's words, e.g. how quickly staff were working in the new space. Confirm all details before publishing.]</p></div>
+          <p style="font-size:.93rem">Related: <a href="#svc-moves">Office Moves &amp; Buildouts</a> · <a href="#firms-situation">Opening or moving an office</a></p>
+        </div>
+      </article>
+
+      <article class="case-full" id="case-entra" aria-labelledby="cn-h">
+        <div class="case-meta">
+          <span class="status">Draft · in progress · name pending approval</span>
+          <h2 id="cn-h" style="font-size:1.5rem">Retiring a domain controller for Entra ID</h2>
+          <dl>
+            <div><dt>Client</dt><dd>[Client firm, name pending approval]</dd></div>
+            <div><dt>Size</dt><dd>About 20 users</dd></div>
+            <div><dt>Services</dt><dd>Entra ID migration, NAS permissions</dd></div>
+          </dl>
+        </div>
+        <div class="stack">
+          <h3>The situation</h3>
+          <p>About 20 users on domain-joined PCs, authenticated by a domain controller running as a virtual machine in the firm's Azure tenant, with project files on a Synology NAS joined to that domain. The firm wanted to retire the domain controller VM and run on Entra ID, and to do it in stages rather than all at once.</p>
+          <h3>What we did</h3>
+          <ul>
+            <li>Planned a piecemeal move from domain-joined to Entra-joined PCs so work continues during the transition</li>
+            <li>Restructured file permissions on the NAS</li>
+            <li>Evaluated options for NAS authentication once the domain controller is gone</li>
+            <li>Planned the domain decommission as its own step</li>
+          </ul>
+          <h3>What we found along the way</h3>
+          <p>The client wanted to manage folder permissions from Entra. We recommended keeping them on the NAS itself, where they can be set and audited directly, and explained why. Part of the job is saying which approach will be manageable a year from now.</p>
+          <div class="ph"><span class="ph-label">Result placeholder</span><p>[Outcome in the client's words once complete.]</p></div>
+          <p style="font-size:.93rem">Related: <a href="#svc-managed">Managed IT &amp; Infrastructure</a> · <a href="#firms-situation">Retiring an old domain</a></p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="cta-band on-navy" aria-labelledby="cta-work">
+    <div class="wrap cta-inner">
+      <div class="stack"><h2 id="cta-work">Have a project like one of these?</h2><p class="lede">We'll scope it on a call and quote it as a fixed fee.</p></div>
+      <div class="btn-row"><a class="btn btn-ghost arrow" href="#engagements">How we engage</a><a class="btn btn-primary arrow" href="#contact">Talk to a Specialist</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== ENGAGEMENTS ===================== -->
+<div class="page" id="engagements" tabindex="-1" hidden data-sheet="A-450" data-sheetname="How We Engage"
+  data-title="How We Engage | Pricing Model, Terms and Continuity | Agile Networks"
+  data-desc="How Agile Networks structures managed IT for architecture firms: monthly support, fixed-fee projects, what's included, who owns your data, and what happens if you leave.">
+
+  <section class="page-hero on-navy" aria-labelledby="eng-h1">
+    <div class="wrap">
+      <p class="eyebrow"><a href="#about" style="color:var(--line-on-navy);text-decoration:none">About</a> · How we engage</p>
+      <h1 id="eng-h1" style="margin-top:.8rem">What it costs, what's included, and what happens if you leave</h1>
+      <p class="lede">The questions a principal or finance lead should ask any IT provider, answered before the first call.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="model-h">
+    <div class="wrap">
+      <div class="section-head split">
+        <div class="stack"><p class="eyebrow">Engagement model</p><h2 id="model-h">Three ways to work with us</h2></div>
+        <p class="lede">Most clients have monthly support and add fixed-fee projects as needed. Nothing is billed by the surprise hour.</p>
+      </div>
+      <div class="model m-scroll">
+        <div>
+          <span class="kind">Ongoing</span>
+          <h3>Monthly managed support</h3>
+          <p>A monthly base for your firm plus a per-user amount for the security stack on each person's devices.</p>
+          <ul>
+            <li>Day-to-day support for staff</li>
+            <li>Monitoring, patching and backup checks</li>
+            <li>Endpoint protection and firewall management</li>
+            <li>Vendor and license management</li>
+            <li>Regular reviews with principals</li>
+          </ul>
+          <span class="price">[Pricing: base + per user, or "starting at"]</span>
+        </div>
+        <div>
+          <span class="kind">One-time</span>
+          <h3>Fixed-fee projects</h3>
+          <p>Scoped and quoted up front. If the scope changes, we tell you before the price does.</p>
+          <ul>
+            <li>Egnyte and cloud file migrations</li>
+            <li>Entra ID and domain migrations</li>
+            <li>Office moves and buildouts</li>
+            <li>Workstation refreshes</li>
+            <li>Software license and spend review</li>
+          </ul>
+          <span class="price">[Typical range or "quoted per project"]</span>
+        </div>
+        <div>
+          <span class="kind">Advisory</span>
+          <h3>AI governance &amp; security</h3>
+          <p>A defined scope with written deliverables: policy, staff guidelines, tool reviews and a security baseline.</p>
+          <ul>
+            <li>Governance consultation</li>
+            <li>Policy and guideline package</li>
+            <li>Individual AI tool reviews</li>
+            <li>Cyber insurance questionnaire support</li>
+          </ul>
+          <span class="price">[Fixed fee per package]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint" aria-labelledby="calc-h">
+    <div class="wrap">
+      <div class="section-head split">
+        <div class="stack"><p class="eyebrow">Cost of lost time</p><h2 id="calc-h">What IT problems cost your firm now</h2></div>
+        <p class="lede">Use your own numbers. This counts billable time only, not missed deadlines, overtime or frustrated staff.</p>
+      </div>
+      <div class="calc">
+        <form class="calc-in" id="calc" onsubmit="return false" aria-describedby="calc-note">
+          <div class="field"><label for="c-staff">Staff affected</label><input id="c-staff" type="number" inputmode="numeric" min="0" step="1" value="12"></div>
+          <div class="field"><label for="c-rate">Average billable rate ($/hour)</label><input id="c-rate" type="number" inputmode="decimal" min="0" step="5" value="150"></div>
+          <div class="field"><label for="c-hours">Hours lost per person per month</label><input id="c-hours" type="number" inputmode="decimal" min="0" step="0.5" value="2"><span class="hint">Slow opens, crashes, waiting on help, VPN problems.</span></div>
+          <div class="field"><label for="c-util">Share of lost time that was billable (%)</label><input id="c-util" type="number" inputmode="numeric" min="0" max="100" step="5" value="70"></div>
+          <p id="calc-note" class="hint" style="grid-column:1/-1;font-size:.86rem;color:var(--muted)">The starting values are examples only, not industry figures. Replace them with your own.</p>
+        </form>
+        <div class="calc-out" aria-live="polite">
+          <span class="eyebrow">Estimated billable time lost</span>
+          <div><span class="big" id="c-year">$0</span> <span style="color:var(--muted-on-navy)">per year</span></div>
+          <div class="row"><span>Per month</span><b id="c-month">$0</b></div>
+          <div class="row"><span>Hours per year</span><b id="c-hrs">0</b></div>
+          <small>Compare this with the cost of fixing the causes. We're glad to walk through the math on a call.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="terms-h">
+    <div class="wrap two wide-right">
+      <div class="stack"><p class="eyebrow">Terms in plain language</p><h2 id="terms-h">What you can count on</h2></div>
+      <ul class="terms">
+        <li><b>Contract term</b><span>[Confirm: e.g. initial term, then month-to-month, and notice period.]</span></li>
+        <li><b>Onboarding</b><span>An assessment and documentation phase before monthly support starts. [Confirm: included or billed as a fixed onboarding fee.]</span></li>
+        <li><b>Your data and credentials</b><span>Your admin accounts, passwords and documentation belong to your firm. [Confirm: stored in a client-owned password vault.]</span></li>
+        <li><b>If you leave</b><span>We hand over documentation, credentials and a walkthrough to whoever takes over. Handover is part of the agreement, not a favor.</span></li>
+        <li><b>Hardware and software</b><span>[Confirm: how hardware and licenses are quoted and billed.]</span></li>
+        <li><b>After hours</b><span>[Confirm: after-hours and emergency coverage policy.]</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section tint" aria-labelledby="cont-h" id="continuity" style="scroll-margin-top:90px">
+    <div class="wrap two">
+      <div class="stack">
+        <p class="eyebrow">Continuity</p>
+        <h2 id="cont-h">What if the founder is unavailable?</h2>
+        <p>A fair question for any small firm. Our answer is that your IT doesn't depend on any one person's memory.</p>
+      </div>
+      <ul class="checklist" style="grid-template-columns:minmax(0,1fr)">
+        <li>Every client environment is documented in a central system, and your documentation can be exported to you at any time</li>
+        <li>Admin credentials are held where your firm has access, not only ours</li>
+        <li>[Confirm: technicians cross-trained on each client account]</li>
+        <li>[Confirm: backup arrangement with a partner firm for extended absences]</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ins-cy-h">
+    <div class="wrap two">
+      <div class="stack">
+        <p class="eyebrow">Cyber insurance</p>
+        <h2 id="ins-cy-h">Help with the security questionnaire</h2>
+      </div>
+      <div class="stack">
+        <p>Cyber insurance applications and renewals often ask detailed questions about MFA, backups, endpoint protection and staff training. We help you answer them accurately and put the controls in place where an honest answer today would be "no."</p>
+        <p style="color:var(--muted);font-size:.95rem">Coverage decisions are between you, your broker and your insurer. We supply the technical facts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint" aria-labelledby="dont-h">
+    <div class="wrap">
+      <div class="section-head split">
+        <div class="stack"><p class="eyebrow">Fit</p><h2 id="dont-h">What we don't do</h2></div>
+        <p class="lede">Knowing where we stop helps you decide if we're the right fit.</p>
+      </div>
+      <ul class="dont">
+        <li>We don't run an offshore or tier-one call center. [Confirm]</li>
+        <li>We don't give legal advice on contracts or liability. We work alongside your counsel.</li>
+        <li>We don't take on large enterprise environments. [Confirm size ceiling]</li>
+        <li>We don't sell tools you don't need to hit a quota. [Confirm]</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta-band on-navy" aria-labelledby="cta-eng">
+    <div class="wrap cta-inner">
+      <div class="stack"><h2 id="cta-eng">Want a number for your firm?</h2><p class="lede">Tell us your headcount and setup and we'll give you a straight estimate.</p></div>
+      <div class="btn-row"><a class="btn btn-primary arrow" href="#contact">Get an estimate</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== CHATTERBOX ===================== -->
+<div class="page" id="chatterbox" tabindex="-1" hidden data-sheet="A-600" data-sheetname="Chatterbox"
+  data-title="Chatterbox | Articles and Posts on IT for AEC Firms | Agile Networks"
+  data-desc="Articles, LinkedIn posts and practical notes on IT for architecture, engineering and construction firms: onboarding, Egnyte, Revit performance, security and AI governance.">
+
+  <section class="page-hero on-navy" aria-labelledby="ch-h1">
+    <div class="wrap">
+      <p class="eyebrow">Chatterbox</p>
+      <h1 id="ch-h1" style="margin-top:.8rem">Articles, posts and notes from the work</h1>
+      <p class="lede">How we actually do things for AEC firms, written up so you can use it whether or not you work with us.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="feat-h">
+    <div class="wrap">
+      <a class="feature" href="#post-onboarding" aria-labelledby="feat-h">
+        <div class="feature-art" aria-hidden="true">
+          <ol class="mini-flow">
+            <li>Setup sheet</li><li>Role profile</li><li>Approved software</li><li>Licenses</li><li>Hardware check</li><li>Review date</li><li>Setup</li><li>Video to office manager</li>
+          </ol>
+        </div>
+        <div class="feature-body">
+          <span class="cat">Featured · Managed IT</span>
+          <h2 id="feat-h">From setup sheet to video walkthrough: how we onboard a new hire</h2>
+          <p>Eight steps between an office manager filling in one form and a new designer sitting down to a working machine, with licenses accounted for and a hardware review already on the calendar.</p>
+          <span class="more arrow">Read the article </span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section tint" aria-labelledby="li-h">
+    <div class="wrap">
+      <div class="section-head split">
+        <div class="stack"><p class="eyebrow">On LinkedIn</p><h2 id="li-h">Recent posts</h2></div>
+        <p class="lede">Shorter takes we share on LinkedIn first. <span class="ph" style="display:inline;padding:0 .3rem">[Follow link: LinkedIn company page URL]</span></p>
+      </div>
+      <div class="posts m-scroll">
+        <article class="li-card"><span class="li-tag">LinkedIn post</span><p class="ph" style="padding:.6rem .8rem">[Paste the opening lines of a recent post]</p><div class="li-foot"><span class="meta">[Date]</span><span class="meta">View on LinkedIn [link]</span></div></article>
+        <article class="li-card"><span class="li-tag">LinkedIn post</span><p class="ph" style="padding:.6rem .8rem">[Paste the opening lines of a recent post]</p><div class="li-foot"><span class="meta">[Date]</span><span class="meta">View on LinkedIn [link]</span></div></article>
+        <article class="li-card"><span class="li-tag">LinkedIn post</span><p class="ph" style="padding:.6rem .8rem">[Paste the opening lines of a recent post]</p><div class="li-foot"><span class="meta">[Date]</span><span class="meta">View on LinkedIn [link]</span></div></article>
+      </div>
+      <p class="hint" style="margin-top:1rem;font-size:.86rem;color:var(--muted)">On the live site these can be individual LinkedIn post embeds or a feed widget, depending on what your site platform supports.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="art-h">
+    <div class="wrap">
+      <div class="section-head"><p class="eyebrow">Articles</p><h2 id="art-h">All articles</h2></div>
+      <div class="filters" role="group" aria-label="Filter articles by topic">
+        <button class="filter" aria-pressed="true" data-f="all">All</button>
+        <button class="filter" aria-pressed="false" data-f="managed">Managed IT</button>
+        <button class="filter" aria-pressed="false" data-f="egnyte">Egnyte &amp; files</button>
+        <button class="filter" aria-pressed="false" data-f="software">AEC software</button>
+        <button class="filter" aria-pressed="false" data-f="ai">AI governance</button>
+        <button class="filter" aria-pressed="false" data-f="security">Security</button>
+      </div>
+      <div class="posts" id="posts">
+        <a class="post" data-cat="managed" href="#post-onboarding" style="text-decoration:none;color:var(--ink)"><div class="post-img post-img-real" aria-hidden="true"><span>8 steps</span></div><div class="post-body"><span class="cat">Managed IT</span><h3>From setup sheet to video walkthrough: how we onboard a new hire</h3><p>Role profiles, approved software, license checks and a hardware review date, before the new hire's first day.</p><span class="meta">[Date] · About 6 min read</span></div></a>
+        <article class="post" data-cat="egnyte"><div class="ph post-img"><span class="ph-label">Featured image placeholder</span></div><div class="post-body"><span class="cat">Egnyte &amp; files</span><h3>[Suggested topic] Planning a file server to Egnyte migration without stopping project work</h3><p>[Excerpt placeholder]</p><span class="meta">[Date] · [Read time]</span></div></article>
+        <article class="post" data-cat="software"><div class="ph post-img"><span class="ph-label">Featured image placeholder</span></div><div class="post-body"><span class="cat">AEC software</span><h3>[Suggested topic] Why your central model is slow: network, storage or Revit?</h3><p>[Excerpt placeholder]</p><span class="meta">[Date] · [Read time]</span></div></article>
+        <article class="post" data-cat="ai"><div class="ph post-img"><span class="ph-label">Featured image placeholder</span></div><div class="post-body"><span class="cat">AI governance</span><h3>[Suggested topic] A one-page AI policy for architecture firms</h3><p>[Excerpt placeholder]</p><span class="meta">[Date] · [Read time]</span></div></article>
+        <article class="post" data-cat="software"><div class="ph post-img"><span class="ph-label">Featured image placeholder</span></div><div class="post-body"><span class="cat">AEC software</span><h3>[Suggested topic] Speccing workstations for Revit and Enscape</h3><p>[Excerpt placeholder]</p><span class="meta">[Date] · [Read time]</span></div></article>
+        <article class="post" data-cat="security"><div class="ph post-img"><span class="ph-label">Featured image placeholder</span></div><div class="post-body"><span class="cat">Security</span><h3>[Suggested topic] Backups you've actually tested: a checklist for principals</h3><p>[Excerpt placeholder]</p><span class="meta">[Date] · [Read time]</span></div></article>
+      </div>
+      <p id="posts-empty" hidden style="margin-top:1rem;color:var(--muted)">No articles in this topic yet.</p>
+    </div>
+  </section>
+
+  <section class="section on-navy" aria-labelledby="pod-h">
+    <div class="wrap two" style="align-items:center">
+      <div class="stack">
+        <p class="eyebrow">Podcast · In the works</p>
+        <h2 id="pod-h">We're starting a podcast</h2>
+        <p>Conversations with principals, operations leads and technologists from AEC firms about how their practices actually run: the tools, the tradeoffs and what they'd do differently.</p>
+      </div>
+      <div class="stack">
+        <p class="ph" style="padding:.6rem .8rem;background:transparent;color:var(--muted-on-navy);border-color:var(--line-on-navy)">[Working title and launch timing, once decided]</p>
+        <p>Run an AEC firm and have a story worth telling? We're lining up first guests now.</p>
+        <div class="btn-row"><a class="btn btn-primary arrow" href="#contact">Suggest a guest</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== POST: ONBOARDING ===================== -->
+<div class="page" id="post-onboarding" tabindex="-1" hidden data-sheet="A-610" data-sheetname="Chatterbox Article"
+  data-title="How We Onboard a New Hire at an AEC Firm | Chatterbox | Agile Networks"
+  data-desc="The eight-step process Agile Networks uses to onboard new staff at architecture and engineering firms: setup sheet, role profile, approved software, licenses, hardware check, review date, setup and a video walkthrough.">
+
+  <article aria-labelledby="po-h1">
+    <header class="page-hero on-navy">
+      <div class="wrap article-head">
+        <p class="eyebrow"><a href="#chatterbox" style="color:var(--line-on-navy);text-decoration:none">Chatterbox</a> · Managed IT</p>
+        <h1 id="po-h1">From setup sheet to video walkthrough: how we onboard a new hire</h1>
+        <p class="lede">A new designer's first morning says a lot about a firm. Here's the process we use so that morning is spent on project work, not waiting for logins.</p>
+        <p class="byline">[Author name] · [Date] · About 6 min read</p>
+      </div>
+    </header>
+
+    <div class="section">
+      <div class="wrap">
+        <ol class="flow" aria-label="The eight onboarding steps">
+          <li><b>Setup sheet</b><span>Office manager fills in one form</span></li>
+          <li><b>Role profile</b><span>The hire is matched to an avatar</span></li>
+          <li><b>Approved software</b><span>Only what the role needs</span></li>
+          <li><b>Licenses</b><span>Seats checked and assigned</span></li>
+          <li><b>Hardware check</b><span>Is the machine fit for the role?</span></li>
+          <li><b>Review date</b><span>Next hardware review scheduled</span></li>
+          <li><b>Setup</b><span>Accounts, software, security, files</span></li>
+          <li><b>Video</b><span>Walkthrough sent to office manager</span></li>
+        </ol>
+
+        <div class="prose">
+          <p>Most onboarding problems aren't technical. They come from nobody writing down what the new person needs until the day they show up. The process below moves every decision earlier, and it leaves the office manager with a record of exactly what was delivered.</p>
+
+          <h2>1. The setup sheet</h2>
+          <p>It starts with one form the office manager fills in as soon as an offer is accepted. It asks for the basics we need, and nothing we can look up ourselves.</p>
+          <div class="table-wrap"><table class="doc-table">
+            <caption>Example setup sheet fields</caption>
+            <thead><tr><th scope="col">Field</th><th scope="col">Why we ask</th></tr></thead>
+            <tbody>
+              <tr><td>Name and start date</td><td>Accounts and hardware ready the day before</td></tr>
+              <tr><td>Role</td><td>Picks the role profile (step 2)</td></tr>
+              <tr><td>Office, remote or hybrid</td><td>Desk setup on site, or hardware shipped to their home</td></tr>
+              <tr><td>Manager and project teams</td><td>File and project platform access</td></tr>
+              <tr><td>Anything unusual</td><td>Extra software, accessibility needs, a specific plugin</td></tr>
+            </tbody>
+          </table></div>
+
+          <h2>2. The role profile, or avatar</h2>
+          <p>Every firm we support has a small set of role profiles. We call them avatars. Each one defines the software, file access and class of hardware a person in that role needs. A new hire is matched to an avatar instead of starting from a blank list.</p>
+          <div class="table-wrap"><table class="doc-table">
+            <caption>Example avatars (each firm's set is different)</caption>
+            <thead><tr><th scope="col">Avatar</th><th scope="col">Core software</th><th scope="col">Hardware class</th></tr></thead>
+            <tbody>
+              <tr><td>Designer</td><td>Revit, Rhino, Enscape, Bluebeam, Microsoft 365, Egnyte</td><td>Design workstation with a dedicated GPU</td></tr>
+              <tr><td>Project manager</td><td>Revit (viewing), Bluebeam, ACC or Procore, Microsoft 365, Egnyte</td><td>Business laptop with a docking station</td></tr>
+              <tr><td>Visualization</td><td>Enscape or other render tools, Rhino, Adobe Creative Cloud</td><td>High-end GPU workstation</td></tr>
+              <tr><td>Operations and finance</td><td>Microsoft 365, accounting and HR platforms, Egnyte</td><td>Business laptop</td></tr>
+            </tbody>
+          </table></div>
+          <p>Avatars make onboarding consistent, and they make the next steps faster because most of the answers are already decided.</p>
+
+          <h2>3. The approved software list</h2>
+          <p>The avatar pulls from the firm's approved software list. If it's not on the list, it doesn't get installed without a quick approval. That keeps licensing clean, keeps unvetted tools off firm machines, and it's the same list your AI policy points to when someone asks whether a new AI tool is allowed.</p>
+
+          <h2>4. Software assets and licenses</h2>
+          <p>Before anything is installed, we check the firm's license records. Is there a free Autodesk seat? A Bluebeam license from someone who left? If a new seat has to be bought, the office manager hears about the cost before it's ordered, not when the invoice arrives. The assignment is recorded against the person in the asset register.</p>
+
+          <h2>5. Is the hardware fit for purpose?</h2>
+          <p>Next we compare the machine that's available against the avatar's hardware class. A laptop that was fine for a project manager may struggle with Enscape for a designer. If an existing machine fits, it's redeployed. If it doesn't, the office manager gets a quote with the reason, in time to order.</p>
+
+          <h2>6. Set a hardware review date</h2>
+          <p>Every machine that goes out gets a review date in the asset record. When that date comes up, we check the machine against the role it's serving now. Refreshes get planned and budgeted instead of forced by a failure in the middle of a deadline.</p>
+
+          <h2>7. The setup</h2>
+          <ul>
+            <li>Microsoft 365 and Entra ID account, with multi-factor authentication</li>
+            <li>Egnyte access and the right project and department folders</li>
+            <li>ACC, BIM 360 or Procore access for their projects</li>
+            <li>Software from the avatar, including the Revit versions their projects need</li>
+            <li>Endpoint protection, backup and device management</li>
+            <li>Printers, plotters and email signature</li>
+          </ul>
+          <p>Then we test it the way the new hire will use it: sign in, open a project file, print.</p>
+
+          <h2>8. A video walkthrough to the office manager</h2>
+          <p>The last step is a short screen recording of the finished setup: accounts signed in, software installed, project files opening. It goes to the office manager, who can forward it to the new hire as a first-day orientation.</p>
+          <figure class="video-ph">
+          <div class="video-frame" role="img" aria-label="Video placeholder: example new-hire setup walkthrough">
+            <span class="play" aria-hidden="true"><svg width="22" height="24" viewBox="0 0 22 24"><path d="M2 2 L20 12 L2 22 Z" fill="currentColor"/></svg></span>
+            <span class="v-title">Example setup walkthrough</span>
+            <span class="v-meta">Video placeholder · about 30 sec · captions on</span>
+          </div>
+          <figcaption>A real setup video of the kind we send office managers, with names and firm details blurred.</figcaption>
+          <details class="transcript"><summary>Read the transcript</summary><p class="ph" style="padding:.6rem .8rem">[Transcript placeholder. Paste the caption text here so it's readable without playing the video and visible to search engines.]</p></details>
+        </figure>
+          <p>It also answers a question every office manager eventually gets from a principal: what exactly are we paying for? The video is the answer, with a date on it.</p>
+
+          <h2>Why this matters</h2>
+          <ul>
+            <li>New hires start on project work, not waiting for accounts</li>
+            <li>License spend is visible before it happens</li>
+            <li>Hardware refreshes are planned, not emergencies</li>
+            <li>The office manager has a record of every setup</li>
+          </ul>
+
+          <div class="callout"><strong>Want this at your firm?</strong> New hire onboarding is part of our <a href="#svc-managed">managed IT service</a>. We can build your avatars and approved software list as part of onboarding. <a href="#contact">Talk to a specialist</a>.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <section class="section tint" aria-labelledby="more-h">
+    <div class="wrap">
+      <div class="section-head split"><div class="stack"><p class="eyebrow">Keep reading</p><h2 id="more-h">Related</h2></div></div>
+      <div class="cards six m-scroll">
+        <a class="card" href="#svc-license"><span class="code">Service</span><h3>Software License &amp; Spend Review</h3><p>See every seat and renewal in one place.</p><span class="more arrow">Details </span></a>
+        <a class="card" href="#ai-sample"><span class="code">AI governance</span><h3>A one-page staff guideline</h3><p>The approved-tools rule, applied to AI.</p><span class="more arrow">See the sample </span></a>
+        <a class="card" href="#work"><span class="code">Our work</span><h3>Case studies</h3><p>Egnyte migration, office move and Entra ID projects.</p><span class="more arrow">See our work </span></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== CONTACT ===================== -->
+<div class="page" id="contact" tabindex="-1" hidden data-sheet="A-700" data-sheetname="Contact"
+  data-title="Contact Agile Networks | Talk to an Architecture IT Specialist"
+  data-desc="Book a call with a senior technician or send a message. On-site support along the Boston-DC corridor, remote support for AEC firms across the US.">
+
+  <section class="page-hero on-navy" aria-labelledby="contact-h1">
+    <div class="wrap">
+      <h1 id="contact-h1">Talk to a specialist</h1>
+      <p class="lede">Book a time directly, or send a message and a senior technician will get back to you. Either way you'll talk to someone who works on IT for architecture, engineering and construction firms every day.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Contact options">
+    <div class="wrap contact-grid">
+      <div class="stack-lg">
+        <figure class="video-ph">
+          <div class="video-frame" role="img" aria-label="Video placeholder: founder explains what happens on the first call">
+            <span class="play" aria-hidden="true"><svg width="22" height="24" viewBox="0 0 22 24"><path d="M2 2 L20 12 L2 22 Z" fill="currentColor"/></svg></span>
+            <span class="v-title">What happens when you book a call</span>
+            <span class="v-meta">Video placeholder · 30 to 45 sec · captions on</span>
+          </div>
+          <figcaption>[Founder name], founder and senior technician, on what the first call covers and what to bring.</figcaption>
+          <details class="transcript"><summary>Read the transcript</summary><p class="ph" style="padding:.6rem .8rem">[Transcript placeholder. Paste the caption text here so it's readable without playing the video and visible to search engines.]</p></details>
+        </figure>
+        <div class="book">
+          <p class="eyebrow">Option 1 · Book an appointment</p>
+          <h2 style="font-size:1.6rem">Pick a time for a 30-minute call</h2>
+          <p>Choose a slot that works for you. Bring your current setup and the problem that's bothering you most.</p>
+          <a class="btn btn-primary arrow" href="#contact" id="book-btn" aria-describedby="book-note">Book an Appointment</a>
+          <p id="book-note" style="font-family:var(--mono);font-size:.78rem;color:var(--muted-on-navy)">Placeholder: link to booking page (Calendly, Microsoft Bookings, etc.)</p>
+        </div>
+        <div class="stack">
+          <p class="eyebrow">Reach us directly</p>
+          <dl class="direct" style="margin:0">
+            <div><dt>Phone</dt><dd><span class="tbd">[Phone number]</span></dd></div>
+            <div><dt>Email</dt><dd><span class="tbd">[Email address]</span></dd></div>
+            <div><dt>On site</dt><dd>Boston-DC corridor, weekly visits available</dd></div>
+            <div><dt>Remote</dt><dd>Anywhere in the US</dd></div>
+          </dl>
+        </div>
+      </div>
+      <div class="stack" id="contact-form" style="scroll-margin-top:90px">
+        <p class="eyebrow">Option 2 · Send a message</p>
+        <form class="contact" id="form" novalidate>
+          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="f-firm">Firm</label><input id="f-firm" name="firm" autocomplete="organization" required></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-phone">Phone <span class="hint">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="f-size">Firm size</label>
+            <select id="f-size" name="size"><option value="">Select</option><option>1-10 staff</option><option>11-50 staff</option><option>50+ staff</option><option>We have in-house IT</option></select></div>
+          <div class="field"><label for="f-topic">What can we help with?</label>
+            <select id="f-topic" name="topic"><option value="">Select</option><option>Managed IT &amp; infrastructure</option><option>Egnyte / cloud file migration</option><option>AEC software performance</option><option>AI governance consultation</option><option>Office move or new office</option><option>Software license &amp; spend review</option><option>Podcast guest</option><option>Something else</option></select></div>
+          <div class="field full"><label for="f-msg">What's going on?</label><textarea id="f-msg" name="message" required placeholder="e.g. Our file server is five years old and remote staff can't open Revit models over the VPN."></textarea></div>
+          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+          <div class="form-foot">
+            <span class="hint" style="font-size:.84rem;color:var(--muted)">Form backend placeholder: connect to your form handler before launch.</span>
+            <button type="submit" class="btn btn-primary arrow">Send message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== BUILD NOTES ===================== -->
+<div class="page" id="notes" tabindex="-1" hidden data-sheet="G-001" data-sheetname="Build Notes"
+  data-title="Build Notes | Agile Networks Site v3"
+  data-desc="Internal review notes for the Agile Networks site preview.">
+
+  <section class="page-hero paper-grid" aria-labelledby="notes-h1" style="border-bottom:1px solid var(--rule)">
+    <div class="wrap">
+      <p class="eyebrow">Sheet G-001 · Internal · Remove before launch</p>
+      <h1 id="notes-h1" style="margin-top:.8rem">Build notes</h1>
+      <p class="lede" style="margin-top:1rem">Version 3. Tagline options, open items, and the SEO plan for each page. This page is for review only.</p>
+      <p style="margin-top:.8rem;font-size:.95rem">v2 changes: plain hero headline, cute lines removed, blueprint styling toned down, case studies page, How We Engage page (pricing model, terms, continuity, calculator, cyber insurance, what we don't do), office moves and license review services, sample AI staff guideline, positioning made consistent. Update: location removed; coverage is now weekly on-site along the Boston-DC corridor and remote across the US; Who We Serve expanded by size, discipline and situation; cross-links to Our Work added throughout.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="tag-h">
+    <div class="wrap two">
+      <div class="stack"><h2 id="tag-h">Tagline options</h2><p>v2 replaces the tagline in the hero with a plain statement of what the firm does. The tagline can still appear elsewhere if you want to keep it.</p></div>
+      <ul class="taglines">
+        <li><small>v2 hero (in use)</small><q>Managed IT for firms whose work lives in Revit, Rhino and Egnyte.</q></li>
+        <li><small>v1 hero / existing site</small><q>Architecture runs on more than creativity. It needs tech that works as hard as you do.</q></li>
+        <li><small>Option A</small><q>Your drawings are precise. Your IT should be too.</q></li>
+        <li><small>Option B</small><q>IT built around the way architects actually work.</q></li>
+        <li><small>Option C</small><q>We keep the models open, the files synced and the studio working.</q></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section tint" aria-labelledby="open-h">
+    <div class="wrap two">
+      <div class="stack"><h2 id="open-h">Confirm before launch</h2><p>Items the preview deliberately leaves open rather than guessing.</p></div>
+      <ul class="checklist" style="grid-template-columns:minmax(0,1fr)">
+        <li>Written permission from each client before showing their logo or name</li>
+        <li>Real, approved testimonial quote(s) with name, title and firm</li>
+        <li>Weekly on-site visit model: pricing, cities covered, and travel policy outside the corridor</li>
+        <li>Which disciplines on Who We Serve you actively want to sell to (landscape, construction, etc.)</li>
+        <li>Review meeting cadence (How we work, step 4)</li>
+        <li>Specific Egnyte products and any partner status to name</li>
+        <li>Phone, email and booking link</li>
+        <li>Form backend (e.g. your site platform's native forms or a form service)</li>
+        <li>Logo files, team photos and bios</li>
+        <li>LinkedIn company page URL, and 3 recent posts for Chatterbox</li>
+        <li>Onboarding article: author, date, a real setup-video still, and your actual avatar set</li>
+        <li>Podcast working title and timing (Chatterbox shows it as "in the works")</li>
+        <li>Positioning: the site now says architecture, engineering and construction (AEC), with architecture as the core. Decide how to describe non-AEC clients, if any</li>
+        <li>Case studies: client approval, firm type and size for each, and a real result quote. The CORE, relocation and Entra cases are marked in progress or draft</li>
+        <li>Pricing structure wording and ranges (How We Engage), or a decision to show "starting at" only</li>
+        <li>Contract term, onboarding fee, after-hours policy, hardware billing</li>
+        <li>Continuity specifics: cross-training, client-owned password vault, backup partner</li>
+        <li>Each "What we don't do" item</li>
+        <li>License review fee</li>
+        <li>Real hero photo (with permission)</li>
+        <li>Videos: Contact, About, onboarding article, AI Governance (talking points below), with captions and transcripts</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="vid-h">
+    <div class="wrap two">
+      <div class="stack">
+        <h2 id="vid-h">Video talking points</h2>
+        <p>Three points per video. Know them, don't read them. Record each in one or two takes.</p>
+        <h3 style="font-size:1.05rem;margin-top:.6rem">Production checklist</h3>
+        <ul class="checklist" style="grid-template-columns:minmax(0,1fr)">
+          <li>Clip-on mic and a quiet room. Audio matters more than the camera</li>
+          <li>Under 90 seconds, one idea per video</li>
+          <li>Captions burned in or uploaded, plus the transcript on the page</li>
+          <li>Host on YouTube, Vimeo or your site builder's native video; show a still until someone presses play</li>
+          <li>No autoplay. Nothing dated: no prices, years or version numbers</li>
+        </ul>
+      </div>
+      <div class="stack">
+        <ul class="terms">
+          <li><b>Contact: What happens when you book a call (30-45 sec)</b><span>1. You'll talk to me, the founder and senior technician, not a salesperson. 2. Bring your headcount, the software you run, where your files live and the thing that's bothering you most. 3. It's 30 minutes, and you'll leave with an honest read on what we'd fix first, even if we're not the right fit.</span></li>
+          <li><b>About: Why I work with AEC firms (60-90 sec)</b><span>1. How you started working with architects (your story, in your words). 2. What you saw generalist IT get wrong in design firms. 3. How you run the team: small, documented, the same people every time.</span></li>
+          <li><b>Onboarding article: setup walkthrough (about 30 sec)</b><span>A real clip of a finished setup: signed in, Egnyte opening, a project file opening in Revit. Blur names and client details.</span></li>
+          <li><b>AI Governance: What firms get wrong with AI (about 60 sec)</b><span>1. Staff are already using free AI tools with project information. 2. AI features are appearing in platforms firms already pay for. 3. The fix is a short policy and a settings review, not a ban.</span></li>
+          <li><b>Optional: the technicians (20-30 sec each)</b><span>Name, what clients usually call them about, one thing they like about working with design firms. Helps answer the "what if the founder is unavailable?" question.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="seo-h">
+    <div class="wrap stack-lg">
+      <h2 id="seo-h">Page titles and meta descriptions</h2>
+      <div class="notes-table-wrap"><table class="notes-table" id="seo-table"><thead><tr><th scope="col">Sheet</th><th scope="col">Suggested URL</th><th scope="col">Meta title</th><th scope="col">Meta description</th></tr></thead><tbody></tbody></table></div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="stack">
+        <a class="wordmark" href="#home" style="color:#fff" aria-label="Agile Networks home">
+          <svg width="30" height="30" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" fill="none" stroke="#E9EEF4" stroke-width="2"/><path d="M7 26 L17 8 L27 26" fill="none" stroke="#E9EEF4" stroke-width="2"/><path d="M11.5 19 H22.5" stroke="#E07A3F" stroke-width="2"/><circle cx="17" cy="8" r="2.2" fill="#E07A3F"/></svg>
+          <span><b style="color:#fff">Agile Networks</b></span>
+        </a>
+        <p>Managed IT for architecture, engineering and construction firms. On site along the Boston-DC corridor, remote across the US. In business since 2001.</p>
+      </div>
+      <div>
+        <h2>Services</h2>
+        <ul>
+          <li><a href="#svc-managed">Managed IT &amp; Infrastructure</a></li>
+          <li><a href="#svc-egnyte">Egnyte &amp; Cloud Files</a></li>
+          <li><a href="#svc-software">AEC Software Optimization</a></li>
+          <li><a href="#ai-governance">AI Governance</a></li>
+          <li><a href="#svc-moves">Office Moves &amp; Buildouts</a></li>
+          <li><a href="#svc-license">License &amp; Spend Review</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="#work">Our Work</a></li>
+          <li><a href="#firms">Who We Serve</a></li>
+          <li><a href="#engagements">How We Engage</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#chatterbox">Chatterbox</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#notes">Build notes (preview only)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="#contact">Talk to a Specialist</a></li>
+          <li>Phone: [placeholder]</li>
+          <li>Email: [placeholder]</li>
+          <li><a href="#coverage">On site Boston to DC · Remote US-wide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <p>© 2026 Agile Networks. All rights reserved.</p>
+      <p>On site: Boston-DC corridor · Remote: anywhere in the US</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var pages = Array.prototype.slice.call(document.querySelectorAll('.page'));
+  var navLinks = document.querySelectorAll('#site-nav a');
+  var nav = document.getElementById('site-nav');
+  var menuBtn = document.getElementById('menu-btn');
+  var metaDesc = document.querySelector('meta[name="description"]');
+  if(!metaDesc){ metaDesc = document.createElement('meta'); metaDesc.name='description'; document.head.appendChild(metaDesc); }
+  var first = true;
+
+  function route(){
+    var h = (location.hash || '').slice(1) || 'home';
+    var target = null;
+    try { target = document.getElementById(h); } catch(e){}
+    var page = target ? (target.classList.contains('page') ? target : target.closest('.page')) : null;
+    if(!page){ page = document.getElementById('home'); target = null; }
+    pages.forEach(function(p){ p.hidden = (p !== page); });
+    document.title = page.dataset.title;
+    metaDesc.setAttribute('content', page.dataset.desc);
+    navLinks.forEach(function(a){
+      var pagesFor = (a.dataset.pages || '').split(' ');
+      a.removeAttribute('aria-current');
+      if(pagesFor.indexOf(page.id) === -1) return;
+      a.setAttribute('aria-current', a.classList.contains('nav-parent') ? 'true' : 'page');
+    });
+    document.querySelectorAll('.nav-group').forEach(function(g){ g.classList.remove('open'); g.querySelector('.sub-toggle').setAttribute('aria-expanded','false'); });
+    nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false');
+    if(target && target !== page){
+      requestAnimationFrame(function(){ target.scrollIntoView({block:'start'}); });
+    } else {
+      window.scrollTo(0,0);
+      requestAnimationFrame(function(){ window.scrollTo(0,0); });
+      if(!first) page.focus({preventScroll:true});
+    }
+    first = false;
+  }
+  window.addEventListener('hashchange', route);
+  route();
+
+  document.querySelectorAll('.sub-toggle').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var g = btn.parentNode, open = !g.classList.contains('open');
+      document.querySelectorAll('.nav-group').forEach(function(x){ x.classList.remove('open'); x.querySelector('.sub-toggle').setAttribute('aria-expanded','false'); });
+      if(open){ g.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') document.querySelectorAll('.nav-group.open').forEach(function(g){ g.classList.remove('open'); g.querySelector('.sub-toggle').setAttribute('aria-expanded','false'); }); });
+  document.addEventListener('click', function(e){ if(!e.target.closest('.nav-group')) document.querySelectorAll('.nav-group.open').forEach(function(g){ g.classList.remove('open'); g.querySelector('.sub-toggle').setAttribute('aria-expanded','false'); }); });
+
+  menuBtn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  document.getElementById('skip-link').addEventListener('click', function(e){
+    e.preventDefault();
+    var visible = pages.filter(function(p){ return !p.hidden; })[0];
+    if(visible) visible.focus();
+  });
+
+  // Mobile: collapse service detail beyond the first block
+  if (window.matchMedia && window.matchMedia('(max-width: 640px)').matches) {
+    document.querySelectorAll('.svc .facets').forEach(function(fc, k){
+      var extra = fc.querySelectorAll('.facet:not(:first-child)');
+      if (!extra.length) return;
+      fc.id = fc.id || ('facets-' + k);
+      fc.classList.add('collapsed');
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'more-btn'; b.setAttribute('aria-expanded','false'); b.setAttribute('aria-controls', fc.id);
+      b.textContent = 'Show problem, fit and details';
+      b.addEventListener('click', function(){
+        var open = fc.classList.toggle('collapsed') === false;
+        b.setAttribute('aria-expanded', open ? 'true' : 'false');
+        b.textContent = open ? 'Show less' : 'Show problem, fit and details';
+      });
+      fc.parentNode.insertBefore(b, fc.nextSibling);
+    });
+  }
+
+  // Mobile: swipe hints and stacked table labels
+  document.querySelectorAll('.m-scroll').forEach(function(el){
+    var hint = document.createElement('p');
+    hint.className = 'swipe-hint'; hint.setAttribute('aria-hidden','true');
+    hint.textContent = 'Swipe for more';
+    el.parentNode.insertBefore(hint, el);
+  });
+  document.querySelectorAll('.doc-table').forEach(function(t){
+    var heads = Array.prototype.map.call(t.querySelectorAll('thead th'), function(th){ return th.textContent; });
+    t.querySelectorAll('tbody tr').forEach(function(tr){
+      Array.prototype.forEach.call(tr.children, function(td, i){ td.setAttribute('data-label', heads[i] || ''); });
+    });
+  });
+
+  // Insights filter
+  var filters = document.querySelectorAll('.filter');
+  var posts = document.querySelectorAll('#posts .post');
+  filters.forEach(function(b){
+    b.addEventListener('click', function(){
+      var f = b.dataset.f, shown = 0;
+      filters.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      posts.forEach(function(p){ var on = f === 'all' || p.dataset.cat === f; p.hidden = !on; if(on) shown++; });
+      document.getElementById('posts-empty').hidden = shown > 0;
+    });
+  });
+
+  // Booking placeholder
+  document.getElementById('book-btn').addEventListener('click', function(e){
+    e.preventDefault();
+    document.getElementById('book-note').textContent = 'Booking link not connected yet. On the live site this opens your scheduling page.';
+  });
+
+  // Contact form (preview only)
+  var form = document.getElementById('form');
+  var status = document.getElementById('form-status');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var missing = [];
+    ['f-name','f-firm','f-email','f-msg'].forEach(function(id){
+      var el = document.getElementById(id);
+      var bad = !el.value.trim() || (el.type === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value.trim()));
+      el.setAttribute('aria-invalid', bad ? 'true' : 'false');
+      if(bad) missing.push(document.querySelector('label[for="'+id+'"]').firstChild.textContent.trim());
+    });
+    if(missing.length){
+      status.className = 'form-status err';
+      status.textContent = 'Please check: ' + missing.join(', ') + '.';
+      return;
+    }
+    status.className = 'form-status ok';
+    status.textContent = 'Preview only: this form is not connected to a backend yet, so nothing was sent. On the live site this message goes to your inbox or form service.';
+  });
+
+  // Cost-of-lost-time calculator
+  var fmt = function(n){ return '$' + Math.round(n).toLocaleString('en-US'); };
+  function calc(){
+    var v = function(id){ var x = parseFloat(document.getElementById(id).value); return isFinite(x) && x > 0 ? x : 0; };
+    var util = Math.min(v('c-util'), 100) / 100;
+    var hrsYear = v('c-staff') * v('c-hours') * 12;
+    var month = v('c-staff') * v('c-hours') * v('c-rate') * util;
+    document.getElementById('c-month').textContent = fmt(month);
+    document.getElementById('c-year').textContent = fmt(month * 12);
+    document.getElementById('c-hrs').textContent = Math.round(hrsYear).toLocaleString('en-US');
+  }
+  ['c-staff','c-rate','c-hours','c-util'].forEach(function(id){ document.getElementById(id).addEventListener('input', calc); });
+  calc();
+
+  // SEO table on build notes
+  var tbody = document.querySelector('#seo-table tbody');
+  var urls = {home:'/', services:'/services', work:'/work', firms:'/who-we-serve', engagements:'/how-we-engage', 'ai-governance':'/ai-governance', about:'/about', chatterbox:'/chatterbox', 'post-onboarding':'/chatterbox/new-hire-onboarding', contact:'/contact'};
+  pages.forEach(function(p){
+    if(!urls[p.id]) return;
+    var tr = document.createElement('tr');
+    [p.dataset.sheet + ' ' + p.dataset.sheetname, urls[p.id], p.dataset.title, p.dataset.desc].forEach(function(t, i){
+      var td = document.createElement('td');
+      if(i === 1){ var c = document.createElement('code'); c.textContent = t; td.appendChild(c); } else td.textContent = t;
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+})();
+</script>
+
+</body>
+</html>
