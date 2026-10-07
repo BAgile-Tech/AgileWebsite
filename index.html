@@ -320,10 +320,7 @@ form.contact{background:var(--white);border:1px solid var(--rule);padding:clamp(
 .page:focus{outline:none}
 
 /* v2 additions */
-.hero-photo{aspect-ratio:4/3;max-width:100%;border:1.5px dashed var(--line-on-navy);background:rgba(11,29,53,.6);display:flex;flex-direction:column;justify-content:center;gap:.6rem;padding:clamp(20px,3vw,32px);color:var(--muted-on-navy)}
-.hero-photo .ph-label{color:var(--line-on-navy)}
-.hero-photo p{color:var(--muted-on-navy);font-size:.98rem}
-.hero-photo small{font-family:var(--mono);font-size:.74rem}
+.hero-photo{display:block;width:100%;aspect-ratio:4/3;max-width:100%;object-fit:cover;border:1px solid rgba(141,180,218,.45);background:var(--navy-2)}
 .hero-facts{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(141,180,218,.45)}
 .hero-facts li{margin:0;padding:.8rem .8rem .2rem 0;display:flex;flex-direction:column;gap:.15rem}
 .hero-facts b{font-family:var(--display);font-stretch:112%;font-size:1.15rem;color:#fff;font-weight:650}
@@ -456,7 +453,7 @@ a.post:hover h3{color:var(--accent)}
   .wordmark img{height:30px}
   .menu-btn{padding:.5rem .6rem}
   .hero .eyebrow{font-size:.7rem;line-height:1.7}
-  .hero-photo{display:none}
+  .hero-photo{aspect-ratio:16/10}
   .hero-facts{border-top-color:rgba(141,180,218,.3)}
   .btn-row{width:100%}
   .btn-row .btn{flex:1 1 100%;justify-content:center;padding-block:1rem}
@@ -581,11 +578,7 @@ a.post:hover h3{color:var(--accent)}
         </div>
       </div>
       <figure style="margin:0" class="stack">
-        <div class="hero-photo" role="img" aria-label="Photo placeholder: a real client studio or equipment room, used with permission">
-          <span class="ph-label">Photo placeholder</span>
-          <p>A real photo: a client studio floor, a rack you installed, or a designer's workstation running Revit. Used with the client's permission.</p>
-          <small>alt: "[Describe the actual photo]"</small>
-        </div>
+        <img class="hero-photo" src="/scott-webb-WZpNVE-oFbg-unsplash.jpg" alt="Studio sign mounted on a warm wood wall" />
         <ul class="hero-facts" aria-label="At a glance">
           <li><b>2001</b><span>In business since</span></li>
           <li><b>3</b><span>Person team, no call center</span></li>
