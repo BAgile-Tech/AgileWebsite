@@ -124,10 +124,11 @@ li{margin-block:.25em}
 
 /* Hero */
 .hero{padding-block:clamp(48px,7vw,96px) clamp(56px,7vw,96px)}
-.hero-grid{display:grid;gap:clamp(32px,5vw,64px);grid-template-columns:minmax(0,1fr)}
-@media (min-width: 980px){.hero-grid{grid-template-columns:6fr 5fr;align-items:center}}
+.hero-grid{display:grid;grid-template-columns:minmax(0,860px);justify-content:center}
+.hero .stack-lg{align-items:center;text-align:center}
 .hero h1{max-width:18ch}
-.hero .lede{color:var(--muted-on-navy);font-size:1.15rem}
+.hero .lede{color:var(--muted-on-navy);font-size:1.15rem;text-align:center}
+.hero .btn-row{justify-content:center}
 .drawing{border:1px solid rgba(141,180,218,.4);background:var(--navy-2);padding:10px}
 .drawing svg{display:block;width:100%;height:auto}
 .fig-cap{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--muted-on-navy);margin-top:.6rem;text-transform:uppercase}
@@ -331,11 +332,6 @@ form.contact{background:var(--white);border:1px solid var(--rule);padding:clamp(
 .page:focus{outline:none}
 
 /* v2 additions */
-.hero-photo{display:block;width:100%;aspect-ratio:4/5;max-width:100%;object-fit:cover;object-position:center;border:1px solid rgba(141,180,218,.45);background:var(--navy-2)}
-.hero-facts{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(141,180,218,.45)}
-.hero-facts li{margin:0;padding:.8rem .8rem .2rem 0;display:flex;flex-direction:column;gap:.15rem}
-.hero-facts b{font-family:var(--display);font-stretch:112%;font-size:1.15rem;color:#fff;font-weight:650}
-.hero-facts span{font-size:.8rem;color:var(--muted-on-navy);line-height:1.35}
 .cases{display:grid;gap:clamp(20px,3vw,28px);grid-template-columns:minmax(0,1fr)}
 @media (min-width:1000px){.cases.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .case{background:var(--white);border:1px solid var(--rule);display:flex;flex-direction:column}
@@ -464,8 +460,6 @@ a.post:hover h3{color:var(--accent)}
   .wordmark img{height:30px}
   .menu-btn{padding:.5rem .6rem}
   .hero .eyebrow{font-size:.7rem;line-height:1.7}
-  .hero-photo{aspect-ratio:4/5}
-  .hero-facts{border-top-color:rgba(141,180,218,.3)}
   .btn-row{width:100%}
   .btn-row .btn{flex:1 1 100%;justify-content:center;padding-block:1rem}
   .cta-inner .btn-row .btn{flex:1 1 100%}
@@ -588,14 +582,6 @@ a.post:hover h3{color:var(--accent)}
           <a class="btn btn-ghost" href="#work">See our work</a>
         </div>
       </div>
-      <figure style="margin:0" class="stack">
-        <img class="hero-photo" src="/scott-webb-WZpNVE-oFbg-unsplash.jpg" alt="Studio sign mounted on a warm wood wall" />
-        <ul class="hero-facts" aria-label="At a glance">
-          <li><b>2001</b><span>In business since</span></li>
-          <li><b>3</b><span>Person team, no call center</span></li>
-          <li><b>US-wide</b><span>Remote support. Weekly on-site, Boston to DC</span></li>
-        </ul>
-      </figure>
     </div>
   </section>
 
