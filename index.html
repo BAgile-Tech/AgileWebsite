@@ -66,9 +66,8 @@ li{margin-block:.25em}
 .header-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:68px}
 .wordmark{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--ink)}
 .wordmark:hover{color:var(--ink)}
-.wordmark svg{flex:none}
-.wordmark b{font-family:var(--display);font-stretch:118%;font-weight:750;font-size:1.12rem;letter-spacing:-.01em;line-height:1}
-.wordmark small{display:block;white-space:nowrap;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.wordmark img{flex:none;height:38px;width:auto;display:block}
+.site-footer .wordmark img{filter:brightness(0) invert(1);opacity:.92;height:34px}
 .nav{display:flex;align-items:center;gap:.25rem}
 .nav a{font-size:.92rem;font-weight:500;color:var(--ink);text-decoration:none;padding:.5rem .55rem;border-radius:2px;white-space:nowrap}
 .nav a:hover{color:var(--accent)}
@@ -454,9 +453,7 @@ a.post:hover h3{color:var(--accent)}
   .cta-band{padding-block:44px}
   .section-head{margin-bottom:24px}
   .lede{font-size:1.05rem}
-  .wordmark small{display:none}
-  .wordmark b{font-size:1rem}
-  .wordmark svg{width:28px;height:28px}
+  .wordmark img{height:30px}
   .menu-btn{padding:.5rem .6rem}
   .hero .eyebrow{font-size:.7rem;line-height:1.7}
   .hero-photo{display:none}
@@ -523,6 +520,9 @@ a.post:hover h3{color:var(--accent)}
 </style>
 
 <style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+  <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
 </head>
 <body>
 <a class="skip" href="#home" id="skip-link">Skip to main content</a>
@@ -530,13 +530,7 @@ a.post:hover h3{color:var(--accent)}
 <header class="site-header">
   <div class="wrap header-row">
     <a class="wordmark" href="#home" aria-label="Agile Networks home">
-      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
-        <rect x="1" y="1" width="32" height="32" fill="none" stroke="#0E1A2B" stroke-width="2"/>
-        <path d="M7 26 L17 8 L27 26" fill="none" stroke="#0E1A2B" stroke-width="2"/>
-        <path d="M11.5 19 H22.5" stroke="#B8481A" stroke-width="2"/>
-        <circle cx="17" cy="8" r="2.2" fill="#B8481A"/>
-      </svg>
-      <span><b>Agile Networks</b><small>Wordmark placeholder</small></span>
+      <img src="/agile-networks-stacked.svg" alt="Agile Networks" />
     </a>
     <a class="btn btn-primary m-cta" href="#contact">Book a call</a>
     <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="site-nav">
@@ -2154,9 +2148,8 @@ a.post:hover h3{color:var(--accent)}
   <div class="wrap">
     <div class="foot-grid">
       <div class="stack">
-        <a class="wordmark" href="#home" style="color:#fff" aria-label="Agile Networks home">
-          <svg width="30" height="30" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" fill="none" stroke="#E9EEF4" stroke-width="2"/><path d="M7 26 L17 8 L27 26" fill="none" stroke="#E9EEF4" stroke-width="2"/><path d="M11.5 19 H22.5" stroke="#E07A3F" stroke-width="2"/><circle cx="17" cy="8" r="2.2" fill="#E07A3F"/></svg>
-          <span><b style="color:#fff">Agile Networks</b></span>
+        <a class="wordmark" href="#home" aria-label="Agile Networks home">
+          <img src="/agile-networks-stacked.svg" alt="Agile Networks" />
         </a>
         <p>Managed IT for architecture, engineering and construction firms. On site along the Boston-DC corridor, remote across the US. In business since 2001.</p>
       </div>
