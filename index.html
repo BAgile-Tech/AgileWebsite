@@ -333,8 +333,13 @@ form.contact{background:var(--white);border:1px solid var(--rule);padding:clamp(
 
 /* v2 additions */
 .home-why{background:var(--white)}
-.home-image-break{padding-block:clamp(32px,5vw,64px);background:var(--paper)}
-.home-image-break img{display:block;width:100%;max-width:none;height:auto;margin-inline:auto;border:1px solid var(--rule);border-radius:16px;box-shadow:0 18px 40px rgba(5,16,38,.14)}
+.home-image-break{padding-block:clamp(48px,7vw,88px);background:var(--white)}
+.home-image-frame{position:relative;display:flex;align-items:center;min-height:clamp(360px,38vw,560px)}
+.home-image-break img{display:block;width:75%;height:auto;border:1px solid var(--rule);border-radius:16px;box-shadow:0 18px 40px rgba(5,16,38,.14)}
+.home-image-copy{position:absolute;right:0;top:50%;width:min(42%,460px);transform:translateY(-50%);padding:clamp(28px,4vw,52px);background:var(--navy);color:var(--text-on-navy);border:1px solid rgba(255,255,255,.2);border-radius:16px;box-shadow:0 18px 40px rgba(5,16,38,.2)}
+.home-image-copy h2{margin-top:.7rem;color:var(--text-on-navy)}
+.home-image-copy p:last-child{margin-bottom:0;color:var(--text-on-navy)}
+@media (max-width:640px){.home-image-frame{display:block;min-height:0}.home-image-break img{width:100%}.home-image-copy{position:relative;top:auto;right:auto;width:auto;transform:none;margin:-24px 16px 0;padding:28px 24px}}
 .firms-image-section{padding-block:clamp(48px,7vw,88px);background:var(--navy-2)}
 .firms-image-feature{display:grid;gap:clamp(28px,5vw,72px);grid-template-columns:minmax(0,1fr);align-items:stretch}
 .firms-image{display:block;width:100%;height:auto;aspect-ratio:5 / 4;object-fit:cover;object-position:center;border:1px solid var(--rule);border-radius:16px;box-shadow:0 18px 40px rgba(5,16,38,.14)}
@@ -630,8 +635,13 @@ a.post:hover h3{color:var(--accent)}
   </section>
 
   <section class="home-image-break" aria-label="Creative workspace">
-    <div class="wrap">
+    <div class="wrap home-image-frame">
       <img src="/Unsplash-Punch.webp" alt="Creative workspace with a desk, plant and the words Punch Today in the Face on the wall" />
+      <div class="home-image-copy">
+        <p class="eyebrow">Technology with intention</p>
+        <h2>Have IT fight for you, not fight you.</h2>
+        <p>We've deployed new tools at other firms before most people have heard of them. We forecast what's coming, so you can adopt new technology at your own pace, when you're ready. And we know which battles are worth fighting and which to skip.</p>
+      </div>
     </div>
   </section>
 
