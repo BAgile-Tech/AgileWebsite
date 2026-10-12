@@ -4,9 +4,9 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 
 // Change this once chatterbox.agilenet.works (or another custom domain) is set up in Substack.
-const SUBSTACK_URL = process.env.SUBSTACK_URL || 'https://brianagile.substack.com';
+const SUBSTACK_URL = process.env.SUBSTACK_URL || 'https://agilenetworks.substack.com';
 const OUT = new URL('../public/substack.json', import.meta.url);
-const MAX_POSTS = 6;
+const MAX_POSTS = 12;
 
 const decode = (s) => s
   .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1')
