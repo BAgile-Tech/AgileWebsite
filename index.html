@@ -111,7 +111,6 @@ li{margin-block:.25em}
 #work{--gx:65%;--gy:18%;--gb:.56;--gc1:#0D2038;--gc2:#16345A;--gc3:#07182E;--ga:15,120,165}
 #engagements{--gx:12%;--gy:55%;--gb:.66;--gc1:#0A1B34;--gc2:#0E2A4E;--gc3:#051228;--ga:0,115,175}
 #chatterbox{--gx:82%;--gy:42%;--gb:.82;--gc1:#081A2E;--gc2:#10325C;--gc3:#041026;--ga:0,150,200}
-#post-onboarding{--gx:38%;--gy:48%;--gb:.54;--gc1:#0B1D32;--gc2:#122E50;--gc3:#06142A;--ga:25,105,155}
 #contact{--gx:52%;--gy:88%;--gb:.74;--gc1:#0C1E36;--gc2:#0E2C52;--gc3:#07142E;--ga:0,135,185}
 .on-navy p,.on-navy li{color:var(--text-on-navy)}
 .on-navy .lede{color:var(--muted-on-navy)}
@@ -414,6 +413,9 @@ form.contact{background:var(--white);border:1px solid var(--rule);padding:clamp(
 .mini-flow{list-style:none;counter-reset:mf;padding:0;margin:0;display:flex;flex-direction:column;gap:.35rem;width:100%}
 .mini-flow li{counter-increment:mf;margin:0;font-family:var(--mono);font-size:.8rem;color:var(--text-on-navy);display:flex;gap:.7rem;align-items:center;padding:.3rem 0;border-bottom:1px solid rgba(141,180,218,.25)}
 .mini-flow li::before{content:counter(mf);color:var(--focus);min-width:1.2rem}
+.feature-art.has-img{padding:0;background:var(--navy)}
+.feature-art.has-img img{display:block;width:100%;height:100%;object-fit:cover}
+.feature-tile{font-family:var(--display);font-stretch:118%;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#fff;line-height:1.1}
 .feature-body{padding:clamp(22px,3vw,40px);display:flex;flex-direction:column;gap:.9rem;justify-content:center}
 .feature-body .cat,.li-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
 .feature-body p{color:var(--muted)}
@@ -593,7 +595,7 @@ a.post:hover h3{color:var(--accent)}
           <a href="#engagements" data-pages="engagements">How We Engage</a>
         </div>
       </div>
-      <a href="#chatterbox" data-pages="chatterbox post-onboarding">Chatterbox</a>
+      <a href="#chatterbox" data-pages="chatterbox">Chatterbox</a>
       <a href="#contact" class="btn btn-primary">Talk to a Specialist</a>
     </nav>
   </div>
@@ -791,7 +793,7 @@ a.post:hover h3{color:var(--accent)}
     <div class="wrap">
       <div class="section-head split" style="margin-bottom:0">
         <div class="stack"><p class="eyebrow">From Chatterbox</p><h2 id="home-ch-h">How we onboard a new hire, step by step</h2></div>
-        <p class="lede">Setup sheet, role profile, approved software, licenses, a hardware check, a review date, the setup itself, and a video walkthrough for the office manager. <a href="#post-onboarding" class="arrow">Read the article </a></p>
+        <p class="lede"><span id="home-ch-text">Setup sheet, role profile, approved software, licenses, a hardware check, a review date, the setup itself, and a video walkthrough for the office manager.</span> <a id="home-ch-link" href="/chatterbox/new-hire-onboarding/" class="arrow">Read the article </a></p>
       </div>
     </div>
   </section>
@@ -848,7 +850,7 @@ a.post:hover h3{color:var(--accent)}
               <li>Network design and management: switching, firewalls, Wi-Fi, VPN and remote access</li>
               <li>Windows Server and Hyper-V administration</li>
               <li>Workstation lifecycle: spec, image, deploy, support, retire</li>
-              <li>New hire onboarding built on role profiles, with a video walkthrough of every setup (<a href="#post-onboarding">how it works</a>)</li>
+              <li>New hire onboarding built on role profiles, with a video walkthrough of every setup (<a href="/chatterbox/new-hire-onboarding/">how it works</a>)</li>
               <li>Microsoft 365 and Entra ID administration</li>
               <li>Cloud infrastructure and hybrid setups</li>
               <li>Vendor management for AEC software licensing and renewals</li>
@@ -1825,40 +1827,8 @@ a.post:hover h3{color:var(--accent)}
     </div>
   </section>
 
-  <section class="section" aria-labelledby="feat-h">
-    <div class="wrap">
-      <a class="feature" href="#post-onboarding" aria-labelledby="feat-h">
-        <div class="feature-art" aria-hidden="true">
-          <ol class="mini-flow">
-            <li>Setup sheet</li><li>Role profile</li><li>Approved software</li><li>Licenses</li><li>Hardware check</li><li>Review date</li><li>Setup</li><li>Video to office manager</li>
-          </ol>
-        </div>
-        <div class="feature-body">
-          <span class="cat">Featured · Managed IT</span>
-          <h2 id="feat-h">From setup sheet to video walkthrough: how we onboard a new hire</h2>
-          <p>Eight steps between an office manager filling in one form and a new designer sitting down to a working machine, with licenses accounted for and a hardware review already on the calendar.</p>
-          <span class="more arrow">Read the article </span>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <section class="section tint" aria-labelledby="ss-h">
-    <div class="wrap">
-      <div class="section-head split">
-        <div class="stack"><p class="eyebrow">On Substack</p><h2 id="ss-h">Latest posts</h2></div>
-        <div class="stack">
-          <p class="lede">Two posts a month on running IT at an AEC firm. Read them on Substack, or get them by email.</p>
-          <div class="btn-row"><a class="btn btn-primary arrow" data-substack="subscribe" href="https://agilenetworks.substack.com/subscribe" target="_blank" rel="noopener">Subscribe</a><a class="btn btn-ghost" data-substack="home" href="https://agilenetworks.substack.com" target="_blank" rel="noopener">All posts</a></div>
-        </div>
-      </div>
-      <div class="posts m-scroll" id="ss-posts" aria-live="polite"></div>
-      <div class="btn-row" id="ss-more-row" style="margin-top:1.4rem" hidden><button class="btn btn-ghost" id="ss-more" type="button">Read more posts</button></div>
-      <div class="feed-empty" id="ss-fallback" hidden>
-        <p>New Chatterbox posts are published on Substack.</p>
-        <a class="arrow" data-substack="home" href="https://agilenetworks.substack.com" target="_blank" rel="noopener">Read Chatterbox on Substack </a>
-      </div>
-    </div>
+  <section class="section" id="feature-slot" aria-labelledby="feat-h" hidden>
+    <div class="wrap" id="feature-wrap"></div>
   </section>
 
   <section class="section" aria-labelledby="li-h">
@@ -1879,10 +1849,10 @@ a.post:hover h3{color:var(--accent)}
   </section>
 
 
-  <section class="section" aria-labelledby="art-h">
+  <section class="section tint" id="art-section" aria-labelledby="art-h" hidden>
     <div class="wrap">
-      <div class="section-head"><p class="eyebrow">Articles</p><h2 id="art-h">All articles</h2></div>
-      <div class="filters" role="group" aria-label="Filter articles by topic">
+      <div class="section-head"><p class="eyebrow">Articles</p><h2 id="art-h">More articles</h2></div>
+      <div class="filters" role="group" aria-label="Filter articles by topic" id="art-filters">
         <button class="filter" aria-pressed="true" data-f="all">All</button>
         <button class="filter" aria-pressed="false" data-f="managed">Managed IT</button>
         <button class="filter" aria-pressed="false" data-f="egnyte">Egnyte &amp; files</button>
@@ -1890,15 +1860,8 @@ a.post:hover h3{color:var(--accent)}
         <button class="filter" aria-pressed="false" data-f="ai">AI governance</button>
         <button class="filter" aria-pressed="false" data-f="security">Security</button>
       </div>
-      <div class="posts" id="posts">
-        <a class="post" data-cat="managed" href="#post-onboarding" style="text-decoration:none;color:var(--ink)"><div class="post-img post-img-real" aria-hidden="true"><span>8 steps</span></div><div class="post-body"><span class="cat">Managed IT</span><h3>From setup sheet to video walkthrough: how we onboard a new hire</h3><p>Role profiles, approved software, license checks and a hardware review date, before the new hire's first day.</p><span class="meta">[Date] · About 6 min read</span></div></a>
-        <article class="post" data-cat="egnyte"><div class="ph post-img"><span class="ph-label">Featured image placeholder</span></div><div class="post-body"><span class="cat">Egnyte &amp; files</span><h3>[Suggested topic] Planning a file server to Egnyte migration without stopping project work</h3><p>[Excerpt placeholder]</p><span class="meta">[Date] · [Read time]</span></div></article>
-        <article class="post" data-cat="software"><div class="ph post-img"><span class="ph-label">Featured image placeholder</span></div><div class="post-body"><span class="cat">AEC software</span><h3>[Suggested topic] Why your central model is slow: network, storage or Revit?</h3><p>[Excerpt placeholder]</p><span class="meta">[Date] · [Read time]</span></div></article>
-        <article class="post" data-cat="ai"><div class="ph post-img"><span class="ph-label">Featured image placeholder</span></div><div class="post-body"><span class="cat">AI governance</span><h3>[Suggested topic] A one-page AI policy for architecture firms</h3><p>[Excerpt placeholder]</p><span class="meta">[Date] · [Read time]</span></div></article>
-        <article class="post" data-cat="software"><div class="ph post-img"><span class="ph-label">Featured image placeholder</span></div><div class="post-body"><span class="cat">AEC software</span><h3>[Suggested topic] Speccing workstations for Revit and Enscape</h3><p>[Excerpt placeholder]</p><span class="meta">[Date] · [Read time]</span></div></article>
-        <article class="post" data-cat="security"><div class="ph post-img"><span class="ph-label">Featured image placeholder</span></div><div class="post-body"><span class="cat">Security</span><h3>[Suggested topic] Backups you've actually tested: a checklist for principals</h3><p>[Excerpt placeholder]</p><span class="meta">[Date] · [Read time]</span></div></article>
-      </div>
-      <p id="posts-empty" hidden style="margin-top:1rem;color:var(--muted)">No articles in this topic yet.</p>
+      <div class="posts" id="posts" aria-live="polite"></div>
+      <div class="btn-row" id="posts-more-row" style="margin-top:1.4rem" hidden><button class="btn btn-ghost" id="posts-more" type="button">Read more articles</button></div>
     </div>
   </section>
 
@@ -1913,127 +1876,6 @@ a.post:hover h3{color:var(--accent)}
         <p class="ph" style="padding:.6rem .8rem;background:transparent;color:var(--muted-on-navy);border-color:var(--line-on-navy)">[Working title and launch timing, once decided]</p>
         <p>Run an AEC firm and have a story worth telling? We're lining up first guests now.</p>
         <div class="btn-row"><a class="btn btn-primary arrow" href="#contact">Suggest a guest</a></div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ===================== POST: ONBOARDING ===================== -->
-<div class="page" id="post-onboarding" tabindex="-1" hidden data-sheet="A-610" data-sheetname="Chatterbox Article"
-  data-title="How We Onboard a New Hire at an AEC Firm | Chatterbox | Agile Networks"
-  data-desc="The eight-step process Agile Networks uses to onboard new staff at architecture and engineering firms: setup sheet, role profile, approved software, licenses, hardware check, review date, setup and a video walkthrough.">
-
-  <article aria-labelledby="po-h1">
-    <header class="page-hero on-navy">
-      <div class="wrap article-head">
-        <p class="eyebrow"><a href="#chatterbox" style="color:var(--line-on-navy);text-decoration:none">Chatterbox</a> · Managed IT</p>
-        <h1 id="po-h1">From setup sheet to video walkthrough: how we onboard a new hire</h1>
-        <p class="lede">A new designer's first morning says a lot about a firm. Here's the process we use so that morning is spent on project work, not waiting for logins.</p>
-        <p class="byline">[Author name] · [Date] · About 6 min read</p>
-      </div>
-    </header>
-
-    <div class="section">
-      <div class="wrap">
-        <ol class="flow" aria-label="The eight onboarding steps">
-          <li><b>Setup sheet</b><span>Office manager fills in one form</span></li>
-          <li><b>Role profile</b><span>The hire is matched to an avatar</span></li>
-          <li><b>Approved software</b><span>Only what the role needs</span></li>
-          <li><b>Licenses</b><span>Seats checked and assigned</span></li>
-          <li><b>Hardware check</b><span>Is the machine fit for the role?</span></li>
-          <li><b>Review date</b><span>Next hardware review scheduled</span></li>
-          <li><b>Setup</b><span>Accounts, software, security, files</span></li>
-          <li><b>Video</b><span>Walkthrough sent to office manager</span></li>
-        </ol>
-
-        <div class="prose">
-          <p>Most onboarding problems aren't technical. They come from nobody writing down what the new person needs until the day they show up. The process below moves every decision earlier, and it leaves the office manager with a record of exactly what was delivered.</p>
-
-          <h2>1. The setup sheet</h2>
-          <p>It starts with one form the office manager fills in as soon as an offer is accepted. It asks for the basics we need, and nothing we can look up ourselves.</p>
-          <div class="table-wrap"><table class="doc-table">
-            <caption>Example setup sheet fields</caption>
-            <thead><tr><th scope="col">Field</th><th scope="col">Why we ask</th></tr></thead>
-            <tbody>
-              <tr><td>Name and start date</td><td>Accounts and hardware ready the day before</td></tr>
-              <tr><td>Role</td><td>Picks the role profile (step 2)</td></tr>
-              <tr><td>Office, remote or hybrid</td><td>Desk setup on site, or hardware shipped to their home</td></tr>
-              <tr><td>Manager and project teams</td><td>File and project platform access</td></tr>
-              <tr><td>Anything unusual</td><td>Extra software, accessibility needs, a specific plugin</td></tr>
-            </tbody>
-          </table></div>
-
-          <h2>2. The role profile, or avatar</h2>
-          <p>Every firm we support has a small set of role profiles. We call them avatars. Each one defines the software, file access and class of hardware a person in that role needs. A new hire is matched to an avatar instead of starting from a blank list.</p>
-          <div class="table-wrap"><table class="doc-table">
-            <caption>Example avatars (each firm's set is different)</caption>
-            <thead><tr><th scope="col">Avatar</th><th scope="col">Core software</th><th scope="col">Hardware class</th></tr></thead>
-            <tbody>
-              <tr><td>Designer</td><td>Revit, Rhino, Enscape, Bluebeam, Microsoft 365, Egnyte</td><td>Design workstation with a dedicated GPU</td></tr>
-              <tr><td>Project manager</td><td>Revit (viewing), Bluebeam, ACC or Procore, Microsoft 365, Egnyte</td><td>Business laptop with a docking station</td></tr>
-              <tr><td>Visualization</td><td>Enscape or other render tools, Rhino, Adobe Creative Cloud</td><td>High-end GPU workstation</td></tr>
-              <tr><td>Operations and finance</td><td>Microsoft 365, accounting and HR platforms, Egnyte</td><td>Business laptop</td></tr>
-            </tbody>
-          </table></div>
-          <p>Avatars make onboarding consistent, and they make the next steps faster because most of the answers are already decided.</p>
-
-          <h2>3. The approved software list</h2>
-          <p>The avatar pulls from the firm's approved software list. If it's not on the list, it doesn't get installed without a quick approval. That keeps licensing clean, keeps unvetted tools off firm machines, and it's the same list your AI policy points to when someone asks whether a new AI tool is allowed.</p>
-
-          <h2>4. Software assets and licenses</h2>
-          <p>Before anything is installed, we check the firm's license records. Is there a free Autodesk seat? A Bluebeam license from someone who left? If a new seat has to be bought, the office manager hears about the cost before it's ordered, not when the invoice arrives. The assignment is recorded against the person in the asset register.</p>
-
-          <h2>5. Is the hardware fit for purpose?</h2>
-          <p>Next we compare the machine that's available against the avatar's hardware class. A laptop that was fine for a project manager may struggle with Enscape for a designer. If an existing machine fits, it's redeployed. If it doesn't, the office manager gets a quote with the reason, in time to order.</p>
-
-          <h2>6. Set a hardware review date</h2>
-          <p>Every machine that goes out gets a review date in the asset record. When that date comes up, we check the machine against the role it's serving now. Refreshes get planned and budgeted instead of forced by a failure in the middle of a deadline.</p>
-
-          <h2>7. The setup</h2>
-          <ul>
-            <li>Microsoft 365 and Entra ID account, with multi-factor authentication</li>
-            <li>Egnyte access and the right project and department folders</li>
-            <li>ACC, BIM 360 or Procore access for their projects</li>
-            <li>Software from the avatar, including the Revit versions their projects need</li>
-            <li>Endpoint protection, backup and device management</li>
-            <li>Printers, plotters and email signature</li>
-          </ul>
-          <p>Then we test it the way the new hire will use it: sign in, open a project file, print.</p>
-
-          <h2>8. A video walkthrough to the office manager</h2>
-          <p>The last step is a short screen recording of the finished setup: accounts signed in, software installed, project files opening. It goes to the office manager, who can forward it to the new hire as a first-day orientation.</p>
-          <figure class="video-ph">
-          <div class="video-frame" role="img" aria-label="Video placeholder: example new-hire setup walkthrough">
-            <span class="play" aria-hidden="true"><svg width="22" height="24" viewBox="0 0 22 24"><path d="M2 2 L20 12 L2 22 Z" fill="currentColor"/></svg></span>
-            <span class="v-title">Example setup walkthrough</span>
-            <span class="v-meta">Video placeholder · about 30 sec · captions on</span>
-          </div>
-          <figcaption>A real setup video of the kind we send office managers, with names and firm details blurred.</figcaption>
-          <details class="transcript"><summary>Read the transcript</summary><p class="ph" style="padding:.6rem .8rem">[Transcript placeholder. Paste the caption text here so it's readable without playing the video and visible to search engines.]</p></details>
-        </figure>
-          <p>It also answers a question every office manager eventually gets from a principal: what exactly are we paying for? The video is the answer, with a date on it.</p>
-
-          <h2>Why this matters</h2>
-          <ul>
-            <li>New hires start on project work, not waiting for accounts</li>
-            <li>License spend is visible before it happens</li>
-            <li>Hardware refreshes are planned, not emergencies</li>
-            <li>The office manager has a record of every setup</li>
-          </ul>
-
-          <div class="callout"><strong>Want this at your firm?</strong> New hire onboarding is part of our <a href="#svc-managed">managed IT service</a>. We can build your avatars and approved software list as part of onboarding. <a href="#contact">Talk to a specialist</a>.</div>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <section class="section tint" aria-labelledby="more-h">
-    <div class="wrap">
-      <div class="section-head split"><div class="stack"><p class="eyebrow">Keep reading</p><h2 id="more-h">Related</h2></div></div>
-      <div class="cards six m-scroll">
-        <a class="card" href="#svc-license"><span class="code">Service</span><h3>Software License &amp; Spend Review</h3><p>See every seat and renewal in one place.</p><span class="more arrow">Details </span></a>
-        <a class="card" href="#ai-sample"><span class="code">AI governance</span><h3>A one-page staff guideline</h3><p>The approved-tools rule, applied to AI.</p><span class="more arrow">See the sample </span></a>
-        <a class="card" href="#work"><span class="code">Our work</span><h3>Case studies</h3><p>Egnyte migration, office move and Entra ID projects.</p><span class="more arrow">See our work </span></a>
       </div>
     </div>
   </section>
@@ -2256,6 +2098,7 @@ a.post:hover h3{color:var(--accent)}
 
   function route(){
     var h = (location.hash || '').slice(1) || 'home';
+    if(h === 'post-onboarding'){ location.replace('/chatterbox/new-hire-onboarding/'); return; }
     var target = null;
     try { target = document.getElementById(h); } catch(e){}
     var page = target ? (target.classList.contains('page') ? target : target.closest('.page')) : null;
@@ -2337,56 +2180,83 @@ a.post:hover h3{color:var(--accent)}
     });
   });
 
-  // Insights filter
-  var filters = document.querySelectorAll('.filter');
-  var posts = document.querySelectorAll('#posts .post');
-  filters.forEach(function(b){
-    b.addEventListener('click', function(){
-      var f = b.dataset.f, shown = 0;
-      filters.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-      posts.forEach(function(p){ var on = f === 'all' || p.dataset.cat === f; p.hidden = !on; if(on) shown++; });
-      document.getElementById('posts-empty').hidden = shown > 0;
-    });
-  });
-
-  // Chatterbox feeds: public/substack.json (refreshed daily by a GitHub Action) and public/linkedin.json (edited by hand)
+  // Chatterbox: posts come from public/posts.json (generated from content/posts/ at build time); LinkedIn backup is public/linkedin.json (edited by hand)
   function fmtDate(iso){ if(/^\d{4}-\d{2}-\d{2}$/.test(iso || '')) iso += 'T12:00:00'; var d = new Date(iso); return isNaN(d) ? '' : d.toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'}); }
   function el(tag, cls, text){ var e = document.createElement(tag); if(cls) e.className = cls; if(text) e.textContent = text; return e; }
   function safeUrl(u){ return /^https:\/\//.test(u || '') ? u : null; }
   function getJSON(url){ return fetch(url, {cache:'no-cache'}).then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); }); }
 
-  getJSON('/substack.json').then(function(d){
-    if(d.url && safeUrl(d.url)){ document.querySelectorAll('[data-substack]').forEach(function(a){ a.href = d.url + (a.dataset.substack === 'subscribe' ? '/subscribe' : ''); }); }
-    var list = (d.posts || []).filter(function(p){ return safeUrl(p.link) && p.title; }).slice(0, 12);
+  var PAGE = 6;
+  function postCard(p){
+    var a = el('a', 'post'); a.href = p.url; a.dataset.cat = p.topic;
+    a.style.textDecoration = 'none'; a.style.color = 'var(--ink)';
+    var ph = el('div', 'post-img-real'); ph.setAttribute('aria-hidden', 'true'); ph.appendChild(el('span', null, p.tile || 'Chatterbox'));
+    if(p.image){
+      var img = el('img', 'post-thumb'); img.src = p.image; img.alt = p.imageAlt || ''; img.loading = 'lazy';
+      img.onerror = function(){ img.replaceWith(ph); };
+      a.appendChild(img);
+    } else { a.appendChild(ph); }
+    var body = el('div', 'post-body');
+    body.appendChild(el('span', 'cat', p.topicLabel));
+    body.appendChild(el('h3', null, p.title));
+    var sm = p.summary || ''; body.appendChild(el('p', null, sm.length > 160 ? sm.slice(0, 157).replace(/\s+\S*$/, '') + '...' : sm));
+    body.appendChild(el('span', 'meta', p.dateLabel + ' · About ' + p.readMinutes + ' min read'));
+    a.appendChild(body); return a;
+  }
+  function renderFeature(p){
+    var wrap = document.getElementById('feature-wrap');
+    var a = el('a', 'feature'); a.href = p.url; a.setAttribute('aria-labelledby', 'feat-h');
+    var art = el('div', 'feature-art'); art.setAttribute('aria-hidden', 'true');
+    if(p.image){ art.classList.add('has-img'); var im = el('img'); im.src = p.image; im.alt = ''; im.onerror = function(){ art.classList.remove('has-img'); im.replaceWith(el('span', 'feature-tile', p.tile || p.topicLabel)); }; art.appendChild(im); }
+    else art.appendChild(el('span', 'feature-tile', p.tile || p.topicLabel));
+    var body = el('div', 'feature-body');
+    body.appendChild(el('span', 'cat', 'Latest · ' + p.topicLabel));
+    var h = el('h2', null, p.title); h.id = 'feat-h'; body.appendChild(h);
+    body.appendChild(el('p', null, p.summary));
+    body.appendChild(el('span', 'more arrow', 'Read the article '));
+    a.appendChild(art); a.appendChild(body); wrap.appendChild(a);
+    document.getElementById('feature-slot').hidden = false;
+  }
+  getJSON('/posts.json').then(function(d){
+    var list = (d.posts || []).filter(function(p){ return p.url && p.title; });
     if(!list.length) throw new Error('empty');
-    var wrap = document.getElementById('ss-posts');
-    var SS_FIRST = 6;
-    list.forEach(function(p, idx){
-      var a = el('a', 'post');
-      if(idx >= SS_FIRST) a.hidden = true; a.href = p.link; a.target = '_blank'; a.rel = 'noopener';
-      a.style.textDecoration = 'none'; a.style.color = 'var(--ink)';
-      var ph = el('div', 'post-img-real'); ph.appendChild(el('span', null, 'Chatterbox'));
-      if(safeUrl(p.image)){
-        var img = el('img', 'post-thumb'); img.src = p.image; img.alt = ''; img.loading = 'lazy';
-        img.onerror = function(){ img.replaceWith(ph); };
-        a.appendChild(img);
-      } else { a.appendChild(ph); }
-      var body = el('div', 'post-body');
-      body.appendChild(el('span', 'cat', 'Substack'));
-      body.appendChild(el('h3', null, p.title));
-      if(p.summary) body.appendChild(el('p', null, p.summary.length > 160 ? p.summary.slice(0, 157).replace(/\s+\S*$/, '') + '...' : p.summary));
-      body.appendChild(el('span', 'meta', fmtDate(p.date) + ' · Read on Substack'));
-      a.appendChild(body); wrap.appendChild(a);
-    });
-    if(list.length > SS_FIRST){
-      var more = document.getElementById('ss-more'), row = document.getElementById('ss-more-row');
-      row.hidden = false;
-      more.addEventListener('click', function(){
-        wrap.querySelectorAll('a.post[hidden]').forEach(function(a){ a.hidden = false; });
-        row.hidden = true;
-      });
+    renderFeature(list[0]);
+    var homeLink = document.getElementById('home-ch-link');
+    if(homeLink){
+      document.getElementById('home-ch-h').textContent = list[0].title;
+      document.getElementById('home-ch-text').textContent = list[0].summary;
+      homeLink.href = list[0].url;
     }
-  }).catch(function(){ document.getElementById('ss-fallback').hidden = false; document.getElementById('ss-posts').hidden = true; });
+    var rest = list.slice(1);
+    if(!rest.length) return;
+    var grid = document.getElementById('posts'), cards = rest.map(postCard), limit = PAGE, current = 'all';
+    cards.forEach(function(c){ grid.appendChild(c); });
+    var btns = document.querySelectorAll('#art-filters .filter');
+    btns.forEach(function(b){ if(b.dataset.f !== 'all' && !rest.some(function(p){ return p.topic === b.dataset.f; })) b.hidden = true; });
+    var visibleTopics = btns.length && Array.prototype.filter.call(btns, function(b){ return !b.hidden; }).length;
+    if(visibleTopics <= 2) document.getElementById('art-filters').hidden = true;
+    var moreRow = document.getElementById('posts-more-row');
+    function apply(){
+      var n = 0, total = 0;
+      cards.forEach(function(c){
+        var match = current === 'all' || c.dataset.cat === current;
+        if(match) total++;
+        var show = match && n < limit; if(show) n++;
+        c.hidden = !show;
+      });
+      moreRow.hidden = total <= n;
+    }
+    btns.forEach(function(b){
+      b.addEventListener('click', function(){
+        current = b.dataset.f; limit = PAGE;
+        btns.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        apply();
+      });
+    });
+    document.getElementById('posts-more').addEventListener('click', function(){ limit += PAGE; apply(); });
+    apply();
+    document.getElementById('art-section').hidden = false;
+  }).catch(function(){});
 
   // LinkedIn: Elfsight widget first; if it hasn't rendered ~10s after Chatterbox is shown, use public/linkedin.json
   function loadLinkedInBackup(){
@@ -2459,7 +2329,7 @@ a.post:hover h3{color:var(--accent)}
 
   // SEO table on build notes
   var tbody = document.querySelector('#seo-table tbody');
-  var urls = {home:'/', services:'/services', work:'/work', firms:'/who-we-serve', engagements:'/how-we-engage', 'ai-governance':'/ai-governance', about:'/about', chatterbox:'/chatterbox', 'post-onboarding':'/chatterbox/new-hire-onboarding', contact:'/contact'};
+  var urls = {home:'/', services:'/services', work:'/work', firms:'/who-we-serve', engagements:'/how-we-engage', 'ai-governance':'/ai-governance', about:'/about', chatterbox:'/chatterbox', contact:'/contact'};
   pages.forEach(function(p){
     if(!urls[p.id]) return;
     var tr = document.createElement('tr');

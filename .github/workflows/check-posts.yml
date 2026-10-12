@@ -1,0 +1,23 @@
+name: Check blog posts
+
+# Runs when a post file changes. If a post has a mistake in its settings, this fails and GitHub emails you.
+on:
+  push:
+    paths:
+      - 'content/posts/**'
+      - 'scripts/build-posts.mjs'
+  pull_request:
+    paths:
+      - 'content/posts/**'
+      - 'scripts/build-posts.mjs'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run check-posts
