@@ -793,7 +793,7 @@ a.post:hover h3{color:var(--accent)}
     <div class="wrap">
       <div class="section-head split" style="margin-bottom:0">
         <div class="stack"><p class="eyebrow">From Chatterbox</p><h2 id="home-ch-h">How we onboard a new hire, step by step</h2></div>
-        <p class="lede"><span id="home-ch-text">Setup sheet, role profile, approved software, licenses, a hardware check, a review date, the setup itself, and a video walkthrough for the office manager.</span> <a id="home-ch-link" href="/chatterbox/new-hire-onboarding/" class="arrow">Read the article </a></p>
+        <p class="lede"><span id="home-ch-text">Setup sheet, role profile, approved software, licenses, a hardware check, a review date, the setup itself, and a video walkthrough for the office manager.</span> <a id="home-ch-link" href="/chatterbox/new-hire-onboarding/index.html" class="arrow">Read the article </a></p>
       </div>
     </div>
   </section>
@@ -850,7 +850,7 @@ a.post:hover h3{color:var(--accent)}
               <li>Network design and management: switching, firewalls, Wi-Fi, VPN and remote access</li>
               <li>Windows Server and Hyper-V administration</li>
               <li>Workstation lifecycle: spec, image, deploy, support, retire</li>
-              <li>New hire onboarding built on role profiles, with a video walkthrough of every setup (<a href="/chatterbox/new-hire-onboarding/">how it works</a>)</li>
+              <li>New hire onboarding built on role profiles, with a video walkthrough of every setup (<a href="/chatterbox/new-hire-onboarding/index.html">how it works</a>)</li>
               <li>Microsoft 365 and Entra ID administration</li>
               <li>Cloud infrastructure and hybrid setups</li>
               <li>Vendor management for AEC software licensing and renewals</li>
@@ -2098,7 +2098,8 @@ a.post:hover h3{color:var(--accent)}
 
   function route(){
     var h = (location.hash || '').slice(1) || 'home';
-    if(h === 'post-onboarding'){ location.replace('/chatterbox/new-hire-onboarding/'); return; }
+    if(h === 'post-onboarding'){ location.replace('/chatterbox/new-hire-onboarding/index.html'); return; }
+    if(/^\/chatterbox\/[a-z0-9-]+\/?$/.test(location.pathname)){ location.replace(location.pathname.replace(/\/?$/, '/') + 'index.html'); return; }
     var target = null;
     try { target = document.getElementById(h); } catch(e){}
     var page = target ? (target.classList.contains('page') ? target : target.closest('.page')) : null;
@@ -2188,7 +2189,7 @@ a.post:hover h3{color:var(--accent)}
 
   var PAGE = 6;
   function postCard(p){
-    var a = el('a', 'post'); a.href = p.url; a.dataset.cat = p.topic;
+    var a = el('a', 'post'); a.href = p.url + 'index.html'; a.dataset.cat = p.topic;
     a.style.textDecoration = 'none'; a.style.color = 'var(--ink)';
     var ph = el('div', 'post-img-real'); ph.setAttribute('aria-hidden', 'true'); ph.appendChild(el('span', null, p.tile || 'Chatterbox'));
     if(p.image){
@@ -2205,7 +2206,7 @@ a.post:hover h3{color:var(--accent)}
   }
   function renderFeature(p){
     var wrap = document.getElementById('feature-wrap');
-    var a = el('a', 'feature'); a.href = p.url; a.setAttribute('aria-labelledby', 'feat-h');
+    var a = el('a', 'feature'); a.href = p.url + 'index.html'; a.setAttribute('aria-labelledby', 'feat-h');
     var art = el('div', 'feature-art'); art.setAttribute('aria-hidden', 'true');
     if(p.image){ art.classList.add('has-img'); var im = el('img'); im.src = p.image; im.alt = ''; im.onerror = function(){ art.classList.remove('has-img'); im.replaceWith(el('span', 'feature-tile', p.tile || p.topicLabel)); }; art.appendChild(im); }
     else art.appendChild(el('span', 'feature-tile', p.tile || p.topicLabel));
@@ -2225,7 +2226,7 @@ a.post:hover h3{color:var(--accent)}
     if(homeLink){
       document.getElementById('home-ch-h').textContent = list[0].title;
       document.getElementById('home-ch-text').textContent = list[0].summary;
-      homeLink.href = list[0].url;
+      homeLink.href = list[0].url + 'index.html';
     }
     var rest = list.slice(1);
     if(!rest.length) return;
