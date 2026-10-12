@@ -1853,6 +1853,7 @@ a.post:hover h3{color:var(--accent)}
         </div>
       </div>
       <div class="posts m-scroll" id="ss-posts" aria-live="polite"></div>
+      <div class="btn-row" id="ss-more-row" style="margin-top:1.4rem" hidden><button class="btn btn-ghost" id="ss-more" type="button">Read more posts</button></div>
       <div class="feed-empty" id="ss-fallback" hidden>
         <p>New Chatterbox posts are published on Substack.</p>
         <a class="arrow" data-substack="home" href="https://brianagile.substack.com" target="_blank" rel="noopener">Read Chatterbox on Substack </a>
@@ -2356,11 +2357,13 @@ a.post:hover h3{color:var(--accent)}
 
   getJSON('/substack.json').then(function(d){
     if(d.url && safeUrl(d.url)){ document.querySelectorAll('[data-substack]').forEach(function(a){ a.href = d.url + (a.dataset.substack === 'subscribe' ? '/subscribe' : ''); }); }
-    var list = (d.posts || []).filter(function(p){ return safeUrl(p.link) && p.title; }).slice(0, 6);
+    var list = (d.posts || []).filter(function(p){ return safeUrl(p.link) && p.title; }).slice(0, 12);
     if(!list.length) throw new Error('empty');
     var wrap = document.getElementById('ss-posts');
-    list.forEach(function(p){
-      var a = el('a', 'post'); a.href = p.link; a.target = '_blank'; a.rel = 'noopener';
+    var SS_FIRST = 6;
+    list.forEach(function(p, idx){
+      var a = el('a', 'post');
+      if(idx >= SS_FIRST) a.hidden = true; a.href = p.link; a.target = '_blank'; a.rel = 'noopener';
       a.style.textDecoration = 'none'; a.style.color = 'var(--ink)';
       var ph = el('div', 'post-img-real'); ph.appendChild(el('span', null, 'Chatterbox'));
       if(safeUrl(p.image)){
@@ -2375,6 +2378,14 @@ a.post:hover h3{color:var(--accent)}
       body.appendChild(el('span', 'meta', fmtDate(p.date) + ' · Read on Substack'));
       a.appendChild(body); wrap.appendChild(a);
     });
+    if(list.length > SS_FIRST){
+      var more = document.getElementById('ss-more'), row = document.getElementById('ss-more-row');
+      row.hidden = false;
+      more.addEventListener('click', function(){
+        wrap.querySelectorAll('a.post[hidden]').forEach(function(a){ a.hidden = false; });
+        row.hidden = true;
+      });
+    }
   }).catch(function(){ document.getElementById('ss-fallback').hidden = false; document.getElementById('ss-posts').hidden = true; });
 
   // LinkedIn: Elfsight widget first; if it hasn't rendered ~10s after Chatterbox is shown, use public/linkedin.json
