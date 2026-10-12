@@ -7,6 +7,7 @@
 <meta name="description" content="Managed IT for architecture, engineering and construction firms. Weekly on-site support along the Boston-DC corridor, remote support across the US. Since 2001.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://elfsightcdn.com/platform.js" async></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
 <style>
 :root{
@@ -536,6 +537,23 @@ a.post:hover h3{color:var(--accent)}
 .transcript summary{cursor:pointer;font-weight:600;font-size:.92rem;color:var(--blue);padding:.2rem 0}
 .transcript[open] summary{margin-bottom:.5rem}
 @media (max-width:640px){.video-frame .play{width:48px;height:48px}.video-frame .v-title{font-size:1rem}}
+/* Chatterbox feeds */
+.post-thumb{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-bottom:1px solid var(--rule)}
+.feed-empty{border:1px dashed var(--rule);padding:1.2rem 1.3rem;display:flex;flex-direction:column;gap:.5rem;color:var(--muted);background:var(--white)}
+.li-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column}
+.li-item{margin:0;padding:1.1rem 0;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:.45rem}
+.li-item:first-child{border-top:1px solid var(--ink)}
+.li-item p{font-size:.98rem}
+.li-item .meta{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.li-grid{list-style:none;padding:0;margin:0;display:grid;gap:clamp(16px,2vw,22px);grid-template-columns:minmax(0,1fr)}
+@media (min-width:720px){.li-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1080px){.li-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.li-grid .li-item{border:1px solid var(--rule);background:var(--white);padding:1.2rem 1.3rem;margin:0}
+.li-grid .li-item:first-child{border-top:1px solid var(--rule)}
+.li-grid .li-item p{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.li-grid .li-item .arrow{margin-top:auto}
+
+.li-embed{min-height:120px}
 </style>
 
 <style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
@@ -1825,20 +1843,40 @@ a.post:hover h3{color:var(--accent)}
     </div>
   </section>
 
-  <section class="section tint" aria-labelledby="li-h">
+  <section class="section tint" aria-labelledby="ss-h">
     <div class="wrap">
       <div class="section-head split">
-        <div class="stack"><p class="eyebrow">On LinkedIn</p><h2 id="li-h">Recent posts</h2></div>
-        <p class="lede">Shorter takes we share on LinkedIn first. <span class="ph" style="display:inline;padding:0 .3rem">[Follow link: LinkedIn company page URL]</span></p>
+        <div class="stack"><p class="eyebrow">On Substack</p><h2 id="ss-h">Latest posts</h2></div>
+        <div class="stack">
+          <p class="lede">Two posts a month on running IT at an AEC firm. Read them on Substack, or get them by email.</p>
+          <div class="btn-row"><a class="btn btn-primary arrow" data-substack="subscribe" href="https://brianagile.substack.com/subscribe" target="_blank" rel="noopener">Subscribe</a><a class="btn btn-ghost" data-substack="home" href="https://brianagile.substack.com" target="_blank" rel="noopener">All posts</a></div>
+        </div>
       </div>
-      <div class="posts m-scroll">
-        <article class="li-card"><span class="li-tag">LinkedIn post</span><p class="ph" style="padding:.6rem .8rem">[Paste the opening lines of a recent post]</p><div class="li-foot"><span class="meta">[Date]</span><span class="meta">View on LinkedIn [link]</span></div></article>
-        <article class="li-card"><span class="li-tag">LinkedIn post</span><p class="ph" style="padding:.6rem .8rem">[Paste the opening lines of a recent post]</p><div class="li-foot"><span class="meta">[Date]</span><span class="meta">View on LinkedIn [link]</span></div></article>
-        <article class="li-card"><span class="li-tag">LinkedIn post</span><p class="ph" style="padding:.6rem .8rem">[Paste the opening lines of a recent post]</p><div class="li-foot"><span class="meta">[Date]</span><span class="meta">View on LinkedIn [link]</span></div></article>
+      <div class="posts m-scroll" id="ss-posts" aria-live="polite"></div>
+      <div class="feed-empty" id="ss-fallback" hidden>
+        <p>New Chatterbox posts are published on Substack.</p>
+        <a class="arrow" data-substack="home" href="https://brianagile.substack.com" target="_blank" rel="noopener">Read Chatterbox on Substack </a>
       </div>
-      <p class="hint" style="margin-top:1rem;font-size:.86rem;color:var(--muted)">On the live site these can be individual LinkedIn post embeds or a feed widget, depending on what your site platform supports.</p>
     </div>
   </section>
+
+  <section class="section" aria-labelledby="li-h">
+    <div class="wrap">
+      <div class="section-head split">
+        <div class="stack"><p class="eyebrow">On LinkedIn</p><h2 id="li-h">Shorter takes, more often</h2></div>
+        <div class="stack">
+          <p class="lede">Quick notes from client work, shared on LinkedIn first.</p>
+          <div class="btn-row"><a class="btn btn-ghost arrow" id="li-follow" href="https://www.linkedin.com/in/briansmind/recent-activity/all/" target="_blank" rel="noopener">Follow on LinkedIn</a></div>
+        </div>
+      </div>
+      <!-- Elfsight LinkedIn Feed: post count, layout and colors are set in the Elfsight dashboard -->
+      <div class="li-embed" id="li-embed"><div class="elfsight-app-296f8e3e-12bc-48c6-a162-406872a615c1" data-elfsight-app-lazy></div></div>
+      <!-- Backup if the Elfsight widget doesn't load: cards from public/linkedin.json -->
+      <ul class="li-grid m-scroll" id="li-posts" aria-live="polite" hidden></ul>
+      <p class="feed-empty" id="li-fallback" hidden>See recent posts on LinkedIn.</p>
+    </div>
+  </section>
+
 
   <section class="section" aria-labelledby="art-h">
     <div class="wrap">
@@ -2309,6 +2347,63 @@ a.post:hover h3{color:var(--accent)}
       document.getElementById('posts-empty').hidden = shown > 0;
     });
   });
+
+  // Chatterbox feeds: public/substack.json (refreshed daily by a GitHub Action) and public/linkedin.json (edited by hand)
+  function fmtDate(iso){ if(/^\d{4}-\d{2}-\d{2}$/.test(iso || '')) iso += 'T12:00:00'; var d = new Date(iso); return isNaN(d) ? '' : d.toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'}); }
+  function el(tag, cls, text){ var e = document.createElement(tag); if(cls) e.className = cls; if(text) e.textContent = text; return e; }
+  function safeUrl(u){ return /^https:\/\//.test(u || '') ? u : null; }
+  function getJSON(url){ return fetch(url, {cache:'no-cache'}).then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); }); }
+
+  getJSON('/substack.json').then(function(d){
+    if(d.url && safeUrl(d.url)){ document.querySelectorAll('[data-substack]').forEach(function(a){ a.href = d.url + (a.dataset.substack === 'subscribe' ? '/subscribe' : ''); }); }
+    var list = (d.posts || []).filter(function(p){ return safeUrl(p.link) && p.title; }).slice(0, 6);
+    if(!list.length) throw new Error('empty');
+    var wrap = document.getElementById('ss-posts');
+    list.forEach(function(p){
+      var a = el('a', 'post'); a.href = p.link; a.target = '_blank'; a.rel = 'noopener';
+      a.style.textDecoration = 'none'; a.style.color = 'var(--ink)';
+      var ph = el('div', 'post-img-real'); ph.appendChild(el('span', null, 'Chatterbox'));
+      if(safeUrl(p.image)){
+        var img = el('img', 'post-thumb'); img.src = p.image; img.alt = ''; img.loading = 'lazy';
+        img.onerror = function(){ img.replaceWith(ph); };
+        a.appendChild(img);
+      } else { a.appendChild(ph); }
+      var body = el('div', 'post-body');
+      body.appendChild(el('span', 'cat', 'Substack'));
+      body.appendChild(el('h3', null, p.title));
+      if(p.summary) body.appendChild(el('p', null, p.summary.length > 160 ? p.summary.slice(0, 157).replace(/\s+\S*$/, '') + '...' : p.summary));
+      body.appendChild(el('span', 'meta', fmtDate(p.date) + ' · Read on Substack'));
+      a.appendChild(body); wrap.appendChild(a);
+    });
+  }).catch(function(){ document.getElementById('ss-fallback').hidden = false; document.getElementById('ss-posts').hidden = true; });
+
+  // LinkedIn: Elfsight widget first; if it hasn't rendered ~10s after Chatterbox is shown, use public/linkedin.json
+  function loadLinkedInBackup(){
+    document.getElementById('li-embed').hidden = true;
+    getJSON('/linkedin.json').then(function(d){
+      if(safeUrl(d.profile)) document.getElementById('li-follow').href = d.profile;
+      var list = (d.posts || []).filter(function(p){ return p.text; }).slice(0, 6);
+      if(!list.length) throw new Error('empty');
+      var ul = document.getElementById('li-posts'); ul.hidden = false;
+      list.forEach(function(p){
+        var li = el('li', 'li-card li-item');
+        li.appendChild(el('span', 'meta', fmtDate(p.date)));
+        li.appendChild(el('p', null, p.text));
+        if(safeUrl(p.url)){ var a = el('a', 'arrow', 'View on LinkedIn '); a.href = p.url; a.target = '_blank'; a.rel = 'noopener'; li.appendChild(a); }
+        ul.appendChild(li);
+      });
+    }).catch(function(){ document.getElementById('li-fallback').hidden = false; });
+  }
+  var liChecked = false;
+  function checkLinkedInEmbed(){
+    if(liChecked) return; liChecked = true;
+    setTimeout(function(){
+      var w = document.querySelector('#li-embed [class^="elfsight-app-"]');
+      if(!w || w.offsetHeight < 60) loadLinkedInBackup();
+    }, 10000);
+  }
+  window.addEventListener('hashchange', function(){ if((location.hash || '') === '#chatterbox') checkLinkedInEmbed(); });
+  if((location.hash || '') === '#chatterbox') checkLinkedInEmbed();
 
   // Booking placeholder
   document.getElementById('book-btn').addEventListener('click', function(e){
