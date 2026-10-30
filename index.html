@@ -365,7 +365,7 @@ form.contact{background:var(--white);border:1px solid var(--rule);padding:clamp(
 .case-full dl{margin:0;display:flex;flex-direction:column;gap:.7rem}
 .case-full dt{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .case-full dd{margin:0;font-weight:500}
-.case-meta-image{display:block;width:100%;height:auto;margin-bottom:.25rem;border:1px solid var(--rule);background:var(--white)}
+.case-meta-image{display:block;width:100%;height:auto;margin-bottom:.25rem;border:1px solid var(--rule);background:var(--white);cursor:zoom-in;transition:opacity .2s ease}.case-meta-image-link:hover .case-meta-image,.case-meta-image-link:focus-visible .case-meta-image{opacity:.82}.case-meta-image-link:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
 .calc{background:var(--white);border:1px solid var(--rule);display:grid;grid-template-columns:minmax(0,1fr)}
 @media (min-width:900px){.calc{grid-template-columns:6fr 5fr}}
 .calc-in{padding:clamp(22px,3vw,34px);display:grid;gap:1.1rem;grid-template-columns:minmax(0,1fr)}
@@ -1572,7 +1572,9 @@ a.post:hover h3{color:var(--accent)}
 
       <article class="case-full" id="case-egnyte" aria-labelledby="ce-h">
         <div class="case-meta">
-          <img class="case-meta-image" src="/egnyte_Migration-network-map-v2.svg" alt="Diagram showing the progress of an Egnyte project archive migration" />
+          <a class="case-meta-image-link" href="/network-map-large.svg" target="_blank" rel="noopener" aria-label="Open the Egnyte migration diagram at full size">
+            <img class="case-meta-image" src="/egnyte_Migration-network-map-v2.svg" alt="Diagram showing the progress of an Egnyte project archive migration" />
+          </a>
           <span class="status">In progress · name pending approval</span>
           <h2 id="ce-h" style="font-size:1.5rem">Moving a live project archive off an aging file server</h2>
           <dl>
