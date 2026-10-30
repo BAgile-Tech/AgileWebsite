@@ -365,6 +365,7 @@ form.contact{background:var(--white);border:1px solid var(--rule);padding:clamp(
 .case-full dl{margin:0;display:flex;flex-direction:column;gap:.7rem}
 .case-full dt{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .case-full dd{margin:0;font-weight:500}
+.case-meta-image{display:block;width:100%;height:auto;margin-bottom:.25rem;border:1px solid var(--rule);background:var(--white)}
 .calc{background:var(--white);border:1px solid var(--rule);display:grid;grid-template-columns:minmax(0,1fr)}
 @media (min-width:900px){.calc{grid-template-columns:6fr 5fr}}
 .calc-in{padding:clamp(22px,3vw,34px);display:grid;gap:1.1rem;grid-template-columns:minmax(0,1fr)}
@@ -1571,7 +1572,8 @@ a.post:hover h3{color:var(--accent)}
 
       <article class="case-full" id="case-egnyte" aria-labelledby="ce-h">
         <div class="case-meta">
-          <span class="status">Draft · in progress · name pending approval</span>
+          <img class="case-meta-image" src="/egnyte_Migration-network-map-v2.svg" alt="Diagram showing the progress of an Egnyte project archive migration" />
+          <span class="status">In progress · name pending approval</span>
           <h2 id="ce-h" style="font-size:1.5rem">Moving a live project archive off an aging file server</h2>
           <dl>
             <div><dt>Client</dt><dd>[Architecture firm, name pending approval]</dd></div>
@@ -1599,7 +1601,7 @@ a.post:hover h3{color:var(--accent)}
 
       <article class="case-full" id="case-move" aria-labelledby="cm-h">
         <div class="case-meta">
-          <span class="status">Draft · name pending approval</span>
+          <span class="status">Name pending approval</span>
           <h2 id="cm-h" style="font-size:1.5rem">Bringing a network up in a new office</h2>
           <dl>
             <div><dt>Client</dt><dd>[Client firm, name pending approval]</dd></div>
@@ -1625,7 +1627,7 @@ a.post:hover h3{color:var(--accent)}
 
       <article class="case-full" id="case-entra" aria-labelledby="cn-h">
         <div class="case-meta">
-          <span class="status">Draft · in progress · name pending approval</span>
+          <span class="status">In progress · name pending approval</span>
           <h2 id="cn-h" style="font-size:1.5rem">Retiring a domain controller for Entra ID</h2>
           <dl>
             <div><dt>Client</dt><dd>[Client firm, name pending approval]</dd></div>
